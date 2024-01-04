@@ -1,0 +1,187 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "South Dakota State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.7835,
+          44.3191
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Utah State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.8097,
+          41.7452
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Montana State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.3626,
+          46.8797
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University of Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2277,
+          44.9740
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Oklahoma State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.0929,
+          35.0078
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Colorado State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.0848,
+          40.5729
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University of Wyoming"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.5666,
+          41.3149
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Texas A&M"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.3365,
+          30.6187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "North Dakota State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8024,
+          46.8978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "New Mexico State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.7491,
+          32.2793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University of Arizona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.9535,
+          32.2319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University of Idaho"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.0126,
+          46.7288
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "University of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.4125,
+          43.0766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Washington State University"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.1803,
+          46.7295
+        ]
+      }
+    }
+  ]
+}

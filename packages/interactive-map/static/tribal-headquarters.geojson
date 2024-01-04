@@ -1,0 +1,1558 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Apache Tribe of Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2389378,
+          35.066056
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Arapaho Tribe of the Wind River Reservation, Wyoming"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.882346,
+          43.006346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.1983149,
+          48.1130741
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.6969042,
+          46.6083268
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Bay Mills Indian Community, Michigan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.6032488,
+          46.4524756
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Big Pine Band of Owens Valley Paiute Shoshone Indians of the Big Pine Reservation, California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.289546,
+          37.1649307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Bishop Paiute Tribe, California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.4183193,
+          37.3617454
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Blackfeet Tribe of the Blackfeet Indian Reservation of Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.1903952,
+          48.7606966
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Bois Forte Band (Nett Lake) of the Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.0971316,
+          48.1147549
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Bridgeport Paiute Indian Colony of California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.2313932,
+          38.2557045
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Burns Paiute Tribe of the Burns Paiute Indian Colony of Oregon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.0541032,
+          43.5862606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Cherokee Nation, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9744127,
+          35.9017365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -101.2224805,
+          44.9886537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Cheyenne and Arapaho Tribes, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.9925236,
+          35.6147243
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Chickasaw Nation, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.6782477,
+          34.7733505
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Chippewa Cree Indians of the Rocky Boy's Reservation, Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.783598,
+          48.261671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Choctaw Nation of Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.3892486,
+          33.9939465
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Coeur D'Alene Tribe, Idaho"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8885094,
+          47.3351803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Comanche Nation, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.4011745,
+          34.7270755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Confederated Salish & Kootenai Tribes of the Flathead Reservation, Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.1195251,
+          47.602957
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Confederated Tribes and Bands of the Yakama Nation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.3086667,
+          46.3773509
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Confederated Tribes of the Chehalis Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.2323686,
+          46.8403765
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Confederated Tribes of the Colville Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.9747476,
+          48.1671004
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Confederated Tribes of the Goshute Reservation"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.9852805,
+          40.0366039
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Confederated Tribes of the Umatilla Indian Reservation, Oregon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.7885967,
+          45.672075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.4378846,
+          44.068601
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Crow Tribe of Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.4645278,
+          45.6041414
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Eastern Band of Cherokee Indians of North Carolina"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.3107072,
+          35.4717656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Flandreau Santee Sioux Tribe of South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.595324,
+          44.0494154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Fond du Lac Band of the Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.5160505,
+          46.7134606
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Fort Belknap Indian Community of the Fort Belknap Reservation of Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.7840463,
+          48.5333309
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation, California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.2000951,
+          36.8027102
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada and Oregon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.7189974,
+          41.9972968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Fort Sill Apache Tribe of Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.3658875,
+          34.8936766
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Grand Portage Band of the Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.6848121,
+          47.963776
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Grand Traverse Band of Ottawa and Chippewa Indians, Michigan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.6049964,
+          45.0193321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Ho-Chunk Nation of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.8025109,
+          44.306801
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Jamestown S'Klallam Tribe, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.9962656,
+          48.0254542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Jena Band of Choctaw Indians, Louisiana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.1337448,
+          31.6832271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Jicarilla Apache Nation, New Mexico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.989267,
+          36.935546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.5265889,
+          36.945542
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Keweenaw Bay Indian Community, Michigan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.5092877,
+          46.8081587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Kiowa Indian Tribe of Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.6036735,
+          35.1036699
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.360743,
+          45.9418213
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lac Vieux Desert Band of Lake Superior Chippewa Indians, Michigan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.1783221,
+          46.2679475
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.8920991,
+          45.9696725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.1378112,
+          36.184775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Leech Lake Band of the Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.60106,
+          47.3839789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.1590786,
+          40.2420059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.6118667,
+          44.0510521
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lower Elwha Tribal Community, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.5486715,
+          48.1440352
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Lower Sioux Indian Community in the State of Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9843725,
+          44.5514993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Makah Indian Tribe of the Makah Indian Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.6249602,
+          48.3681223
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Menominee Indian Tribe of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.6337152,
+          44.8838712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Mescalero Apache Tribe of the Mescalero Reservation, New Mexico"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.779954,
+          33.156795
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Mille Lacs Band of the Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.7552608,
+          46.1779922
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.6043207,
+          47.3793942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Mississippi Band of Choctaw Indians, Mississippi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.2127328,
+          32.7734342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -114.594155,
+          36.682194
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Muscogee (Creek) Nation, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.9605502,
+          35.6234367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Navajo Nation, Arizona, New Mexico & Utah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.0525929,
+          35.680573
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Nez Perce Tribe of Idaho"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.8048733,
+          46.4048865
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Nisqually Indian Tribe of the Nisqually Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.670328,
+          47.003706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -106.6666984,
+          45.6230476
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Northwestern Band of Shoshoni Nation of Utah (Washakie)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.015839,
+          41.525162
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Oglala Sioux Tribe of the Pine Ridge Reservation, South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.5111079,
+          43.022499
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Paiute Indian Tribe of Utah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -113.0578039,
+          37.6850231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Paiute-Shoshone Indians of the Lone Pine Community of the Lone Pine Reservation, California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.0628654,
+          36.6060444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.7569624,
+          39.4820325
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Pawnee Nation of Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.8039232,
+          36.3378321
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Poarch Band of Creeks, Alabama"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.5528806,
+          31.0960483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Port Gamble S'Klallam Tribe, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5693153,
+          47.8521554
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Prairie Island Indian Community in the State of Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.6439621,
+          44.629353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Puyallup Tribe of the Puyallup Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.4095609,
+          47.236319
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.3579527,
+          39.8318537
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Quapaw Tribe of Indians, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.7880057,
+          36.9545117
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Quileute Tribe of the Quileute Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.6352255,
+          47.9081335
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Quinault Tribe of the Quinault Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.29324,
+          47.3473047
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1087337,
+          46.8472313
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Red Lake Band of Chippewa Indians, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.0169401,
+          47.876346
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.8225732,
+          43.2582688
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Saginaw Chippewa Indian Tribe of Michigan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.7063637,
+          43.6033732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "San Carlos Apache Tribe of the San Carlos Reservation, Arizona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -110.4738762,
+          33.6024112
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "San Juan Southern Paiute Tribe of Arizona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.2398625,
+          36.1349928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Santee Sioux Nation, Nebraska"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.8579099,
+          42.836205
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Sault Ste. Marie Tribe of Chippewa Indians of Michigan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.3480727,
+          46.4970532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Seminole Nation of Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.4933457,
+          35.1586902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Seminole Tribe of Florida"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.2155898,
+          26.0455416
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Shakopee Mdewakanton Sioux Community of Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.4732246,
+          44.7366589
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Shoalwater Bay Tribe of the Shoalwater Bay Indian Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.9818347,
+          46.7064856
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Shoshone-Bannock Tribes of the Fort Hall Reservation of Idaho"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -112.46,
+          42.99
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.1565875,
+          41.9665836
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -97.0656586,
+          45.565819
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Sokaogon Chippewa Community, Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -88.9096896,
+          45.4696236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -107.634604,
+          37.132099
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Spirit Lake Tribe, North Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.994906,
+          47.9781379
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Spokane Tribe of the Spokane Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.9881676,
+          47.8865464
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Squaxin Island Tribe of the Squaxin Island Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.0798584,
+          47.122311
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "St. Croix Chippewa Indians of Wisconsin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.2074354,
+          45.8135655
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Standing Rock Sioux Tribe of North & South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -100.6301271,
+          46.0869408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Summit Lake Paiute Tribe of Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.7658025,
+          39.5408871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Suquamish Indian Tribe of the Port Madison Reservation, Washington"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.5616207,
+          47.7307539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Te-Moak Tribe of Western Shoshone Indians of Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.7738277,
+          40.8407567
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "The Osage Nation, Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.3372309,
+          36.6678426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -102.577224,
+          47.9805462
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Tonto Apache Tribe of Arizona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -111.3270273,
+          34.2295968
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Turtle Mountain Band of Chippewa Indians of North Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -99.7448688,
+          48.8391712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "United Keetoowah Band of Cherokee Indians in Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9744127,
+          35.9017365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Upper Sioux Community, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.5455752,
+          44.8099575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Ute Indian Tribe of the Uintah & Ouray Reservation, Utah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.866327,
+          40.3262949
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Ute Mountain Ute Tribe, Colorado, New Mexico, & Utah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -108.729006,
+          37.201973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.5564526,
+          37.8909018
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Walker River Paiute Tribe of the Walker River Reservation, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.7198004,
+          38.9507415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "White Earth Band of Minnesota Chippewa Tribe, Minnesota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.839551,
+          47.099186
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "White Mountain Apache Tribe of the Fort Apache Reservation, Arizona"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -109.9642664,
+          33.8369944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Wichita and Affiliated Tribes (Wichita, Keechi, Waco & Tawakonie), Oklahoma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.2436625,
+          35.072562
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Winnebago Tribe of Nebraska"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.4723119,
+          42.2376482
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Yankton Sioux Tribe of South Dakota"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -98.29316,
+          43.0799
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "present_day_tribe": "Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.1860677,
+          39.0703055
+        ]
+      }
+    }
+  ]
+}
