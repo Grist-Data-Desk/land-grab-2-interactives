@@ -1,0 +1,39 @@
+{
+  "name": "@land-grab-2-interactives/tx-parcels",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .ts src",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/geojson": "^7946.0.13",
+    "@types/lodash": "^4.14.202",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "@d3fc/d3fc-webgl": "^3.2.0",
+    "@deck.gl/core": "^8.9.34",
+    "@deck.gl/layers": "^8.9.34",
+    "@deck.gl/mapbox": "^8.9.34",
+    "d3": "^7.8.5",
+    "d3-interpolate": "^3.0.1",
+    "d3fc": "^15.2.6",
+    "deck.gl": "^8.9.34",
+    "lodash": "^4.17.21",
+    "maplibre-gl": "^3.6.2"
+  }
+}

@@ -1,0 +1,52 @@
+#puf-scrolly {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+  #puf-scrolly {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+#puf-scrolly .puf-img-container {
+  position: absolute;
+  inset: 0;
+}
+
+#puf-scrolly .puf-img-container__frame {
+  position: sticky;
+  top: 25vh;
+  bottom: 0;
+  width: 100%;
+  height: 50vh;
+}
+
+#puf-scrolly .puf-img-container__cell {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+#puf-scrolly .puf-img-container__cell--active {
+  opacity: 1;
+}
+
+#puf-scrolly .puf-img-container__cell img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.puf-step {
+  height: 100vh;
+  width: 100%;
+}

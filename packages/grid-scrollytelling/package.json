@@ -1,0 +1,32 @@
+{
+  "name": "@land-grab-2-interactives/grid-scrollytelling",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .ts src",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@land-grab-2-interactives/types": "^0.0.1",
+    "@types/lodash.range": "^3.2.9",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
+  "dependencies": {
+    "lodash.range": "^3.2.0",
+    "maplibre-gl": "^3.6.2",
+    "pmtiles": "^2.11.0",
+    "scrollama": "^3.2.0"
+  }
+}

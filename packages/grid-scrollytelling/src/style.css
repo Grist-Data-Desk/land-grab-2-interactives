@@ -1,0 +1,115 @@
+:root {
+  --color-smog: #f0f0f0;
+  --color-smog-transparent: rgba(240, 240, 240, 0.95);
+  --color-earth: #3c3830;
+  --color-earth-transparent: rgba(60, 56, 48, 0.8);
+  --font-sans: "Basis Grotesque Pro", sans-serif;
+  --font-sans-alt: "PolySans", sans-serif;
+  --radius: 0.25rem;
+  --font-xl: 1.25rem;
+  --line-height-xl: 1.75rem;
+  --font-2xl: 1.5rem;
+  --line-height-2xl: 2rem;
+}
+
+/* Commented out for production deployment. */
+/* body {
+  margin: 0;
+} */
+
+/* We make use of ids in the CSS here to up the specificity over Grist's
+WordPress styles. */
+#grid-scrolly-map {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+  #grid-scrolly-map {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+.grid-scrolly-legend {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: var(--color-smog);
+  font-family: var(--font-sans-alt);
+  transition: opacity 0.2s ease-out;
+  z-index: 10;
+}
+
+.grid-scrolly-legend--hidden {
+  opacity: 0;
+}
+
+.grid-scrolly-legend--visible {
+  opacity: 1;
+}
+
+.grid-scrolly-legend__subtitle {
+  margin-top: 0.25rem;
+  color: rgba(240, 240, 240, 0.5);
+}
+
+.grid-scrolly-legend__stat {
+  color: rgba(240, 240, 240, 0.5);
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+#scrolly {
+  position: relative;
+  width: 100vw;
+  margin-left: calc((50vw - 50%) * -1);
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120vh;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 20;
+}
+
+.step__content {
+  width: 75vw;
+  background: var(--color-smog-transparent);
+  font-family: var(--font-sans);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  font-size: var(--font-xl);
+  line-height: var(--line-height-xl);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.4),
+    0 4px 6px -4px rgb(0 0 0 / 0.4);
+}
+
+.step__content p,
+.grid-scrolly-legend p {
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .step__content {
+    width: 500px;
+    font-size: var(--font-2xl);
+    line-height: var(--line-height-2xl);
+  }
+}
+
+.step:first-child > .step__content {
+  transform: translateY(-50%);
+}
