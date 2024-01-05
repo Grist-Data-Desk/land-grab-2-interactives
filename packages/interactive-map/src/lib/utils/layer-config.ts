@@ -85,7 +85,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'visible'
     },
     paint: {
-      'fill-color': GRIST_COLORS.EARTH,
+      'fill-color': GRIST_COLORS.ORANGE,
       'fill-opacity': 0.25
     }
   },
@@ -98,7 +98,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'visible'
     },
     paint: {
-      'line-color': GRIST_COLORS.EARTH,
+      'line-color': GRIST_COLORS.ORANGE,
       'line-width': 0.25
     }
   },
@@ -111,16 +111,16 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'visible'
     },
     paint: {
-      'line-color': GRIST_COLORS.EARTH,
+      'line-color': GRIST_COLORS.ORANGE,
       'line-width': 0.25,
       'line-opacity': [
         'interpolate',
         ['linear'],
         ['zoom'],
         8,
-        0.05,
+        0.3,
         10,
-        0.5,
+        0.6,
         14,
         1
       ]
@@ -146,7 +146,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
     type: 'symbol',
     layout: {
       'text-field': ['get', 'name'],
-      'text-font': ['Noto Sans Bold'],
+      'text-font': ['PolySans Bold'],
       'text-anchor': 'bottom-left',
       'text-size': 11,
       'text-justify': 'left',

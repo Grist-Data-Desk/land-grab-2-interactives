@@ -110,7 +110,7 @@
 
 <div class="stack stack-xs text-earth text-xs md:text-sm">
   <h2 class="text-xl font-bold uppercase tracking-wider">See Connections To</h2>
-  <div class="border-earth flex w-full border-x border-t md:border">
+  <div class="border-earth flex w-full border">
     <div
       class="border-earth flex basis-1/2 justify-center border-r p-2 {$mapEntity ===
       'universities'

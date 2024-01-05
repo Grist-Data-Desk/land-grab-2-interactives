@@ -76,18 +76,16 @@
 
 <form
   on:submit={onSubmit}
-  class="stack stack-xs text-earth absolute right-4 top-4 md:right-8 md:top-8"
+  class="md:stack md:stack-xs md:text-earth hidden md:absolute md:bottom-8 md:right-8 md:block"
 >
   <input
     value={query}
     placeholder="Search for a location"
     on:input={onInput}
-    class="border-earth bg-smog h-9 w-48 truncate rounded border bg-opacity-75 px-2 shadow-md"
+    class="border-earth bg-smog h-9 w-48 truncate rounded border px-2 shadow-md"
   />
   {#if hits.length > 0 && query.length > 0}
-    <ul
-      class="border-earth bg-smog w-48 rounded border bg-opacity-75 text-xs shadow-md"
-    >
+    <ul class="border-earth bg-smog w-48 rounded border text-xs shadow-md">
       {#each hits as hit}
         <li
           class="border-earth overflow-hidden border-t p-2 first:rounded-t first:border-none last:rounded-b focus-within:bg-gray-300 hover:bg-gray-300"
@@ -96,7 +94,7 @@
             class="flex w-full flex-col truncate text-left"
             on:click={onClick(hit)}
           >
-            <span class="w-full truncate font-semibold">
+            <span class="w-full truncate font-bold">
               {hit.place_name.split(',')[0]}
             </span>
             <span class="w-full truncate">

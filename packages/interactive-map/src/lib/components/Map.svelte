@@ -3,6 +3,7 @@
   import { onDestroy, onMount } from 'svelte';
   import * as pmtiles from 'pmtiles';
 
+  import Legend from '$lib/components/Legend.svelte';
   import Menu from '$lib/components/Menu.svelte';
   import Search from '$lib/components/Search.svelte';
   import { map as mapStore } from '$lib/stores/map';
@@ -26,6 +27,16 @@
       center: [-105.93, 40.36],
       zoom: 4.5
     });
+
+    map.addControl(new maplibregl.NavigationControl());
+    map.addControl(
+      new maplibregl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        trackUserLocation: true
+      })
+    );
 
     map.on('load', () => {
       Object.values(SOURCE_CONFIG).forEach(({ id, config }) => {
@@ -58,5 +69,6 @@
   {#if map && mapIdle}
     <Menu {data} {map} />
     <Search {map} />
+    <Legend />
   {/if}
 </div>

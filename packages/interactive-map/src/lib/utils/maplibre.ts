@@ -44,7 +44,7 @@ const renderLARPopup =
               stroke-width="1"
             />
           </svg>
-          <p class="text-base text-earth align-left font-semibold">
+          <p class="text-base text-earth align-left font-bold">
             ${LARNAME}
           </p>
         </div>`
@@ -105,7 +105,7 @@ const renderParcelPopup =
       parcelPopup
         .setLngLat(coordinates)
         .setHTML(
-          `<div class="flex flex-col text-earth stack stack-xs">
+          `<div class="flex flex-col text-earth stack stack-xs font-sans">
             <div class="stack-h stack-h-xs items-center border-b border-earth border-dotted">
               <svg width="16" height="16" viewBox="0 0 16 16">
                 <rect
@@ -113,41 +113,41 @@ const renderParcelPopup =
                   y="0"
                   width="16"
                   height="16"
-                  fill="${GRIST_COLORS.EARTH}"
+                  fill="${GRIST_COLORS.ORANGE}"
                   fill-opacity="0.25"
-                  stroke="${GRIST_COLORS.EARTH}"
+                  stroke="${GRIST_COLORS.ORANGE}"
                   stroke-width="1" />
               </svg>
-              <p class="text-base align-left font-semibold">Parcel ${object_id}</p>
+              <p class="text-base align-left font-bold">Parcel ${object_id}</p>
             </div>
             <table>
               <tbody>
                 <tr>
-                  <td class="font-light pr-1">University</td>
-                  <td class="font-semibold pl-1">${university}</td>
+                  <td class="font-gray-300 pr-1">University</td>
+                  <td class="font-bold pl-1">${university}</td>
                 </tr>
                 <tr>
-                  <td class="font-light pr-1">State Enabling Act</td>
-                  <td class="font-semibold pl-1">${state_enabling_act}</td>
+                  <td class="font-gray-300 pr-1">State Enabling Act</td>
+                  <td class="font-bold pl-1">${state_enabling_act}</td>
                 <tr>
-                  <td class="font-light pr-1">Managing Agency</td>
-                  <td class="font-semibold pl-1">${managing_agency}</td>
+                  <td class="font-gray-300 pr-1">Managing Agency</td>
+                  <td class="font-bold pl-1">${managing_agency}</td>
                 </tr>
                 <tr>
-                  <td class="font-light pr-1 align-top">Activity</td>
-                  <td class="font-semibold pl-1">
+                  <td class="font-gray-300 pr-1 align-top">Activity</td>
+                  <td class="font-bold pl-1">
                     ${formatActivity(activity)}
                   </td>
                 </tr>
                 <tr>
-                  <td class="font-light pr-1">Rights Type</td>
-                  <td class="font-semibold pl-1">${formatRightsType(
+                  <td class="font-gray-300 pr-1">Rights Type</td>
+                  <td class="font-bold pl-1">${formatRightsType(
                     rights_type
                   )}</td>
                 </tr>
                 <tr>
-                  <td class="font-light pr-1">Cessions</td>
-                  <td class="font-semibold pl-1">${formatCessions(
+                  <td class="font-gray-300 pr-1">Cessions</td>
+                  <td class="font-bold pl-1">${formatCessions(
                     all_cession_numbers
                   )}</td>
                 </tr>
