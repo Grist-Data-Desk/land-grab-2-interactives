@@ -1,10 +1,10 @@
 <script lang="ts">
-	import 'maplibre-gl/dist/maplibre-gl.css';
-	import '../app.css';
+  import 'maplibre-gl/dist/maplibre-gl.css';
+  import '../app.css';
 </script>
 
 <svelte:head>
-	<title>Grist — Land Grab 2</title>
+  <title>Grist — Land Grab 2 Interactive Map</title>
 </svelte:head>
 
 <slot />

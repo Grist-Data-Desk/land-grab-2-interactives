@@ -1,151 +1,141 @@
 <script lang="ts">
-	import * as turf from '@turf/turf';
-	import type { ExpressionSpecification, FilterSpecification, Map } from 'maplibre-gl';
-	import * as _ from 'lodash';
-	import type { Feature } from 'geojson';
+  import * as turf from '@turf/turf';
+  import type {
+    ExpressionSpecification,
+    FilterSpecification,
+    Map
+  } from 'maplibre-gl';
+  import * as _ from 'lodash';
+  import type { Feature } from 'geojson';
 
-	import Checkbox from '$lib/components/Checkbox.svelte';
-	import RightsTypeSelect from '$lib/components/RightsTypeSelect.svelte';
-	import TribeSelect from '$lib/components/TribeSelect.svelte';
-	import UniversitySelect from '$lib/components/UniversitySelect.svelte';
-	import { mapEntity, type MapEntity } from '$lib/stores/map-entity';
-	import { mapFilters, type MapFilters } from '$lib/stores/map-filters';
-	import type { Data } from '$lib/types/data';
-	import { LAYER_CONFIG } from '$lib/utils/layer-config';
+  import MapFilters from '$lib/components/MapFilters.svelte';
+  import MapSwitch from '$lib/components/MapSwitch.svelte';
+  import { mapEntity, type MapEntity } from '$lib/stores/map-entity';
+  import {
+    mapFilters,
+    type MapFilters as ParcelFilters
+  } from '$lib/stores/map-filters';
+  import type { Data } from '$lib/types/data';
+  import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
-	export let data: Data;
-	export let map: Map;
+  export let data: Data;
+  export let map: Map;
 
-	let showLinks = true;
+  const fitFilteredFeatureBounds = async (
+    filters: ParcelFilters,
+    entity: MapEntity
+  ) => {
+    const features = await fetch(
+      entity === 'universities'
+        ? '/university-parcel-links.geojson'
+        : '/tribe-parcel-links.geojson'
+    )
+      .then((res) => res.json())
+      .then((res) => res.features as Feature[]);
 
-	const fitFilteredFeatureBounds = async (filters: MapFilters, entity: MapEntity) => {
-		const features = await fetch(
-			entity === 'universities' ? '/university-parcel-links.geojson' : '/tribe-parcel-links.geojson'
-		)
-			.then((res) => res.json())
-			.then((res) => res.features as Feature[]);
+    const layerId =
+      entity === 'universities'
+        ? LAYER_CONFIG.universityParcelLinks.id
+        : LAYER_CONFIG.tribeParcelLinks.id;
+    const { university, presentDayTribe, rightsType } = filters[layerId];
 
-		const layerId =
-			entity === 'universities'
-				? LAYER_CONFIG.universityParcelLinks.id
-				: LAYER_CONFIG.tribeParcelLinks.id;
-		const { university, presentDayTribe, rightsType } = filters[layerId];
+    const universityFilter = (feature: Feature) =>
+      university && university.value !== 'All' && entity === 'universities'
+        ? feature.properties?.[university.key] === university.value
+        : true;
+    const presentDayTribeFilter = (feature: Feature) =>
+      presentDayTribe && presentDayTribe.value !== 'All' && entity === 'tribes'
+        ? feature.properties?.[presentDayTribe.key] === presentDayTribe.value
+        : true;
+    const rightsTypeFilter = (feature: Feature) =>
+      rightsType && !rightsType.value.includes('All')
+        ? feature.properties?.[rightsType.key].includes(rightsType.value[0])
+        : true;
 
-		const universityFilter = (feature: Feature) =>
-			university && university.value !== 'All' && entity === 'universities'
-				? feature.properties?.[university.key] === university.value
-				: true;
-		const presentDayTribeFilter = (feature: Feature) =>
-			presentDayTribe && presentDayTribe.value !== 'All' && entity === 'tribes'
-				? feature.properties?.[presentDayTribe.key] === presentDayTribe.value
-				: true;
-		const rightsTypeFilter = (feature: Feature) =>
-			rightsType && !rightsType.value.includes('All')
-				? feature.properties?.[rightsType.key].includes(rightsType.value[0])
-				: true;
+    const predicates =
+      entity === 'universities'
+        ? [universityFilter, rightsTypeFilter]
+        : [presentDayTribeFilter, rightsTypeFilter];
+    const filteredFeatures = features.filter((feature) =>
+      _.overEvery(predicates)(feature)
+    );
+    const bbox = turf.bbox(turf.featureCollection(filteredFeatures));
+    map.fitBounds(bbox, { padding: 50 });
+  };
 
-		const predicates =
-			entity === 'universities'
-				? [universityFilter, rightsTypeFilter]
-				: [presentDayTribeFilter, rightsTypeFilter];
-		const filteredFeatures = features.filter((feature) => _.overEvery(predicates)(feature));
-		const bbox = turf.bbox(turf.featureCollection(filteredFeatures));
-		map.fitBounds(bbox, { padding: 50 });
-	};
+  const composeFilters = (filters: ParcelFilters, entity: MapEntity): void => {
+    Object.entries(filters).forEach(([layerId, filter]) => {
+      const { university, presentDayTribe, rightsType } = filter;
 
-	const composeFilters = (filters: MapFilters, entity: MapEntity): void => {
-		Object.entries(filters).forEach(([layerId, filter]) => {
-			const { university, presentDayTribe, rightsType } = filter;
+      const universityFilter: FilterSpecification | undefined =
+        university && university.value !== 'All' && entity === 'universities'
+          ? ['==', ['get', university.key], university.value]
+          : undefined;
+      const rightsTypeFilter: FilterSpecification | undefined =
+        rightsType && !rightsType.value.includes('All')
+          ? ['in', ['literal', rightsType.value[0]], ['get', 'rights_type']]
+          : undefined;
+      let presentDayTribeFilter: FilterSpecification | undefined =
+        presentDayTribe &&
+        presentDayTribe.value !== 'All' &&
+        entity === 'tribes'
+          ? ['==', ['get', presentDayTribe.key], presentDayTribe.value]
+          : undefined;
 
-			const universityFilter: FilterSpecification | undefined =
-				university && university.value !== 'All' && entity === 'universities'
-					? ['==', ['get', university.key], university.value]
-					: undefined;
-			const rightsTypeFilter: FilterSpecification | undefined =
-				rightsType && !rightsType.value.includes('All')
-					? ['in', ['literal', rightsType.value[0]], ['get', 'rights_type']]
-					: undefined;
-			let presentDayTribeFilter: FilterSpecification | undefined =
-				presentDayTribe && presentDayTribe.value !== 'All' && entity === 'tribes'
-					? ['==', ['get', presentDayTribe.key], presentDayTribe.value]
-					: undefined;
+      if (
+        (layerId === LAYER_CONFIG.parcelOutlines.id ||
+          layerId === LAYER_CONFIG.parcels.id) &&
+        presentDayTribe &&
+        presentDayTribe.value !== 'All' &&
+        entity === 'tribes'
+      ) {
+        const columns = _.range(1, 9).map((n) => `C${n}_present_day_tribe`);
+        const inFilters: ExpressionSpecification[] = columns.map((column) => [
+          'in',
+          ['literal', presentDayTribe.value],
+          ['get', column]
+        ]);
 
-			if (
-				(layerId === LAYER_CONFIG.parcelOutlines.id || layerId === LAYER_CONFIG.parcels.id) &&
-				presentDayTribe &&
-				presentDayTribe.value !== 'All' &&
-				entity === 'tribes'
-			) {
-				const columns = _.range(1, 9).map((n) => `C${n}_present_day_tribe`);
-				const inFilters: ExpressionSpecification[] = columns.map((column) => [
-					'in',
-					['literal', presentDayTribe.value],
-					['get', column]
-				]);
+        presentDayTribeFilter = ['any', ...inFilters];
+      }
 
-				presentDayTribeFilter = ['any', ...inFilters];
-			}
+      const fs = [
+        universityFilter,
+        rightsTypeFilter,
+        presentDayTribeFilter
+      ].filter(Boolean) as ExpressionSpecification[];
+      let combinedFilter: FilterSpecification | undefined;
 
-			const fs = [universityFilter, rightsTypeFilter, presentDayTribeFilter].filter(
-				Boolean
-			) as ExpressionSpecification[];
-			let combinedFilter: FilterSpecification | undefined;
+      switch (fs.length) {
+        case 0:
+          combinedFilter = undefined;
+          break;
+        case 1:
+          combinedFilter = fs[0];
+          break;
+        default:
+          combinedFilter = ['all', ...fs];
+          break;
+      }
 
-			switch (fs.length) {
-				case 0:
-					combinedFilter = undefined;
-					break;
-				case 1:
-					combinedFilter = fs[0];
-					break;
-				default:
-					combinedFilter = ['all', ...fs];
-					break;
-			}
+      map.setFilter(layerId, combinedFilter);
+    });
+  };
 
-			map.setFilter(layerId, combinedFilter);
-		});
-	};
-
-	$: {
-		fitFilteredFeatureBounds($mapFilters, $mapEntity);
-		composeFilters($mapFilters, $mapEntity);
-	}
-
-	const onShowLinksChange = (event: CustomEvent<{ checked: boolean }>) => {
-		showLinks = event.detail.checked;
-		const layerId =
-			$mapEntity === 'universities'
-				? LAYER_CONFIG.universityParcelLinks.id
-				: LAYER_CONFIG.tribeParcelLinks.id;
-
-		if (event.detail.checked) {
-			map.setLayoutProperty(layerId, 'visibility', 'visible');
-		} else {
-			map.setLayoutProperty(layerId, 'visibility', 'none');
-		}
-	};
+  $: {
+    fitFilteredFeatureBounds($mapFilters, $mapEntity);
+    composeFilters($mapFilters, $mapEntity);
+  }
 </script>
 
 <div
-	class="absolute top-4 left-4 md:top-8 md:left-8 bg-smog bg-opacity-75 border border-earth rounded p-4 stack stack-md max-w-[16rem]"
+  class="stack stack-sm border-earth bg-smog text-earth absolute left-4 top-4 max-w-[25rem] rounded border p-4 shadow-md md:left-8 md:top-8"
 >
-	<div class="stack stack-xs">
-		<h1 class="text-xl md:text-3xl font-serif text-earth font-semibold">Filter Parcels</h1>
-		{#if $mapEntity === 'universities'}
-			<UniversitySelect universities={data.universities} />
-		{:else}
-			<TribeSelect tribalHeadquarters={data.tribalHeadquarters} />
-		{/if}
-		<RightsTypeSelect />
-	</div>
-	<div class="stack stack-xs">
-		<h2 class="text-base md:text-xl font-serif">Map Options</h2>
-		<Checkbox
-			id="show-links"
-			label={`Parcel-${$mapEntity === 'universities' ? 'University' : 'Indigenous Nation'} Links`}
-			on:change={onShowLinksChange}
-			checked={showLinks}
-		/>
-	</div>
+  <h1
+    class="border-earth border-b pb-4 font-serif text-xl font-bold md:text-3xl"
+  >
+    Indigenous Land Granted to Universities
+  </h1>
+  <MapSwitch {map} />
+  <MapFilters {data} />
 </div>

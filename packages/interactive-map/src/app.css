@@ -3,66 +3,66 @@
 @tailwind utilities;
 
 @layer utilities {
-	/* Block Stack */
-	.stack {
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-	}
+  /* Block Stack */
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-	.stack > * {
-		margin-block: 0;
-	}
+  .stack > * {
+    margin-block: 0;
+  }
 
-	.stack-xs > * + * {
-		margin-block-start: 0.5rem;
-	}
+  .stack-xs > * + * {
+    margin-block-start: 0.5rem;
+  }
 
-	.stack-sm > * + * {
-		margin-block-start: 1rem;
-	}
+  .stack-sm > * + * {
+    margin-block-start: 1rem;
+  }
 
-	.stack-md > * + * {
-		margin-block-start: 1.5rem;
-	}
+  .stack-md > * + * {
+    margin-block-start: 1.5rem;
+  }
 
-	.stack-lg > * + * {
-		margin-block-start: 2rem;
-	}
+  .stack-lg > * + * {
+    margin-block-start: 2rem;
+  }
 
-	/* Inline Stack */
-	.stack-h {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-start;
-	}
+  /* Inline Stack */
+  .stack-h {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 
-	.stack-h > * {
-		margin-inline: 0;
-	}
+  .stack-h > * {
+    margin-inline: 0;
+  }
 
-	.stack-h-xs > * + * {
-		margin-inline-start: 0.5rem;
-	}
+  .stack-h-xs > * + * {
+    margin-inline-start: 0.5rem;
+  }
 
-	.stack-h-sm > * + * {
-		margin-inline-start: 1rem;
-	}
+  .stack-h-sm > * + * {
+    margin-inline-start: 1rem;
+  }
 
-	.stack-h-md > * + * {
-		margin-inline-start: 1.5rem;
-	}
+  .stack-h-md > * + * {
+    margin-inline-start: 1.5rem;
+  }
 
-	.stack-h-lg > * + * {
-		margin-inline-start: 2rem;
-	}
+  .stack-h-lg > * + * {
+    margin-inline-start: 2rem;
+  }
 }
 
 /* MapLibre Overrides. */
 .maplibregl-popup-tip {
-	display: none;
+  display: none;
 }
 
 .maplibregl-popup-content {
-	@apply bg-smog shadow-md p-2 border border-earth;
+  @apply border border-earth bg-smog p-2 shadow-md;
 }

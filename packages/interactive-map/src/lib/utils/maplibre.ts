@@ -1,7 +1,11 @@
 import maplibregl from 'maplibre-gl';
 
 import { GRIST_COLORS } from '$lib/utils/constants';
-import { formatActivity, formatCessions, formatRightsType } from '$lib/utils/formatters';
+import {
+  formatActivity,
+  formatCessions,
+  formatRightsType
+} from '$lib/utils/formatters';
 import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
 /**
@@ -12,18 +16,22 @@ import { LAYER_CONFIG } from '$lib/utils/layer-config';
  * @param larPopup - The MapLibre Popup instance.
  */
 const renderLARPopup =
-	(map: maplibregl.Map, larPopup: maplibregl.Popup) =>
-	(e: maplibregl.MapMouseEvent & { features?: maplibregl.GeoJSONFeature[] | undefined }): void => {
-		map.getCanvas().style.cursor = 'pointer';
+  (map: maplibregl.Map, larPopup: maplibregl.Popup) =>
+  (
+    e: maplibregl.MapMouseEvent & {
+      features?: maplibregl.GeoJSONFeature[] | undefined;
+    }
+  ): void => {
+    map.getCanvas().style.cursor = 'pointer';
 
-		if (e.features) {
-			const coordinates = e.lngLat;
-			const { LARNAME } = e.features[0].properties;
+    if (e.features) {
+      const coordinates = e.lngLat;
+      const { LARNAME } = e.features[0].properties;
 
-			larPopup
-				.setLngLat(coordinates)
-				.setHTML(
-					`<div class="stack-h stack-h-xs items-center border-b border-earth border-dotted">
+      larPopup
+        .setLngLat(coordinates)
+        .setHTML(
+          `<div class="stack-h stack-h-xs items-center border-b border-earth border-dotted">
           <svg width="16" height="16" viewBox="0 0 16 16">
             <rect
               x="0"
@@ -40,12 +48,12 @@ const renderLARPopup =
             ${LARNAME}
           </p>
         </div>`
-				)
-				.addTo(map);
-		}
+        )
+        .addTo(map);
+    }
 
-		larPopup.setMaxWidth('fit-content');
-	};
+    larPopup.setMaxWidth('fit-content');
+  };
 
 /**
  * Create a popup to display information about a given LAR (Land Area Representation).
@@ -53,18 +61,18 @@ const renderLARPopup =
  * @param map – The MapLibre Map instance.
  */
 export const createLARPopup = (map: maplibregl.Map): void => {
-	const larPopup = new maplibregl.Popup({
-		closeButton: false,
-		closeOnClick: false
-	});
+  const larPopup = new maplibregl.Popup({
+    closeButton: false,
+    closeOnClick: false
+  });
 
-	map.on('mouseenter', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
-	map.on('mousemove', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
+  map.on('mouseenter', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
+  map.on('mousemove', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
 
-	map.on('mouseleave', LAYER_CONFIG.lars.id, () => {
-		map.getCanvas().style.cursor = '';
-		larPopup.remove();
-	});
+  map.on('mouseleave', LAYER_CONFIG.lars.id, () => {
+    map.getCanvas().style.cursor = '';
+    larPopup.remove();
+  });
 };
 
 /**
@@ -74,27 +82,30 @@ export const createLARPopup = (map: maplibregl.Map): void => {
  * @param parcelPopup – The MapLibre Popup instance.
  */
 const renderParcelPopup =
-	(map: maplibregl.Map, parcelPopup: maplibregl.Popup) =>
-	(e: maplibregl.MapMouseEvent & { features?: maplibregl.GeoJSONFeature[] | undefined }) => {
-		map.getCanvas().style.cursor = 'pointer';
+  (map: maplibregl.Map, parcelPopup: maplibregl.Popup) =>
+  (
+    e: maplibregl.MapMouseEvent & {
+      features?: maplibregl.GeoJSONFeature[] | undefined;
+    }
+  ) => {
+    map.getCanvas().style.cursor = 'pointer';
 
-		if (e.features) {
-			const coordinates = e.lngLat;
-			const {
-				object_id,
-				university,
-				state_enabling_act,
-				managing_agency,
-				activity,
-				rights_type,
-				all_cession_numbers
-			} = e.features[0].properties;
-			console.log({ rights_type });
+    if (e.features) {
+      const coordinates = e.lngLat;
+      const {
+        object_id,
+        university,
+        state_enabling_act,
+        managing_agency,
+        activity,
+        rights_type,
+        all_cession_numbers
+      } = e.features[0].properties;
 
-			parcelPopup
-				.setLngLat(coordinates)
-				.setHTML(
-					`<div class="flex flex-col text-earth stack stack-xs">
+      parcelPopup
+        .setLngLat(coordinates)
+        .setHTML(
+          `<div class="flex flex-col text-earth stack stack-xs">
             <div class="stack-h stack-h-xs items-center border-b border-earth border-dotted">
               <svg width="16" height="16" viewBox="0 0 16 16">
                 <rect
@@ -130,21 +141,25 @@ const renderParcelPopup =
                 </tr>
                 <tr>
                   <td class="font-light pr-1">Rights Type</td>
-                  <td class="font-semibold pl-1">${formatRightsType(rights_type)}</td>
+                  <td class="font-semibold pl-1">${formatRightsType(
+                    rights_type
+                  )}</td>
                 </tr>
                 <tr>
                   <td class="font-light pr-1">Cessions</td>
-                  <td class="font-semibold pl-1">${formatCessions(all_cession_numbers)}</td>
+                  <td class="font-semibold pl-1">${formatCessions(
+                    all_cession_numbers
+                  )}</td>
                 </tr>
               </tbody>
             </table>
           </div>`
-				)
-				.addTo(map);
+        )
+        .addTo(map);
 
-			parcelPopup.setMaxWidth('fit-content');
-		}
-	};
+      parcelPopup.setMaxWidth('fit-content');
+    }
+  };
 
 /**
  * Create a popup to display information about a given parcel.
@@ -152,17 +167,25 @@ const renderParcelPopup =
  * @param map – The MapLibre Map instance.
  */
 export const createParcelPopup = (map: maplibregl.Map): void => {
-	const parcelPopup = new maplibregl.Popup({
-		closeButton: false,
-		closeOnClick: false
-	});
+  const parcelPopup = new maplibregl.Popup({
+    closeButton: false,
+    closeOnClick: false
+  });
 
-	map.on('mouseenter', LAYER_CONFIG.parcels.id, renderParcelPopup(map, parcelPopup));
+  map.on(
+    'mouseenter',
+    LAYER_CONFIG.parcels.id,
+    renderParcelPopup(map, parcelPopup)
+  );
 
-	map.on('mousemove', LAYER_CONFIG.parcels.id, renderParcelPopup(map, parcelPopup));
+  map.on(
+    'mousemove',
+    LAYER_CONFIG.parcels.id,
+    renderParcelPopup(map, parcelPopup)
+  );
 
-	map.on('mouseleave', LAYER_CONFIG.parcels.id, () => {
-		map.getCanvas().style.cursor = '';
-		parcelPopup.remove();
-	});
+  map.on('mouseleave', LAYER_CONFIG.parcels.id, () => {
+    map.getCanvas().style.cursor = '';
+    parcelPopup.remove();
+  });
 };

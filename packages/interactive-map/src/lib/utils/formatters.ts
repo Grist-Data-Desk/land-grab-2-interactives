@@ -5,16 +5,16 @@
  * @returns – An unordered list of parcel activities as an HTML string.
  */
 export const formatActivity = (activity: string | null): string => {
-	if (!activity) {
-		return 'Unknown';
-	}
+  if (!activity) {
+    return 'Unknown';
+  }
 
-	return `
+  return `
   <ul>
     ${activity
-			.split(',')
-			.map((act) => `<li>${act}</li>`)
-			.join('\n')}
+      .split(',')
+      .map((act) => `<li>${act}</li>`)
+      .join('\n')}
   </ul>`;
 };
 
@@ -30,9 +30,11 @@ export const formatActivity = (activity: string | null): string => {
  * @returns – A PascalCase string of the rights type.
  */
 export const formatRightsType = (rightsType: string): string => {
-	const rightsTypeArray = JSON.parse(rightsType);
+  const rightsTypeArray = JSON.parse(rightsType);
 
-	return rightsTypeArray[0].charAt(0).toUpperCase() + rightsTypeArray[0].slice(1);
+  return (
+    rightsTypeArray[0].charAt(0).toUpperCase() + rightsTypeArray[0].slice(1)
+  );
 };
 
 /**
@@ -43,9 +45,9 @@ export const formatRightsType = (rightsType: string): string => {
  * @returns – A comma-separated string of cessions.
  */
 export const formatCessions = (cessions: string | null): string => {
-	if (!cessions) {
-		return '';
-	}
+  if (!cessions) {
+    return '';
+  }
 
-	return cessions.split(' ').join(', ');
+  return cessions.split(' ').join(', ');
 };
