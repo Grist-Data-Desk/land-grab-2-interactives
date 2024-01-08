@@ -1,5 +1,5 @@
 {
-  "name": "interactive-map",
+  "name": "@land-grab-2-interactives/interactive-map",
   "version": "0.0.1",
   "private": true,
   "scripts": {

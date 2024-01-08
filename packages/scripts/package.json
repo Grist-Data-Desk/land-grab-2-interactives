@@ -1,0 +1,31 @@
+{
+  "name": "@land-grab-2-interactives/scripts",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Scripts for generating the data used by interactives in the Land Grab 2 series.",
+  "dependencies": {
+    "@turf/turf": "^6.5.0"
+  },
+  "scripts": {
+    "arrayify-rights-type": "tsc && node dist/arrayify-rights-type.js",
+    "build": "tsc && npm run fetch:lars && npm run arrayify-rights-type && npm run gen:tribe-parcel-links && npm run gen:university-parcel-links && npm run gen:vector-tiles",
+    "fetch:lars": "tsc && node dist/fetch-lars.js",
+    "format": "prettier --write src/**/*.ts",
+    "gen:tribe-parcel-links": "tsc && node dist/generate-tribe-parcel-links.js",
+    "gen:university-parcel-links": "tsc && node dist/generate-university-parcel-links.js",
+    "gen:vector-tiles": "tsc && node dist/generate-vector-tiles.js"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.13",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "lodash": "^4.17.21",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "type": "module"
+}

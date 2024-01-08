@@ -78,12 +78,6 @@
   on:submit={onSubmit}
   class="md:stack md:stack-xs md:text-earth hidden md:absolute md:bottom-8 md:right-8 md:block"
 >
-  <input
-    value={query}
-    placeholder="Search for a location"
-    on:input={onInput}
-    class="border-earth bg-smog h-9 w-48 truncate rounded border px-2 shadow-md"
-  />
   {#if hits.length > 0 && query.length > 0}
     <ul class="border-earth bg-smog w-48 rounded border text-xs shadow-md">
       {#each hits as hit}
@@ -105,4 +99,10 @@
       {/each}
     </ul>
   {/if}
+  <input
+    value={query}
+    placeholder="Search for a location"
+    on:input={onInput}
+    class="border-earth bg-smog h-9 w-48 truncate rounded border px-2 shadow-md"
+  />
 </form>

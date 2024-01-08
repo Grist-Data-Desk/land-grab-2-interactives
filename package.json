@@ -1,6 +1,6 @@
 {
   "name": "@land-grab-2-interactives/monorepo",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Interactives for Grist's Land Grab 2 project.",
   "private": true,
   "workspaces": [
