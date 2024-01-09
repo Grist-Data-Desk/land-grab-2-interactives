@@ -132,7 +132,7 @@
   class="stack stack-sm border-earth bg-smog text-earth absolute left-4 top-4 max-w-[25rem] rounded border p-4 shadow-md md:left-8 md:top-8"
 >
   <h1
-    class="border-earth border-b pb-4 font-serif text-xl font-bold md:text-3xl"
+    class="border-earth border-b border-dotted pb-4 font-serif text-xl font-bold md:text-3xl"
   >
     Indigenous Land Granted to Universities
   </h1>

@@ -66,3 +66,23 @@
 .maplibregl-popup-content {
   @apply border border-earth bg-smog p-2 shadow-md;
 }
+
+.maplibregl-ctrl-group:not(:empty) {
+  @apply border border-earth bg-smog shadow-md;
+}
+
+.maplibregl-ctrl-group button + button {
+  @apply border-earth;
+}
+
+.maplibregl-ctrl-top-right {
+  @apply right-8 top-8;
+}
+
+.maplibregl-ctrl-top-right .maplibregl-ctrl {
+  @apply m-0;
+}
+
+.maplibregl-ctrl-top-right .maplibregl-ctrl:last-child {
+  @apply mt-2;
+}

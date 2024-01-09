@@ -110,13 +110,11 @@
 
 <div class="stack stack-xs text-earth text-xs md:text-sm">
   <h2 class="text-xl font-bold uppercase tracking-wider">See Connections To</h2>
-  <div class="border-earth flex w-full border">
-    <div
-      class="border-earth flex basis-1/2 justify-center border-r p-2 {$mapEntity ===
-      'universities'
-        ? 'bg-earth'
-        : 'bg-smog'}"
-    >
+  <div
+    class="border-earth radio-container relative flex w-full border"
+    class:radio-container--right={$mapEntity === 'tribes'}
+  >
+    <div class="border-earth z-10 flex basis-1/2 justify-center border-r p-2">
       <input
         type="radio"
         id="universities-radio"
@@ -127,15 +125,11 @@
       />
       <label
         for="universities-radio"
-        class="peer-checked:bg-earth peer-checked:text-smog peer-checked:font-bold"
+        class="peer-checked:text-smog transition-colors peer-checked:font-bold"
         >Universities</label
       >
     </div>
-    <div
-      class="flex basis-1/2 justify-center p-2 {$mapEntity === 'tribes'
-        ? 'bg-earth'
-        : 'bg-smog'}"
-    >
+    <div class="z-10 flex basis-1/2 justify-center p-2">
       <input
         type="radio"
         id="tribes-radio"
@@ -146,7 +140,7 @@
       />
       <label
         for="tribes-radio"
-        class="peer-checked:bg-earth peer-checked:text-smog peer-checked:font-bold"
+        class="peer-checked:text-smog transition-colors peer-checked:font-bold"
         >Indigenous Nations</label
       >
     </div>
@@ -158,3 +152,14 @@
     checked={showLinks}
   />
 </div>
+
+<style>
+  .radio-container::after {
+    @apply bg-earth absolute left-0 top-0 z-0 h-full w-1/2 transition-all;
+    content: '';
+  }
+
+  .radio-container--right::after {
+    @apply left-1/2;
+  }
+</style>

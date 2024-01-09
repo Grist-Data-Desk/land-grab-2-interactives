@@ -1,4 +1,5 @@
 <script>
+  import { mapEntity } from '$lib/stores/map-entity';
   import { GRIST_COLORS } from '$lib/utils/constants';
 </script>
 
@@ -35,17 +36,33 @@
     </svg>
     <span class="text-xs">Parcel</span>
   </div>
-  <div class="stack-h stack-h-xs items-center">
-    <svg viewBox="0 0 16 16" width="16" height="16">
-      <line
-        x1="0"
-        y1="8"
-        x2="16"
-        y2="8"
-        stroke={GRIST_COLORS.ORANGE}
-        stroke-width="1"
-      />
-    </svg>
-    <span class="text-xs">Parcel-University Link</span>
-  </div>
+  {#if $mapEntity === 'universities'}
+    <div class="stack-h stack-h-xs items-center">
+      <svg viewBox="0 0 16 16" width="16" height="16">
+        <line
+          x1="0"
+          y1="8"
+          x2="16"
+          y2="8"
+          stroke={GRIST_COLORS.ORANGE}
+          stroke-width="1"
+        />
+      </svg>
+      <span class="text-xs">Parcel-University Link</span>
+    </div>
+  {:else}
+    <div class="stack-h stack-h-xs items-center">
+      <svg viewBox="0 0 16 16" width="16" height="16">
+        <line
+          x1="0"
+          y1="8"
+          x2="16"
+          y2="8"
+          stroke={GRIST_COLORS.EARTH}
+          stroke-width="1"
+        />
+      </svg>
+      <span class="text-xs">Parcel-Indigenous Nation Link</span>
+    </div>
+  {/if}
 </div>
