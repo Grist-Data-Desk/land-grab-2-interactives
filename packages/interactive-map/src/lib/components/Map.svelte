@@ -3,7 +3,6 @@
   import { onDestroy, onMount } from 'svelte';
   import * as pmtiles from 'pmtiles';
 
-  import Legend from '$lib/components/Legend.svelte';
   import Menu from '$lib/components/Menu.svelte';
   import Search from '$lib/components/Search.svelte';
   import { map as mapStore } from '$lib/stores/map';
@@ -64,11 +63,10 @@
   });
 </script>
 
-<div class="absolute inset-0">
-  <div id="map" class="h-full w-full" />
+<div class="absolute inset-0 flex flex-col">
   {#if map && mapIdle}
     <Menu {data} {map} />
     <Search {map} />
-    <Legend />
   {/if}
+  <div id="map" class="w-full grow md:h-full" />
 </div>

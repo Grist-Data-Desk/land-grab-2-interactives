@@ -9,11 +9,11 @@
   };
 
   export let id: string;
-  export let label: string;
   export let checked: boolean;
+  export let disabled = false;
 </script>
 
 <div class="stack-h stack-h-xs text-xs">
-  <input type="checkbox" {id} on:change={onChange} {checked} />
-  <label for={id}>{label}</label>
+  <input type="checkbox" {id} on:change={onChange} {checked} {disabled} />
+  <label for={id}><slot /></label>
 </div>

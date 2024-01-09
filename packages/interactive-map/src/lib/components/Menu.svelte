@@ -8,6 +8,7 @@
   import * as _ from 'lodash';
   import type { Feature } from 'geojson';
 
+  import Legend from '$lib/components/Legend.svelte';
   import MapFilters from '$lib/components/MapFilters.svelte';
   import MapSwitch from '$lib/components/MapSwitch.svelte';
   import { mapEntity, type MapEntity } from '$lib/stores/map-entity';
@@ -129,13 +130,22 @@
 </script>
 
 <div
-  class="stack stack-sm border-earth bg-smog text-earth absolute left-4 top-4 max-w-[25rem] rounded border p-4 shadow-md md:left-8 md:top-8"
+  class="stack stack-sm border-earth bg-smog text-earth md:stack-md z-10 border p-4 shadow-md md:absolute md:left-8 md:top-8 md:max-w-[25rem] md:rounded md:px-4 md:py-6"
 >
   <h1
-    class="border-earth border-b border-dotted pb-4 font-serif text-xl font-bold md:text-3xl"
+    class="border-earth md:text-headline flex items-baseline justify-center border-b border-dotted pb-2 text-center font-serif text-xl font-black md:flex-col md:pb-4"
   >
-    Indigenous Land Granted to Universities
+    Indigenous Land
+    <span
+      class="ml-2 text-lg font-normal text-gray-600 md:ml-0 md:self-center md:text-3xl"
+      >Granted to Universities</span
+    >
   </h1>
-  <MapSwitch {map} />
-  <MapFilters {data} />
+  <div
+    class="stack stack-xs md:stack-sm border-earth border-b border-dotted pb-4 md:pb-6"
+  >
+    <MapSwitch {map} />
+    <MapFilters {data} />
+  </div>
+  <Legend {map} />
 </div>

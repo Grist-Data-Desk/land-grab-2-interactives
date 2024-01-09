@@ -6,6 +6,8 @@
   import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
   export let universities: FeatureCollection;
+  let className = '';
+  export { className as class };
 
   let selectedUniversity = 'All';
   const options = [
@@ -56,4 +58,5 @@
   id="university"
   selected={selectedUniversity}
   on:change={onUniversityChange}
+  class={className}
 />

@@ -6,6 +6,8 @@
   import { mapFilters } from '$lib/stores/map-filters';
 
   export let tribalHeadquarters: FeatureCollection;
+  let className = '';
+  export { className as class };
 
   let selectedTribe = 'All';
   const options = [
@@ -56,4 +58,5 @@
   id="indigenous-nation"
   selected={selectedTribe}
   on:change={onPresentDayTribeChange}
+  class={className}
 />

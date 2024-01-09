@@ -3,6 +3,9 @@
   import { mapFilters } from '$lib/stores/map-filters';
   import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
+  let className = '';
+  export { className as class };
+
   let selectedRightsType = 'All';
   const options = [
     { value: 'All', label: 'All' },
@@ -42,4 +45,5 @@
   id="rights-type"
   selected={selectedRightsType}
   on:change={onRightsTypeChange}
+  class={className}
 />

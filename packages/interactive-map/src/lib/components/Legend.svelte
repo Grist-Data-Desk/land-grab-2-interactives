@@ -1,56 +1,88 @@
-<script>
+<script lang="ts">
+  import type { Map } from 'maplibre-gl';
+
+  import Checkbox from '$lib/components/Checkbox.svelte';
+  import SectionHeading from '$lib/components/SectionHeading.svelte';
   import { mapEntity } from '$lib/stores/map-entity';
   import { GRIST_COLORS } from '$lib/utils/constants';
+  import { LAYER_CONFIG } from '$lib/utils/layer-config';
+
+  export let map: Map;
+
+  let showParcels = true;
+  let showLinks = true;
+
+  const onShowParcelsChange = (event: CustomEvent<{ checked: boolean }>) => {
+    showParcels = event.detail.checked;
+    const layerIds = [LAYER_CONFIG.parcels.id, LAYER_CONFIG.parcelOutlines.id];
+
+    if (event.detail.checked) {
+      layerIds.forEach((layerId) => {
+        map.setLayoutProperty(layerId, 'visibility', 'visible');
+      });
+    } else {
+      layerIds.forEach((layerId) => {
+        map.setLayoutProperty(layerId, 'visibility', 'none');
+      });
+    }
+  };
+
+  const onShowLinksChange = (event: CustomEvent<{ checked: boolean }>) => {
+    showLinks = event.detail.checked;
+    const layerId =
+      $mapEntity === 'universities'
+        ? LAYER_CONFIG.universityParcelLinks.id
+        : LAYER_CONFIG.tribeParcelLinks.id;
+
+    if (event.detail.checked) {
+      map.setLayoutProperty(layerId, 'visibility', 'visible');
+    } else {
+      map.setLayoutProperty(layerId, 'visibility', 'none');
+    }
+  };
 </script>
 
-<div
-  class="stack stack-xs border-earth bg-smog absolute bottom-4 left-4 rounded border p-4 shadow-md md:bottom-8 md:left-8"
->
-  <div class="stack-h stack-h-xs items-center">
-    <svg viewBox="0 0 16 16" width="16" height="16">
-      <rect
-        x="0"
-        y="0"
-        width="16"
-        height="16"
-        fill={GRIST_COLORS.TURQUOISE}
-        stroke={GRIST_COLORS.TURQUOISE}
-        stroke-width="1"
-        fill-opacity="0.25"
-      />
-    </svg>
-    <span class="text-xs">Indigenous Land Area Representation (LAR)</span>
-  </div>
-  <div class="stack-h stack-h-xs items-center">
-    <svg viewBox="0 0 16 16" width="16" height="16">
-      <rect
-        x="0"
-        y="0"
-        width="16"
-        height="16"
-        fill={GRIST_COLORS.ORANGE}
-        stroke={GRIST_COLORS.ORANGE}
-        stroke-width="1"
-        fill-opacity="0.25"
-      />
-    </svg>
-    <span class="text-xs">Parcel</span>
-  </div>
-  {#if $mapEntity === 'universities'}
+<div class="stack stack-xs">
+  <SectionHeading>Legend</SectionHeading>
+  <Checkbox id="show-lars" on:change={() => {}} checked disabled>
     <div class="stack-h stack-h-xs items-center">
       <svg viewBox="0 0 16 16" width="16" height="16">
-        <line
-          x1="0"
-          y1="8"
-          x2="16"
-          y2="8"
+        <rect
+          x="0"
+          y="0"
+          width="16"
+          height="16"
+          fill={GRIST_COLORS.TURQUOISE}
+          stroke={GRIST_COLORS.TURQUOISE}
+          stroke-width="1"
+          fill-opacity="0.25"
+        />
+      </svg>
+      <span class="text-xs">Indigenous Land Area Representation (LAR)</span>
+    </div>
+  </Checkbox>
+  <Checkbox
+    id="show-parcels"
+    on:change={onShowParcelsChange}
+    checked={showParcels}
+  >
+    <div class="stack-h stack-h-xs items-center">
+      <svg viewBox="0 0 16 16" width="16" height="16">
+        <rect
+          x="0"
+          y="0"
+          width="16"
+          height="16"
+          fill={GRIST_COLORS.ORANGE}
           stroke={GRIST_COLORS.ORANGE}
           stroke-width="1"
+          fill-opacity="0.25"
         />
       </svg>
-      <span class="text-xs">Parcel-University Link</span>
+      <span class="text-xs">Parcel</span>
     </div>
-  {:else}
+  </Checkbox>
+  <Checkbox id="show-links" on:change={onShowLinksChange} checked={showLinks}>
     <div class="stack-h stack-h-xs items-center">
       <svg viewBox="0 0 16 16" width="16" height="16">
         <line
@@ -58,11 +90,15 @@
           y1="8"
           x2="16"
           y2="8"
-          stroke={GRIST_COLORS.EARTH}
+          stroke={$mapEntity === 'universities'
+            ? GRIST_COLORS.ORANGE
+            : GRIST_COLORS.EARTH}
           stroke-width="1"
         />
       </svg>
-      <span class="text-xs">Parcel-Indigenous Nation Link</span>
+      <span class="text-xs"
+        >Parcel-{$mapEntity === 'universities' ? 'University' : 'Tribe'} Link</span
+      >
     </div>
-  {/if}
+  </Checkbox>
 </div>

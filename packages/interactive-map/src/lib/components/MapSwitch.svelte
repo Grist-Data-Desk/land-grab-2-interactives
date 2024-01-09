@@ -1,14 +1,12 @@
 <script lang="ts">
   import { type Map } from 'maplibre-gl';
 
-  import Checkbox from '$lib/components/Checkbox.svelte';
+  import SectionHeading from '$lib/components/SectionHeading.svelte';
   import { mapEntity } from '$lib/stores/map-entity';
   import { mapFilters } from '$lib/stores/map-filters';
   import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
   export let map: Map;
-
-  let showLinks = true;
 
   const onChange = (event: Event) => {
     const target = event.target as HTMLInputElement;
@@ -92,24 +90,10 @@
       });
     }
   };
-
-  const onShowLinksChange = (event: CustomEvent<{ checked: boolean }>) => {
-    showLinks = event.detail.checked;
-    const layerId =
-      $mapEntity === 'universities'
-        ? LAYER_CONFIG.universityParcelLinks.id
-        : LAYER_CONFIG.tribeParcelLinks.id;
-
-    if (event.detail.checked) {
-      map.setLayoutProperty(layerId, 'visibility', 'visible');
-    } else {
-      map.setLayoutProperty(layerId, 'visibility', 'none');
-    }
-  };
 </script>
 
-<div class="stack stack-xs text-earth text-xs md:text-sm">
-  <h2 class="text-xl font-bold uppercase tracking-wider">See Connections To</h2>
+<div class="stack stack-2xs md:stack-xs text-earth text-xs md:text-sm">
+  <SectionHeading>See Connections To</SectionHeading>
   <div
     class="border-earth radio-container relative flex w-full border"
     class:radio-container--right={$mapEntity === 'tribes'}
@@ -145,12 +129,6 @@
       >
     </div>
   </div>
-  <Checkbox
-    id="show-links"
-    label="Show Links"
-    on:change={onShowLinksChange}
-    checked={showLinks}
-  />
 </div>
 
 <style>
