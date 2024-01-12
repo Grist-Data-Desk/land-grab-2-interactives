@@ -120,7 +120,7 @@ const renderParcelPopup =
               </svg>
               <p class="text-base align-left font-bold">Parcel ${object_id}</p>
             </div>
-            <table>
+            <table class="font-sans-alt">
               <tbody>
                 <tr>
                   <td class="font-gray-300 pr-1">University</td>

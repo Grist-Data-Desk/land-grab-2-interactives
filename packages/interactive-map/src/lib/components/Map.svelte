@@ -21,8 +21,7 @@
 
     map = new maplibregl.Map({
       container: 'map',
-      style:
-        'https://api.maptiler.com/maps/dataviz-light/style.json?key=4AmfYn7h8un1HQLpmsD2',
+      style: '/style.json',
       center: [-105.93, 40.36],
       zoom: 4.5
     });

@@ -58,7 +58,9 @@
           fill-opacity="0.25"
         />
       </svg>
-      <span class="text-xs">Indigenous Land Area Representation (LAR)</span>
+      <span class="font-sans-alt text-xs"
+        >Indigenous Land Area Representation (LAR)</span
+      >
     </div>
   </Checkbox>
   <Checkbox
@@ -79,7 +81,7 @@
           fill-opacity="0.25"
         />
       </svg>
-      <span class="text-xs">Parcel</span>
+      <span class="font-sans-alt text-xs">Parcel</span>
     </div>
   </Checkbox>
   <Checkbox id="show-links" on:change={onShowLinksChange} checked={showLinks}>
@@ -90,13 +92,11 @@
           y1="8"
           x2="16"
           y2="8"
-          stroke={$mapEntity === 'universities'
-            ? GRIST_COLORS.ORANGE
-            : GRIST_COLORS.EARTH}
+          stroke={GRIST_COLORS.ORANGE}
           stroke-width="1"
         />
       </svg>
-      <span class="text-xs"
+      <span class="font-sans-alt text-xs"
         >Parcel-{$mapEntity === 'universities' ? 'University' : 'Tribe'} Link</span
       >
     </div>

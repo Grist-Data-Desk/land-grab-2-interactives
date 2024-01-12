@@ -22,7 +22,7 @@
   <select
     {id}
     value={selected}
-    class="border-earth bg-smog text-earth w-full text-ellipsis border p-2 text-xs md:text-sm"
+    class="border-earth bg-smog text-earth font-sans-alt w-full text-ellipsis border p-2 text-xs md:text-sm"
     on:change={onChange}
   >
     {#each options as option}

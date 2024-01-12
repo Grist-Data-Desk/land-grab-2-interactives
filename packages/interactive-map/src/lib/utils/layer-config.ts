@@ -146,7 +146,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
     type: 'symbol',
     layout: {
       'text-field': ['get', 'name'],
-      'text-font': ['PolySans Bold'],
+      'text-font': ['Basis Grotesque Pro Bold'],
       'text-anchor': 'bottom-left',
       'text-size': 11,
       'text-justify': 'left',
@@ -168,7 +168,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'none'
     },
     paint: {
-      'line-color': GRIST_COLORS.EARTH,
+      'line-color': GRIST_COLORS.ORANGE,
       'line-width': 0.25,
       'line-opacity': [
         'interpolate',
@@ -203,7 +203,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
     type: 'symbol',
     layout: {
       'text-field': ['get', 'present_day_tribe'],
-      'text-font': ['Noto Sans Bold'],
+      'text-font': ['GT Super Display Bold'],
       'text-anchor': 'bottom-left',
       'text-size': 11,
       'text-justify': 'left',
