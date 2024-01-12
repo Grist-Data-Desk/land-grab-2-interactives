@@ -9,6 +9,7 @@ export default {
       },
       fontFamily: {
         sans: '"PolySans", "Open Sans", Helvetica, sans-serif',
+        'sans-alt': "Basis Grotesque Pro, 'Open Sans', Helvetica, sans-serif",
         serif: '"GT Super Display", Georgia, serif'
       },
       fontSize: {
