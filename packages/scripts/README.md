@@ -32,7 +32,7 @@ npm run build
 This command will ensure all scripts are executed in the correct order and write output to the `data/processed` directory. You _can_ run each script below individually, but there are some dependencies between them, namely:
 
 - `generate-vector-tiles.ts` relies on the datasets listed in source being available in `data/processed`. You should only run this script manually after all other scripts have been run.
-- `generate-university-parcel-links.ts` and `generate-tribe-parcel-links.ts` rely on the output of `arrayify-rights-type.ts`. You should only these scripts manually after running `arrayify-rights-type.ts` manually.
+- `generate-university-parcel-links.ts` and `generate-tribe-parcel-links.ts` rely on the output of `arrayify-rights-type.ts`. You should only run these scripts manually after running `arrayify-rights-type.ts` manually.
 
 **When in doubt, just run `npm run build`!**
 
@@ -77,4 +77,46 @@ npm run gen:vector-tiles
 ```
 
 `generate-vector-tiles.ts` generates MBTiles and PMTiles archives of a subset of GeoJSON datasets.
+
+### `rewind-parcels.ts`
+
+```sh
+npm run rewind-parcels
+```
+
+`rewind-parcels.ts` changes the [winding order](https://observablehq.com/@d3/winding-order) of `stl_dataset_extra_activities_plus_cessions_plus_prices_wgs84.geojson` to use the "right-hand rule" for spherical geometry. In other words, if you walked the boundary of a `Polygon` feature defined by its `coordinates`, the interior of the polygon would be on your right hand side. This is the winding order convention used by `d3-geo` and is necessary for correctly rendering the activity map.
+
+## Deploying Datasets and Other Static Assets
+
+Some of the scripts in this repository are used to deploy datasets and other static assets to our Digital Ocean Spaces bucket.
+
+### `store-fonts.ts`
+
+```sh
+npm run store:fonts
+```
+
+`store-fonts.ts` stores the PBF font files for Basis Grotesque, GT Super, and PolySans. The PBF files for these fonts were generated using MapLibre's [`font-maker` tool](https://github.com/maplibre/font-maker).
+
+**Note:** These files already exist on Grist's Digital Ocean Spaces bucket, so you should not need to run this script unless you update the contents of the `fonts` directory!
+
+### `store-geojson.ts`
+
+```sh
+npm run store:geojson
+```
+
+`store-geojson.ts` stores a subset of GeoJSON datasets needed for Land Grab 2 interactives.
+
+### `store-pmtiles.ts`
+
+```sh
+npm run store:pmtiles
+```
+
+`store-pmtiles-archives.ts` stores a subset of PMTiles archives needed for Land Grab 2 interactives.
+
+## CORS
+
+In order to access files from the Digital Ocean Spaces CDN on the Grist prod and dev sites, we need to have CORS enabled. `config/cors.xml` stores the current configuration we're using on the Grist bucket. To update the CORS configuration, follow the steps documented on [Digital Ocean's website](https://docs.digitalocean.com/products/spaces/how-to/configure-cors/).
 

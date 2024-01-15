@@ -4,6 +4,7 @@
   "private": true,
   "description": "Scripts for generating the data used by interactives in the Land Grab 2 series.",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.490.0",
     "@turf/turf": "^6.5.0"
   },
   "scripts": {
@@ -14,7 +15,10 @@
     "gen:tribe-parcel-links": "tsc && node dist/generate-tribe-parcel-links.js",
     "gen:university-parcel-links": "tsc && node dist/generate-university-parcel-links.js",
     "gen:vector-tiles": "tsc && node dist/generate-vector-tiles.js",
-    "rewind-parcels": "tsc && node dist/rewind-parcels.js"
+    "rewind-parcels": "tsc && node dist/rewind-parcels.js",
+    "store:fonts": "tsc && node --env-file=.env dist/store-fonts.js",
+    "store:geojson": "tsc && node --env-file=.env dist/store-geojson.js",
+    "store:pmtiles": "tsc && node --env-file=.env dist/store-pmtiles-archives.js"
   },
   "devDependencies": {
     "@land-grab-2-interactives/types": "^0.0.1",
