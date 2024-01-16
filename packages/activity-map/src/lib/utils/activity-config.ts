@@ -4,15 +4,12 @@ import type { ParcelProperties } from '@land-grab-2-interactives/types';
 import { GRIST_COLORS } from '$lib/utils/constants';
 
 export interface Activity {
-	label: 'Fossil Fuels' | 'Mining' | 'Timber' | 'Agriculture';
+	label: 'Fossil Fuels' | 'Minerals' | 'Timber';
 	color: string;
 	filter: (parcel: Feature<Point, ParcelProperties>) => boolean;
 }
 
-export const ACTIVITY_CONFIG: Record<
-	'fossilFuels' | 'mining' | 'timber' | 'agriculture',
-	Activity
-> = {
+export const ACTIVITY_CONFIG: Record<'fossilFuels' | 'minerals' | 'timber', Activity> = {
 	fossilFuels: {
 		label: 'Fossil Fuels',
 		color: GRIST_COLORS.EARTH,
@@ -23,12 +20,14 @@ export const ACTIVITY_CONFIG: Record<
 				caseInsensitiveActivity?.includes('oil') ||
 				caseInsensitiveActivity?.includes('gas') ||
 				caseInsensitiveActivity?.includes('coal') ||
+				caseInsensitiveActivity?.includes('drilling') ||
+				caseInsensitiveActivity?.includes('hydrocarbons') ||
 				false
 			);
 		}
 	},
-	mining: {
-		label: 'Mining',
+	minerals: {
+		label: 'Minerals',
 		color: GRIST_COLORS.COBALT,
 		filter: (parcel: Feature<Point, ParcelProperties>) => {
 			const caseInsensitiveActivity = parcel.properties.activity?.toLowerCase();
@@ -43,15 +42,6 @@ export const ACTIVITY_CONFIG: Record<
 			const caseInsensitiveActivity = parcel.properties.activity?.toLowerCase();
 
 			return caseInsensitiveActivity?.includes('timber') || false;
-		}
-	},
-	agriculture: {
-		label: 'Agriculture',
-		color: GRIST_COLORS.FUCSHIA,
-		filter: (parcel: Feature<Point, ParcelProperties>) => {
-			const caseInsensitiveActivity = parcel.properties.activity?.toLowerCase();
-
-			return caseInsensitiveActivity?.includes('agriculture') || false;
 		}
 	}
 };

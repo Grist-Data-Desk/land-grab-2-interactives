@@ -8,9 +8,10 @@ export const GRIST_COLORS = {
 	CELERY: '#e6ffa0'
 };
 
-export const categories = [
-	{ label: 'Fossil Fuels', color: GRIST_COLORS.EARTH },
-	{ label: 'Mining', color: GRIST_COLORS.COBALT },
-	{ label: 'Timber', color: GRIST_COLORS.TURQUOISE },
-	{ label: 'Agriculture', color: GRIST_COLORS.FUCSHIA }
-];
+export const MAX_SPIKE_HEIGHT = 100;
+export const SPIKE_WIDTH = 6;
+export const SPIKE_OPACITY = 0.1;
+export const CANVAS_DIMENSIONS = {
+	width: 975,
+	height: 620
+};
