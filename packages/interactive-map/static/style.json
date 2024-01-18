@@ -3474,7 +3474,7 @@
       ]
     }
   ],
-  "glyphs": "/fonts/pbf/{fontstack}/{range}.pbf",
+  "glyphs": "https://grist.nyc3.digitaloceanspaces.com/land-grab-ii/dev/fonts/pbf/{fontstack}/{range}.pbf",
   "bearing": 0,
   "pitch": 0,
   "center": [

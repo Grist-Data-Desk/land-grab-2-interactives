@@ -1,53 +1,57 @@
 import type { AddLayerObject, SourceSpecification } from 'maplibre-gl';
+
+import type { Data } from '$lib/types/data';
 import { GRIST_COLORS } from '$lib/utils/constants';
 
-export const SOURCE_CONFIG: Record<
-  string,
-  { id: string; config: SourceSpecification }
-> = {
+export const DO_SPACE_URL = "https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/data"
+
+export const SOURCE_CONFIG = (data: Data): Record<
+string,
+{ id: string; config: SourceSpecification }
+> => ({
   lars: {
     id: 'lars',
     config: {
       type: 'vector',
-      url: 'pmtiles://http://localhost:5173/lars.pmtiles'
+      url: `pmtiles://${DO_SPACE_URL}/pmtiles/lars.pmtiles`
     }
   },
   parcels: {
     id: 'parcels',
     config: {
       type: 'vector',
-      url: 'pmtiles://http://localhost:5173/parcels.pmtiles'
+      url: `pmtiles://${DO_SPACE_URL}/pmtiles/parcels.pmtiles`
     }
   },
   universities: {
     id: 'universities',
     config: {
       type: 'geojson',
-      data: '/universities.geojson'
+      data: data.universities
     }
   },
   universityParcelLinks: {
     id: 'university-parcel-links',
     config: {
       type: 'vector',
-      url: 'pmtiles://http://localhost:5173/university-parcel-links.pmtiles'
+      url: `pmtiles://${DO_SPACE_URL}/pmtiles/university-parcel-links.pmtiles`
     }
   },
   tribalHeadquarters: {
     id: 'tribal-headquarters',
     config: {
       type: 'geojson',
-      data: '/tribal-headquarters.geojson'
+      data: data.tribalHeadquarters
     }
   },
   tribeParcelLinks: {
     id: 'tribe-parcel-links',
     config: {
       type: 'vector',
-      url: 'pmtiles://http://localhost:5173/tribe-parcel-links.pmtiles'
+      url: `pmtiles://${DO_SPACE_URL}/pmtiles/tribe-parcel-links.pmtiles`
     }
   }
-};
+});
 
 export const LAYER_CONFIG: Record<string, AddLayerObject> = {
   lars: {
@@ -128,7 +132,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
   },
   universities: {
     id: 'universities',
-    source: SOURCE_CONFIG.universities.id,
+    source: 'universities',
     type: 'circle',
     layout: {
       visibility: 'visible'
@@ -142,7 +146,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
   },
   universityLabels: {
     id: 'university-labels',
-    source: SOURCE_CONFIG.universities.id,
+    source: 'universities',
     type: 'symbol',
     layout: {
       'text-field': ['get', 'name'],
@@ -185,7 +189,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
   },
   tribalHeadquarters: {
     id: 'tribal-headquarters',
-    source: SOURCE_CONFIG.tribalHeadquarters.id,
+    source: 'tribal-headquarters',
     type: 'circle',
     layout: {
       visibility: 'none'
@@ -199,7 +203,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
   },
   tribeLabels: {
     id: 'tribe-labels',
-    source: SOURCE_CONFIG.tribalHeadquarters.id,
+    source: 'tribal-headquarters',
     type: 'symbol',
     layout: {
       'text-field': ['get', 'present_day_tribe'],

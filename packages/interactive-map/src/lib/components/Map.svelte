@@ -7,7 +7,11 @@
   import Search from '$lib/components/Search.svelte';
   import { map as mapStore } from '$lib/stores/map';
   import type { Data } from '$lib/types/data';
-  import { SOURCE_CONFIG, LAYER_CONFIG } from '$lib/utils/layer-config';
+  import {
+    SOURCE_CONFIG,
+    LAYER_CONFIG,
+    DO_SPACE_URL
+  } from '$lib/utils/layer-config';
   import { createLARPopup, createParcelPopup } from '$lib/utils/maplibre';
 
   export let data: Data;
@@ -21,7 +25,7 @@
 
     map = new maplibregl.Map({
       container: 'map',
-      style: '/style.json',
+      style: `${DO_SPACE_URL}/styles/style.json`,
       center: [-105.93, 40.36],
       zoom: 4.5
     });
@@ -37,7 +41,7 @@
     );
 
     map.on('load', () => {
-      Object.values(SOURCE_CONFIG).forEach(({ id, config }) => {
+      Object.values(SOURCE_CONFIG(data)).forEach(({ id, config }) => {
         map.addSource(id, config);
       });
 
@@ -62,7 +66,7 @@
   });
 </script>
 
-<div class="absolute inset-0 flex flex-col">
+<div class="full-bleed relative flex w-screen flex-col font-sans">
   {#if map && mapIdle}
     <Menu {data} {map} />
     <Search {map} />

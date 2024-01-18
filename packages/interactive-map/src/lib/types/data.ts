@@ -1,6 +1,6 @@
-import type { FeatureCollection } from 'geojson';
+import type { FeatureCollection, Point } from 'geojson';
 
 export interface Data {
-  universities: FeatureCollection;
-  tribalHeadquarters: FeatureCollection;
+  universities: FeatureCollection<Point>;
+  tribalHeadquarters: FeatureCollection<Point>;
 }

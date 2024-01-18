@@ -17,7 +17,7 @@
     type MapFilters as ParcelFilters
   } from '$lib/stores/map-filters';
   import type { Data } from '$lib/types/data';
-  import { LAYER_CONFIG } from '$lib/utils/layer-config';
+  import { DO_SPACE_URL, LAYER_CONFIG } from '$lib/utils/layer-config';
 
   export let data: Data;
   export let map: Map;
@@ -28,8 +28,8 @@
   ) => {
     const features = await fetch(
       entity === 'universities'
-        ? '/university-parcel-links.geojson'
-        : '/tribe-parcel-links.geojson'
+        ? `${DO_SPACE_URL}/geojson/university-parcel-links.geojson`
+        : `${DO_SPACE_URL}/geojson/tribe-parcel-links.geojson`
     )
       .then((res) => res.json())
       .then((res) => res.features as Feature[]);
