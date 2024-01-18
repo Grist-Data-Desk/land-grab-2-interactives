@@ -20,4 +20,11 @@
         <ExposeHeader>ETag</ExposeHeader>
         <AllowedHeader>*</AllowedHeader>
     </CORSRule>
+    <CORSRule>
+        <AllowedOrigin>http://localhost:4173</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <ExposeHeader>ETag</ExposeHeader>
+        <AllowedHeader>*</AllowedHeader>
+    </CORSRule>
 </CORSConfiguration>
