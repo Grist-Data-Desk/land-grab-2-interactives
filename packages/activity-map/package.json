@@ -18,6 +18,8 @@
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/d3": "^7.4.3",
 		"@types/eslint": "8.56.0",
+		"@types/lodash.groupby": "^4.6.9",
+		"@types/lodash.orderby": "^4.6.9",
 		"@types/topojson-client": "^3.1.4",
 		"@typescript-eslint/eslint-plugin": "^6.0.0",
 		"@typescript-eslint/parser": "^6.0.0",
@@ -40,6 +42,8 @@
 	"dependencies": {
 		"@turf/turf": "^6.5.0",
 		"d3": "^7.8.5",
+		"lodash.groupby": "^4.6.0",
+		"lodash.orderby": "^4.6.0",
 		"topojson-client": "^3.1.0"
 	}
 }

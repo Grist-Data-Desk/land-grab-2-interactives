@@ -5,7 +5,12 @@ export const GRIST_COLORS = {
 	COBALT: '#3977f3',
 	EARTH: '#3c3830',
 	SMOG: '#f0f0f0',
-	CELERY: '#e6ffa0'
+	CELERY: '#e6ffa0',
+	OLIVE: '#383d01'
+};
+
+export const LGU2_COLORS = {
+	SAND: '#b4997e'
 };
 
 export const MAX_SPIKE_HEIGHT = 100;
@@ -13,5 +18,5 @@ export const SPIKE_WIDTH = 6;
 export const SPIKE_OPACITY = 0.1;
 export const CANVAS_DIMENSIONS = {
 	width: 975,
-	height: 620
+	height: 700
 };

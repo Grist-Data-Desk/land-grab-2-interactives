@@ -25,11 +25,11 @@
 	<div class="stack stack-xs">
 		<p class="font-sans-alt text-xs md:text-sm">
 			This map shows the <strong>number of acres*</strong> of state trust lands devoted to different
-			extractive practices. Each spike is located at the centroid of its associated parcel.
+			land uses. Each spike is located at the geographic center of its associated parcel.
 		</p>
 		<p class="text-2xs text-gray-500 md:text-xs">
-			*Some parcels are associated with multiple extractive practices. In these cases, the acreage
-			is counted for each practice.
+			*Some parcels are associated with multiple land uses. In these cases, the acreage is counted
+			for each practice.
 		</p>
 	</div>
 	<svg

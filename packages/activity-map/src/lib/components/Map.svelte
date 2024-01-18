@@ -73,6 +73,7 @@
 
 		const parcelUniversities = new Set(parcels.map((parcel) => parcel.properties.university));
 		parcelUniversities.forEach((parcelUniversity) => {
+			ctx.save();
 			const university = universities.features.find(
 				(university) => university.properties?.name === parcelUniversity
 			);
@@ -82,7 +83,7 @@
 
 				// Draw university locations.
 				ctx.beginPath();
-				ctx.arc(x, y, 5, 0, 2 * Math.PI);
+				ctx.arc(x, y, 4, 0, 2 * Math.PI);
 				ctx.fillStyle = GRIST_COLORS.EARTH;
 				ctx.fill();
 				ctx.lineWidth = 1;
@@ -99,17 +100,43 @@
 				ctx.shadowOffsetX = 2;
 				ctx.shadowBlur = 10;
 				ctx.fillStyle = '#ffffff';
-				ctx.fillRect(x + 8, y - 15, textWidth + 8, 16);
 				ctx.strokeStyle = GRIST_COLORS.EARTH;
-				ctx.strokeRect(x + 8, y - 15, textWidth + 8, 16);
+
+				// One-off label placement to avoid collisions.
+				if (university.properties?.name === 'Washington State University') {
+					ctx.fillRect(x - 16 - textWidth, y + 8, textWidth + 8, 16);
+					ctx.strokeRect(x - 16 - textWidth, y + 8, textWidth + 8, 16);
+				} else if (university.properties?.name === 'University of Arizona') {
+					ctx.fillRect(x - 16 - textWidth, y - 15, textWidth + 8, 16);
+					ctx.strokeRect(x - 16 - textWidth, y - 15, textWidth + 8, 16);
+				} else {
+					ctx.fillRect(x + 8, y - 15, textWidth + 8, 16);
+					ctx.strokeRect(x + 8, y - 15, textWidth + 8, 16);
+				}
+
+				ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+				ctx.shadowOffsetY = 0;
+				ctx.shadowOffsetX = 0;
+				ctx.shadowBlur = 0;
 
 				// Labels.
 				ctx.fillStyle = GRIST_COLORS.EARTH;
-				ctx.fillText(university.properties?.name, x + 12, y - 4);
 				ctx.strokeStyle = GRIST_COLORS.SMOG;
 				ctx.lineWidth = 0.1;
-				ctx.strokeText(university.properties?.name, x + 12, y - 4);
+
+				if (university.properties?.name === 'Washington State University') {
+					ctx.fillText(university.properties?.name, x - 12 - textWidth, y + 20);
+					ctx.strokeText(university.properties?.name, x - 12 - textWidth, y + 20);
+				} else if (university.properties?.name === 'University of Arizona') {
+					ctx.fillText(university.properties?.name, x - 12 - textWidth, y - 4);
+					ctx.strokeText(university.properties?.name, x - 12 - textWidth, y - 4);
+				} else {
+					ctx.fillText(university.properties?.name, x + 12, y - 4);
+					ctx.strokeText(university.properties?.name, x + 12, y - 4);
+				}
 			}
+
+			ctx.restore();
 		});
 	};
 
@@ -134,4 +161,9 @@
 	}
 </script>
 
-<canvas bind:this={canvas} width="975" height="700" />
+<canvas
+	bind:this={canvas}
+	width={CANVAS_DIMENSIONS.width}
+	height={CANVAS_DIMENSIONS.height}
+	style="margin-block-start: 0;"
+/>

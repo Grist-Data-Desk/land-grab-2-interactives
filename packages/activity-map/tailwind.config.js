@@ -9,7 +9,9 @@ export default {
 				orange: '#f79945',
 				turquoise: '#12a07f',
 				fuchsia: '#ac00e8',
-				cobalt: '#3977f3'
+				cobalt: '#3977f3',
+				olive: '#383d01',
+				sand: '#b4997e'
 			},
 			fontFamily: {
 				sans: '"PolySans", "Open Sans", Helvetica, sans-serif',
