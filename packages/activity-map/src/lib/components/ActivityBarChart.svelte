@@ -31,7 +31,7 @@
 		.map((d) => (d.acres > 0 ? d : { university: 'None', acres: 0 }));
 
 	$: xDomain = [0, sortedSums[0].acres];
-	$: xRange = [0, 300];
+	$: xRange = [0, 250];
 	$: xScale = d3.scaleLinear(xDomain, xRange);
 
 	$: yDomain = sortedSums.map((d) => d.university);
@@ -48,11 +48,11 @@
 			>{acreage.toLocaleString()}</strong
 		>
 	</div>
-	<div class="stack stack-xs md:basis-[475px]">
+	<div class="stack stack-xs md:basis-[425px]">
 		<p class="text-sm md:text-base">Universities with the Highest Acreage</p>
 		<svg
-			viewBox="0 0 475 100"
-			width="475"
+			viewBox="0 0 425 100"
+			width="425"
 			height="100"
 			style="max-width: 100%; height: auto; height: intrinsic;"
 		>
@@ -64,7 +64,7 @@
 						width={xScale(sum.acres)}
 						height={yScale.bandwidth()}
 						fill={ACTIVITY_CONFIG[$activity].color}
-						out:slide
+						class="transition-all duration-300 ease-out"
 					/>
 					<text
 						x={xScale(sum.acres) + 10}

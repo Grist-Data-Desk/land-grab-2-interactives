@@ -10,7 +10,7 @@
 
 <div
 	class="border-earth bg-earth select text-2xs relative -mx-4 mb-4 grid grid-cols-5 gap-px border md:mx-auto md:text-base"
-	class:select--minerals={$activityStore === 'minerals'}
+	class:select--mining={$activityStore === 'mining'}
 	class:select--timber={$activityStore === 'timber'}
 	class:select--agriculture={$activityStore === 'agriculture'}
 	class:select--grazing={$activityStore === 'grazing'}
@@ -39,7 +39,7 @@
 		@apply bg-earth absolute left-0 top-0 z-0 h-full w-1/5 transition-transform duration-300;
 		content: '';
 	}
-	.select--minerals::after {
+	.select--mining::after {
 		@apply bg-cobalt translate-x-full;
 	}
 
