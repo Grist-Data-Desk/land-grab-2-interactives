@@ -66,7 +66,7 @@
   });
 </script>
 
-<div class="full-bleed relative flex w-screen flex-col font-sans">
+<div class="full-bleed relative flex w-screen flex-col font-sans" style="height: 100vh;">
   {#if map && mapIdle}
     <Menu {data} {map} />
     <Search {map} />
