@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="map-grid-scrolly"></div>
+      <div
+        id="cessions-legend"
+        class="grid-scrolly-legend grid-scrolly-legend--hidden"
+      >
+        <p>Tribal Land Cession Boundaries</p>
+        <p class="grid-scrolly-legend__subtitle">1784-1894</p>
+        <svg
+          width="96"
+          height="24"
+          viewBox="0 0 96 24"
+          style="max-width: 100%; height: auto; height: intrinsic"
+        >
+          <line
+            x1="0"
+            y1="12"
+            x2="96"
+            y2="12"
+            stroke="#e6ffa0"
+            stroke-width="2"
+            stroke-dasharray="1 2"
+          />
+        </svg>
+      </div>
+      <div
+        id="territories-legend"
+        class="grid-scrolly-legend grid-scrolly-legend--hidden"
+      >
+        <p id="territories-legend__year" class="grid-scrolly-legend__stat">
+          1783
+        </p>
+      </div>
+      <div
+        id="townships-legend"
+        class="grid-scrolly-legend grid-scrolly-legend--hidden"
+      >
+        <p>Public Land Survey System Townships</p>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="#f79945"
+          fill-opacity="0.4"
+          stroke="#f79945"
+          stroke-width="0.25"
+          style="
+            max-width: 100%;
+            height: auto;
+            height: intrinsic;
+            margin-top: 0.5rem;
+          "
+        >
+          <rect x="0" y="0" width="24" height="24" />
+        </svg>
+      </div>
+      <div
+        id="wa-state-trust-lands-legend"
+        class="grid-scrolly-legend grid-scrolly-legend--hidden"
+      >
+        <p>Washington State Trust Lands</p>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="#f79945"
+          fill-opacity="0.75"
+          stroke="#f79945"
+          stroke-width="0.25"
+          style="
+            max-width: 100%;
+            height: auto;
+            height: intrinsic;
+            margin-top: 0.5rem;
+          "
+        >
+          <rect x="0" y="0" width="24" height="24" />
+        </svg>
+      </div>
+      <div
+        id="wsu-state-trust-lands-legend"
+        class="grid-scrolly-legend grid-scrolly-legend--hidden"
+      >
+        <p>Washington State Trust Lands</p>
+        <p class="grid-scrolly-legend__subtitle">
+          Connected to Washington State University
+        </p>
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="#f79945"
+          fill-opacity="1"
+          stroke="#f79945"
+          stroke-width="0.25"
+          style="
+            max-width: 100%;
+            height: auto;
+            height: intrinsic;
+            margin-top: 0.5rem;
+          "
+        >
+          <rect x="0" y="0" width="24" height="24" />
+        </svg>
+      </div>
+      <section id="scrolly">
+        <article>
+          <div class="step" data-step="1">
+            <div class="step__content">
+              <p>
+                Since time immemorial Indigenous peoples have lived with, and
+                cared for, the lands they call home.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="2">
+            <div class="step__content">
+              <p>
+                But as settlers moved west, U.S. government and military
+                officials forced those communities from their lands, sometimes
+                through the signing of treaties, sometimes through military
+                action.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="3">
+            <div class="step__content">
+              <p>
+                Once ceded, those lands became territories, then, states. With
+                statehood, those lands could become part of America&apos;s real
+                estate system.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="4">
+            <div class="step__content">
+              <p>
+                Lands inside newly formed states were overlaid with the Public
+                Land Survey System - a rectangular survey system designed by
+                early colonists to map newly acquired Indigenous lands.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="5">
+            <div class="step__content">
+              <p>
+                One six-by-six mile square on the grid is known as a
+                <strong>township.</strong>
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="6">
+            <div class="step__content">
+              <p>
+                Inside each township are 36 more one-by-one mile squares called
+                <strong>sections</strong>.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="7">
+            <div class="step__content">
+              <p>
+                In most states, sections 16 and 36 of every township were
+                automatically set aside to fund K-12 schools, known as common
+                schools at the time.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="8">
+            <div class="step__content">
+              <p>
+                From the remaining 34 sections, states could choose which lands
+                would benefit other public institutions, like hospitals,
+                penitentiaries and universities.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="9">
+            <div class="step__content">
+              <p>
+                In the years since statehood, some of these lands have been sold
+                or swapped, but most Western states have held onto their trust
+                lands.
+              </p>
+            </div>
+          </div>
+          <div class="step" data-step="10" data-offset="0.7">
+            <div class="step__content">
+              <p>
+                Spread across the western U.S. land grid, trust lands are often
+                unseen, landlocked and anonymous on the landscape.
+              </p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </body>
+</html>
