@@ -3,12 +3,12 @@ import type { AddLayerObject, SourceSpecification } from 'maplibre-gl';
 import type { Data } from '$lib/types/data';
 import { GRIST_COLORS } from '$lib/utils/constants';
 
-export const DO_SPACE_URL = "https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/data"
+export const DO_SPACE_URL =
+  'https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/data';
 
-export const SOURCE_CONFIG = (data: Data): Record<
-string,
-{ id: string; config: SourceSpecification }
-> => ({
+export const SOURCE_CONFIG = (
+  data: Data
+): Record<string, { id: string; config: SourceSpecification }> => ({
   lars: {
     id: 'lars',
     config: {
@@ -63,7 +63,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'visible'
     },
     paint: {
-      'fill-color': GRIST_COLORS.TURQUOISE,
+      'fill-color': GRIST_COLORS.GREEN,
       'fill-opacity': 0.25
     }
   },
@@ -76,7 +76,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'visible'
     },
     paint: {
-      'line-color': GRIST_COLORS.TURQUOISE,
+      'line-color': GRIST_COLORS.GREEN,
       'line-width': 0.25
     }
   },
@@ -122,9 +122,9 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
         ['linear'],
         ['zoom'],
         8,
-        0.3,
+        0.1,
         10,
-        0.6,
+        0.5,
         14,
         1
       ]
@@ -195,10 +195,24 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'none'
     },
     paint: {
-      'circle-color': GRIST_COLORS.EARTH,
-      'circle-radius': 4,
+      'circle-color': GRIST_COLORS.GREEN,
+      'circle-radius': 3,
       'circle-stroke-color': GRIST_COLORS.SMOG,
       'circle-stroke-width': 0.5
+    }
+  },
+  tribalHeadquartersOutlines: {
+    id: 'tribal-headquarters-outlines',
+    source: 'tribal-headquarters',
+    type: 'circle',
+    layout: {
+      visibility: 'none'
+    },
+    paint: {
+      'circle-color': 'transparent',
+      'circle-radius': 4,
+      'circle-stroke-color': GRIST_COLORS.GREEN,
+      'circle-stroke-width': 1
     }
   },
   tribeLabels: {

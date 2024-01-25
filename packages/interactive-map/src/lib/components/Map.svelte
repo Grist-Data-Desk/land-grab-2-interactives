@@ -25,7 +25,7 @@
 
     map = new maplibregl.Map({
       container: 'map',
-      style: `${DO_SPACE_URL}/styles/style.json`,
+      style: `${DO_SPACE_URL}/style/style.json`,
       center: [-105.93, 40.36],
       zoom: 4.5
     });
@@ -66,7 +66,10 @@
   });
 </script>
 
-<div class="full-bleed relative flex w-screen flex-col font-sans" style="height: 100vh;">
+<div
+  class="full-bleed relative flex w-screen flex-col font-sans"
+  style="height: 100vh;"
+>
   {#if map && mapIdle}
     <Menu {data} {map} />
     <Search {map} />

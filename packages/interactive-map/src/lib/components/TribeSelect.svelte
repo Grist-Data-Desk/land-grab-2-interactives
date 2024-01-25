@@ -30,6 +30,10 @@
         key: 'present_day_tribe',
         value: selectedTribe
       };
+      filters[LAYER_CONFIG.tribalHeadquartersOutlines.id].presentDayTribe = {
+        key: 'present_day_tribe',
+        value: selectedTribe
+      };
       filters[LAYER_CONFIG.tribeParcelLinks.id].presentDayTribe = {
         key: 'present_day_tribe',
         value: selectedTribe

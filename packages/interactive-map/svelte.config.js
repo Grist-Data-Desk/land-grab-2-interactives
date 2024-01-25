@@ -18,7 +18,8 @@ const config = {
       strict: true
     }),
     paths: {
-      assets: 'https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/interactive-map'
+      assets:
+        'https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/interactive-map'
     }
   }
 };

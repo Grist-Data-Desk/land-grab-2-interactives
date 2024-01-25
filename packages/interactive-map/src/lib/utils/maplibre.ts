@@ -1,10 +1,11 @@
 import maplibregl from 'maplibre-gl';
+import type { ParcelProperties } from '@land-grab-2-interactives/types';
 
 import { GRIST_COLORS } from '$lib/utils/constants';
 import {
   formatActivity,
-  formatCessions,
-  formatRightsType
+  formatRightsType,
+  formatTribes
 } from '$lib/utils/formatters';
 import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
@@ -38,9 +39,9 @@ const renderLARPopup =
               y="0"
               width="16"
               height="16"
-              fill="${GRIST_COLORS.TURQUOISE}"
+              fill="${GRIST_COLORS.GREEN}"
               fill-opacity="0.25"
-              stroke="${GRIST_COLORS.TURQUOISE}"
+              stroke="${GRIST_COLORS.GREEN}"
               stroke-width="1"
             />
           </svg>
@@ -99,8 +100,15 @@ const renderParcelPopup =
         managing_agency,
         activity,
         rights_type,
-        all_cession_numbers
-      } = e.features[0].properties;
+        C1_present_day_tribe,
+        C2_present_day_tribe,
+        C3_present_day_tribe,
+        C4_present_day_tribe,
+        C5_present_day_tribe,
+        C6_present_day_tribe,
+        C7_present_day_tribe,
+        C8_present_day_tribe
+      } = e.features[0].properties as ParcelProperties;
 
       parcelPopup
         .setLngLat(coordinates)
@@ -146,10 +154,17 @@ const renderParcelPopup =
                   )}</td>
                 </tr>
                 <tr>
-                  <td class="font-gray-300 pr-1">Cessions</td>
-                  <td class="font-bold pl-1">${formatCessions(
-                    all_cession_numbers
-                  )}</td>
+                  <td class="font-gray-300 pr-1 align-top">Associated Tribes</td>
+                  <td class="font-bold pl-1">${formatTribes([
+                    C1_present_day_tribe,
+                    C2_present_day_tribe,
+                    C3_present_day_tribe,
+                    C4_present_day_tribe,
+                    C5_present_day_tribe,
+                    C6_present_day_tribe,
+                    C7_present_day_tribe,
+                    C8_present_day_tribe
+                  ])}</td>
                 </tr>
               </tbody>
             </table>
@@ -157,7 +172,11 @@ const renderParcelPopup =
         )
         .addTo(map);
 
-      parcelPopup.setMaxWidth('fit-content');
+      if (window.matchMedia('(min-width: 612px)').matches) {
+        parcelPopup.setMaxWidth('35rem');
+      } else {
+        parcelPopup.setMaxWidth(`${0.75 * window.innerWidth}px`);
+      }
     }
   };
 

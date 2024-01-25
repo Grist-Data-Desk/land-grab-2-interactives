@@ -24,7 +24,8 @@
     "rewind-parcels": "tsc && node dist/rewind-parcels.js",
     "store:fonts": "tsc && node --env-file=.env dist/store-fonts.js",
     "store:geojson": "tsc && node --env-file=.env dist/store-geojson.js",
-    "store:pmtiles": "tsc && node --env-file=.env dist/store-pmtiles-archives.js"
+    "store:pmtiles": "tsc && node --env-file=.env dist/store-pmtiles-archives.js",
+    "store:style": "tsc && node --env-file=.env dist/store-style.js"
   },
   "devDependencies": {
     "@land-grab-2-interactives/types": "^0.0.1",

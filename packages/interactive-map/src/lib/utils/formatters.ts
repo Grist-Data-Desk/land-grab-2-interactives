@@ -38,16 +38,17 @@ export const formatRightsType = (rightsType: string): string => {
 };
 
 /**
- * Format the cessions associated with a parcel into a comma-separated string
- * for display in a popup.
+ * Format the tribes associated with a parcel.
  *
- * @param cessions – The raw cessions string for a parcel from the STL dataset.
- * @returns – A comma-separated string of cessions.
+ * @param tribes (string | null)[] - The list of tribes associated with a parcel.
+ * @returns – An unordered list of tribes associated with a parcel, as an HTML string.
  */
-export const formatCessions = (cessions: string | null): string => {
-  if (!cessions) {
-    return '';
-  }
+export const formatTribes = (tribes: (string | null)[]): string => {
+  const filteredTribes = tribes
+    .filter((tribe) => Boolean(tribe) as unknown as string)
+    .flatMap((tribe) => tribe!.split(';'));
 
-  return cessions.split(' ').join(', ');
+  return `<ul>
+    ${filteredTribes.map((tribe) => `<li>${tribe}</li>`).join('\n')}
+  </ul>`;
 };

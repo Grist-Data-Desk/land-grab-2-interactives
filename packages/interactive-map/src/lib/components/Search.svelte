@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { type Map } from 'maplibre-gl';
+  import maplibregl, { type Map } from 'maplibre-gl';
   import * as _ from 'lodash';
+  import { GRIST_COLORS } from '$lib/utils/constants';
 
   interface NominatimHit {
     type: string;
@@ -19,6 +20,7 @@
   export let map: Map;
   let query = '';
   let hits: NominatimHit[] = [];
+  let marker: maplibregl.Marker | null = null;
 
   const queryNominatim = async (query: string) => {
     const features = [];
@@ -51,15 +53,36 @@
     const input = event.target as HTMLInputElement;
     query = input.value;
 
+    if (query.length === 0) {
+      hits = [];
+      marker?.remove();
+      marker = null;
+      return;
+    }
+
     await throttledQueryNominatim(query);
+  };
+
+  const addMarkerAndFly = (coordinates: [number, number]) => {
+    marker?.remove();
+
+    marker = new maplibregl.Marker({
+      color: GRIST_COLORS.EARTH,
+      scale: 0.75
+    })
+      .setLngLat(coordinates)
+      .addTo(map);
+
+    map.flyTo({
+      center: coordinates,
+      zoom: 10
+    });
   };
 
   const onSubmit = () => {
     if (hits) {
-      map.flyTo({
-        center: hits[0].geometry.coordinates,
-        zoom: 12
-      });
+      // Remove any existing markers.
+      addMarkerAndFly(hits[0].geometry.coordinates);
     }
   };
 
@@ -67,10 +90,7 @@
     query = hit.place_name;
     hits = [];
 
-    map.flyTo({
-      center: hit.geometry.coordinates,
-      zoom: 10
-    });
+    addMarkerAndFly(hit.geometry.coordinates);
   };
 </script>
 

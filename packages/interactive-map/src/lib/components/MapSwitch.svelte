@@ -34,6 +34,11 @@
         'none'
       );
       map.setLayoutProperty(
+        LAYER_CONFIG.tribalHeadquartersOutlines.id,
+        'visibility',
+        'none'
+      );
+      map.setLayoutProperty(
         LAYER_CONFIG.tribeParcelLinks.id,
         'visibility',
         'none'
@@ -64,6 +69,11 @@
       );
       map.setLayoutProperty(
         LAYER_CONFIG.tribalHeadquarters.id,
+        'visibility',
+        'visible'
+      );
+      map.setLayoutProperty(
+        LAYER_CONFIG.tribalHeadquartersOutlines.id,
         'visibility',
         'visible'
       );

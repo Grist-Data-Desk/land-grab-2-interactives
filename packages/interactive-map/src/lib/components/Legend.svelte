@@ -52,8 +52,8 @@
           y="0"
           width="16"
           height="16"
-          fill={GRIST_COLORS.TURQUOISE}
-          stroke={GRIST_COLORS.TURQUOISE}
+          fill={GRIST_COLORS.GREEN}
+          stroke={GRIST_COLORS.GREEN}
           stroke-width="1"
           fill-opacity="0.25"
         />
