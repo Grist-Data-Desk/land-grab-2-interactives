@@ -110,8 +110,8 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
           filled: true,
           stroked: true,
           getFillColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
-          // lineWidthMinPixels: 1,
-          // getLineColor: [0, 0, 0, 255]
+          lineWidthMinPixels: 1,
+          getLineColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
         })
       ]
     });
