@@ -67,8 +67,7 @@
 </script>
 
 <div
-  class="full-bleed relative flex w-screen flex-col font-sans"
-  style="height: 100vh;"
+  class="full-bleed border-earth relative flex h-screen w-screen flex-col border-b font-sans md:h-[80vh] md:border"
 >
   {#if map && mapIdle}
     <Menu {data} {map} />
