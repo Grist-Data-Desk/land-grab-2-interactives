@@ -81,25 +81,8 @@ const main = async () => {
     usTopoJson.objects.nation
   ) as FeatureCollection;
 
-  const simulation = d3
-    .forceSimulation()
-    .force(
-      "x",
-      d3
-        .forceX((d) =>
-          d.group
-            ? CANVAS_DIMENSIONS.width / 4
-            : (3 * CANVAS_DIMENSIONS.width) / 4
-        )
-        .strength(0.05)
-    )
-    .force("y", d3.forceY(CANVAS_DIMENSIONS.height / 2).strength(0.05))
-    .force("collide", d3.forceCollide(2))
-    .on("tick", drawFeatures(us))
-    .stop();
-
   try {
-    const data = (await fetch("/parcels-rewound.geojson").then((res) =>
+    const data = (await fetch("/parcels-and-translation.geojson").then((res) =>
       res.json()
     )) as FeatureCollection<Polygon>;
     const [txParcels, restParcels] = _.partition(
@@ -120,6 +103,8 @@ const main = async () => {
         y: centroid[1],
         x0: centroid[0],
         y0: centroid[1],
+        finalX: d.properties.final_x,
+        finalY: d.properties.final_y,
         group: d.properties?.state === "TX",
         feature: d,
       };
@@ -130,12 +115,32 @@ const main = async () => {
     toggleButton.addEventListener("click", () => {
       animationState = !animationState;
       if (animationState) {
-        simulation.nodes(nodes).alpha(1).restart();
-        toggleButton.textContent = "Reset";
-      } else {
+        // Interpolate towards final positions
         d3.transition()
           .duration(1000)
-          .tween("reset", () => {
+          .tween("translate", () => {
+            const ix = d3.interpolateArray(
+              nodes.map((d) => d.x),
+              nodes.map((d) => d.finalX)
+            );
+            const iy = d3.interpolateArray(
+              nodes.map((d) => d.y),
+              nodes.map((d) => d.finalY)
+            );
+            return (t) => {
+              nodes.forEach((d, i) => {
+                d.x = ix(t)[i];
+                d.y = iy(t)[i];
+              });
+              drawFeatures(us)();
+            };
+          });
+        toggleButton.textContent = "Reset";
+      } else {
+        // Interpolate back towards initial positions
+        d3.transition()
+          .duration(1000)
+          .tween("translate", () => {
             const ix = d3.interpolateArray(
               nodes.map((d) => d.x),
               nodes.map((d) => d.x0)
@@ -152,9 +157,11 @@ const main = async () => {
               drawFeatures(us)();
             };
           });
-        toggleButton.textContent = "Start Animation";
+        toggleButton.textContent = "Translate";
       }
     });
+    
+
   } catch (error) {
     console.error(error);
   }
