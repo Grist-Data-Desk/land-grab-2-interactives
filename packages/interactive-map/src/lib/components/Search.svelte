@@ -104,7 +104,7 @@
     >
       {#each hits as hit}
         <li
-          class="hit border-earth mt-0! overflow-hidden border-t p-2 first:rounded-t first:border-none last:rounded-b focus-within:bg-gray-300 hover:bg-gray-300"
+          class="hit border-earth !mt-0 overflow-hidden border-t !p-2 first:rounded-t first:border-none last:rounded-b focus-within:bg-gray-300 hover:bg-gray-300"
         >
           <button
             class="flex w-full flex-col truncate border-none bg-inherit p-0 text-left text-xs font-normal shadow-none md:text-sm"
