@@ -1,13 +1,44 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="/src/style.css" />
-    <script type="module" src="/src/main.ts"></script>
-  </head>
-  <body>
-    <div id="controls">
-      <button id="toggleAnimation">Start Animation</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body, html { 
+      margin: 0; 
+      padding: 0; 
+      height: 100%; 
+      overflow-x: hidden; 
+    }
+    .scroll-container { 
+      overflow-y: auto; 
+      position: relative; 
+      width: 100%;
+    }
+    .content { 
+      padding: 20px; 
+    }
+    #map-container { 
+      height: 100vh; 
+      width: 100%;
+      position: relative; 
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-container">
+    <div class="content">
+      <h1>A map follows</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum tempus egestas sed sed risus pretium quam vulputate. Amet commodo nulla facilisi nullam vehicula. Volutpat commodo sed egestas egestas fringilla. Rhoncus urna neque viverra justo nec ultrices dui sapien. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. Massa placerat duis ultricies lacus sed. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Commodo elit at imperdiet dui accumsan.</p>
     </div>
-    <canvas width="975" height="700"></canvas>
-  </body>
+    <div id="map-container">
+    </div>
+    <div class="content">
+      <h2>That was a map</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum tempus egestas sed sed risus pretium quam vulputate. Amet commodo nulla facilisi nullam vehicula. Volutpat commodo sed egestas egestas fringilla. Rhoncus urna neque viverra justo nec ultrices dui sapien. Turpis tincidunt id aliquet risus feugiat in ante metus dictum. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. Massa placerat duis ultricies lacus sed. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Commodo elit at imperdiet dui accumsan.</p>
+      </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
 </html>

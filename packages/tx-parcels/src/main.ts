@@ -1,170 +1,125 @@
-import * as d3 from "d3";
-import { Feature, FeatureCollection, Polygon } from "geojson";
-import _ from "lodash";
-import * as topojson from "topojson-client";
+import { Deck } from '@deck.gl/core';
+import { GeoJsonLayer } from '@deck.gl/layers';
+import { interpolateNumber } from 'd3-interpolate';
 
-interface Node {
-  id: number;
-  x: number;
-  y: number;
-  x0: number;
-  y0: number;
-  group: boolean;
-  feature: Feature<Polygon>;
+interface FeatureProperties {
+  final_lon: number;
+  final_lat: number;
+  state: string;
 }
 
-const CANVAS_DIMENSIONS = { width: 975, height: 610 };
-const canvas = document.querySelector("canvas")!;
-const dpi = devicePixelRatio;
-canvas.width = CANVAS_DIMENSIONS.width * dpi;
-canvas.height = CANVAS_DIMENSIONS.height * dpi;
-canvas.style.width = CANVAS_DIMENSIONS.width + "px";
+let deck = new Deck({
+  initialViewState: {
+    longitude: -100,
+    latitude: 40,
+    zoom: 4
+  },
+  controller: true,
+  layers: [],
+  parent: document.getElementById('map-container')
+});
 
-const ctx = canvas.getContext("2d")!;
-ctx.scale(dpi, dpi);
-ctx.canvas.style.maxWidth = "100%";
-ctx.lineJoin = "round";
-ctx.lineCap = "round";
-
-const projection = d3
-  .geoAlbersUsa()
-  .scale(1300)
-  .translate([CANVAS_DIMENSIONS.width / 2, CANVAS_DIMENSIONS.height / 2]);
-
-const path = d3.geoPath(projection, ctx);
-
-let nodes: Node[] = [];
-let animationState = false;
-const toggleButton = document.getElementById("toggleAnimation")!;
-
-const drawFeature = (
-  feature: Feature<Polygon>,
-  translateX: number,
-  translateY: number
-) => {
-  ctx.save();
-  ctx.translate(
-    translateX - path.centroid(feature)[0],
-    translateY - path.centroid(feature)[1]
-  );
-  ctx.beginPath();
-  path(feature);
-  ctx.closePath();
-  ctx.fill();
-  ctx.stroke();
-  ctx.restore();
-};
-
-const drawFeatures = (us: FeatureCollection) => () => {
-  ctx.clearRect(0, 0, CANVAS_DIMENSIONS.width, CANVAS_DIMENSIONS.height);
-
-  ctx.beginPath();
-  path(us);
-  ctx.lineWidth = 0.25;
-  ctx.strokeStyle = "rgba(60, 56, 48, 0.8)";
-  ctx.stroke();
-
-  nodes.forEach((d) => {
-    ctx.fillStyle = d.group ? "red" : "blue";
-    ctx.lineWidth = 0.5;
-    ctx.strokeStyle = d.group ? "red" : "blue";
-    drawFeature(d.feature, d.x, d.y);
-  });
-};
-
-const main = async () => {
-  const usTopoJson = (await fetch("/us.json").then((res) =>
-    res.json()
-  )) as TopoJSON.Topology;
-  const us = topojson.feature(
-    usTopoJson,
-    usTopoJson.objects.nation
-  ) as FeatureCollection;
-
-  try {
-    const data = (await fetch("/parcels-and-translation.geojson").then((res) =>
-      res.json()
-    )) as FeatureCollection<Polygon>;
-    const [txParcels, restParcels] = _.partition(
-      data.features,
-      (d) => d.properties?.state === "TX"
-    );
-    data.features = [
-      ...txParcels.slice(0, 1000),
-      ...restParcels.slice(0, 1000),
-    ];
-
-    nodes = data.features.map((d, i) => {
-      const centroid = path.centroid(d);
-
-      return {
-        id: i,
-        x: centroid[0],
-        y: centroid[1],
-        x0: centroid[0],
-        y0: centroid[1],
-        finalX: d.properties.final_x,
-        finalY: d.properties.final_y,
-        group: d.properties?.state === "TX",
-        feature: d,
-      };
-    });
-
-    drawFeatures(us)();
-
-    toggleButton.addEventListener("click", () => {
-      animationState = !animationState;
-      if (animationState) {
-        // Interpolate towards final positions
-        d3.transition()
-          .duration(1000)
-          .tween("translate", () => {
-            const ix = d3.interpolateArray(
-              nodes.map((d) => d.x),
-              nodes.map((d) => d.finalX)
-            );
-            const iy = d3.interpolateArray(
-              nodes.map((d) => d.y),
-              nodes.map((d) => d.finalY)
-            );
-            return (t) => {
-              nodes.forEach((d, i) => {
-                d.x = ix(t)[i];
-                d.y = iy(t)[i];
-              });
-              drawFeatures(us)();
-            };
-          });
-        toggleButton.textContent = "Reset";
-      } else {
-        // Interpolate back towards initial positions
-        d3.transition()
-          .duration(1000)
-          .tween("translate", () => {
-            const ix = d3.interpolateArray(
-              nodes.map((d) => d.x),
-              nodes.map((d) => d.x0)
-            );
-            const iy = d3.interpolateArray(
-              nodes.map((d) => d.y),
-              nodes.map((d) => d.y0)
-            );
-            return (t) => {
-              nodes.forEach((d, i) => {
-                d.x = ix(t)[i];
-                d.y = iy(t)[i];
-              });
-              drawFeatures(us)();
-            };
-          });
-        toggleButton.textContent = "Translate";
-      }
-    });
-    
-
-  } catch (error) {
-    console.error(error);
+function calculateCentroid(geometry: GeoJSON.Polygon): { x: number, y: number } {
+  let x = 0, y = 0, totalPoints = 0;
+  
+  for (const ring of geometry.coordinates) {
+    for (const point of ring) {
+      x += point[0];
+      y += point[1];
+      totalPoints += 1;
+    }
   }
-};
 
-main();
+  return { x: x / totalPoints, y: y / totalPoints };
+}
+
+function translatePolygon(geometry: GeoJSON.Polygon, newCentroid: { x: number, y: number }): GeoJSON.Polygon {
+  const oldCentroid = calculateCentroid(geometry);
+  const dx = newCentroid.x - oldCentroid.x;
+  const dy = newCentroid.y - oldCentroid.y;
+
+  const newCoordinates = geometry.coordinates.map(ring => 
+    ring.map(point => [point[0] + dx, point[1] + dy])
+  );
+
+  return { ...geometry, type: 'Polygon', coordinates: newCoordinates };
+}
+
+function getInterpolatedData(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>, t: number): GeoJSON.Feature<GeoJSON.Polygon, FeatureProperties>[] {
+  return data.features.map(feature => {
+    const geometry = feature.geometry as GeoJSON.Polygon;
+
+    const originalCentroid = calculateCentroid(geometry);
+    const finalPosition = {
+      x: feature.properties.final_lon,
+      y: feature.properties.final_lat
+    };
+
+    const interpolatedCentroid = {
+      x: interpolateNumber(originalCentroid.x, finalPosition.x)(t),
+      y: interpolateNumber(originalCentroid.y, finalPosition.y)(t)
+    };
+
+    return {
+      ...feature,
+      geometry: translatePolygon(geometry, interpolatedCentroid)
+    };
+  });
+}
+
+function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>) {
+  let lastTime = Date.now();
+  let t = 0; 
+  let direction = 1; 
+  const animationDuration = 5000;
+  const pauseDuration = 2000; 
+  let isPaused = false;
+  let pauseStartTime = 0;
+
+  function animate() {
+    requestAnimationFrame(animate);
+    const currentTime = Date.now();
+
+    if (isPaused) {
+      if (currentTime - pauseStartTime > pauseDuration) {
+        isPaused = false;
+        lastTime = currentTime;
+      }
+    } else {
+      const deltaTime = currentTime - lastTime;
+      t += direction * deltaTime / animationDuration;
+
+      if (t > 1 || t < 0) {
+        direction *= -1; 
+        t = Math.max(0, Math.min(t, 1));
+        isPaused = true;
+        pauseStartTime = currentTime;
+      }
+
+      const interpolatedData = getInterpolatedData(data, t);
+      updateDeck(interpolatedData);
+    }
+  }
+
+  function updateDeck(interpolatedData) {
+    deck.setProps({
+      layers: [
+        new GeoJsonLayer({
+          id: 'geojson-layer',
+          data: { type: 'FeatureCollection', features: interpolatedData },
+          filled: true,
+          stroked: true,
+          getFillColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
+          // lineWidthMinPixels: 1,
+          // getLineColor: [0, 0, 0, 255]
+        })
+      ]
+    });
+  }
+
+  animate();
+}
+
+fetch('/parcels-rewound-translated.geojson')
+  .then(response => response.json())
+  .then(data => initializeAnimation(data as GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>));
