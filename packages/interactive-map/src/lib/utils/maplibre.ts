@@ -32,7 +32,7 @@ const renderLARPopup =
       larPopup
         .setLngLat(coordinates)
         .setHTML(
-          `<div class="stack-h stack-h-xs items-center border-b border-earth border-dotted">
+          `<div class="stack-h stack-h-xs items-center border-0 border-b border-earth border-dotted">
           <svg width="16" height="16" viewBox="0 0 16 16">
             <rect
               x="0"
@@ -45,7 +45,7 @@ const renderLARPopup =
               stroke-width="1"
             />
           </svg>
-          <p class="text-base text-earth align-left font-bold">
+          <p class="text-base text-earth align-left font-bold my-0">
             ${LARNAME}
           </p>
         </div>`
@@ -114,7 +114,7 @@ const renderParcelPopup =
         .setLngLat(coordinates)
         .setHTML(
           `<div class="flex flex-col text-earth stack stack-xs font-sans">
-            <div class="stack-h stack-h-xs items-center border-b border-earth border-dotted">
+            <div class="stack-h stack-h-xs items-center border-0 border-b border-earth border-dotted">
               <svg width="16" height="16" viewBox="0 0 16 16">
                 <rect
                   x="0"
@@ -126,7 +126,7 @@ const renderParcelPopup =
                   stroke="${GRIST_COLORS.ORANGE}"
                   stroke-width="1" />
               </svg>
-              <p class="text-base align-left font-bold">Parcel ${object_id}</p>
+              <p class="text-base align-left font-bold my-0">Parcel ${object_id}</p>
             </div>
             <table class="font-sans-alt">
               <tbody>

@@ -67,7 +67,7 @@
 </script>
 
 <div
-  class="full-bleed border-earth relative flex h-screen w-screen flex-col border-b font-sans md:h-[80vh] md:border"
+  class="full-bleed border-earth relative mt-[18px] flex h-screen w-screen flex-col border-b font-sans md:h-[80vh] md:border md:border-solid"
 >
   {#if map && mapIdle}
     <Menu {data} {map} />

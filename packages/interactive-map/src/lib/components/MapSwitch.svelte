@@ -105,7 +105,7 @@
 <div class="stack stack-2xs md:stack-xs text-earth text-xs md:text-sm">
   <SectionHeading>See Connections To</SectionHeading>
   <div
-    class="border-earth radio-container relative flex w-full border"
+    class="border-earth radio-container relative flex w-full border border-solid"
     class:radio-container--right={$mapEntity === 'tribes'}
   >
     <div class="border-earth z-10 flex basis-1/2 justify-center border-r p-2">

@@ -10,7 +10,7 @@ export const formatActivity = (activity: string | null): string => {
   }
 
   return `
-  <ul>
+  <ul class="list-none">
     ${activity
       .split(',')
       .map((act) => `<li>${act}</li>`)
@@ -48,7 +48,7 @@ export const formatTribes = (tribes: (string | null)[]): string => {
     .filter((tribe) => Boolean(tribe) as unknown as string)
     .flatMap((tribe) => tribe!.split(';'));
 
-  return `<ul>
+  return `<ul class="list-none">
     ${filteredTribes.map((tribe) => `<li>${tribe}</li>`).join('\n')}
   </ul>`;
 };

@@ -85,11 +85,11 @@
 }
 
 .maplibregl-popup-content {
-  @apply border border-earth bg-smog p-2 shadow-md;
+  @apply border border-solid border-earth bg-smog p-2 shadow-md;
 }
 
 .maplibregl-ctrl-group:not(:empty) {
-  @apply border border-earth bg-smog shadow-md;
+  @apply border border-solid border-earth bg-smog shadow-md;
 }
 
 .maplibregl-ctrl-group button + button {
