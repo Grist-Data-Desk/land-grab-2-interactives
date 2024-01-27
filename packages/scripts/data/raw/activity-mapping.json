@@ -1,0 +1,2478 @@
+[
+  {
+    "sub-activity": "Grazing",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Ag/grazing",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Agriculture",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "EASEMENT (COUNTY ROADS),Solar zone",
+    "activity": "Infrastructure, Renewables"
+  },
+  {
+    "sub-activity": "EASEMENT (COUNTY ROADS),Range improvement project contract,Solar zone",
+    "activity": "Infrastructure, Renewables"
+  },
+  {
+    "sub-activity": "EASEMENT (COUNTY ROADS),Range improvement project contract",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "EASEMENT (COUNTY ROADS),Solar zone,Wind zone",
+    "activity": "Infrastructure, Renewables"
+  },
+  {
+    "sub-activity": "Range improvement project contract",
+    "activity": "Conservation"
+  },
+  {
+    "sub-activity": "EASEMENT (COUNTY ROADS),Range improvement project contract,Renewables - SOLAR,Solar zone",
+    "activity": "Infrastructure, Renewables"
+  },
+  {
+    "sub-activity": "EASEMENT (COUNTY ROADS)",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "DEVELOPMENT LEASE,EASEMENT (COUNTY ROADS)",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "DEVELOPMENT GROUND LEASE,EASEMENT (COUNTY ROADS)",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Coal,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil And Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil And Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Coal,Oil And Gas,Other Minerals,Tar sand contract",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,OIL GAS & ASSOCIATED HYDROCARBONS,Oil And Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,OIL GAS & ASSOCIATED HYDROCARBONS,Oil And Gas,Other Minerals,Tar sand contract",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil And Gas,Other Minerals,Other minerals - METALLIFEROUS MINERALS",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,OIL GAS & HYDROCARBON,Oil And Gas,Oil and gas fields,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,OIL GAS & ASSOCIATED HYDROCARBONS,Oil And Gas,Oil and gas fields,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,HELIUM OIL GAS & ASSOCIATED HYDROCARBONS,Oil And Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil And Gas,Oil and gas fields,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil And Gas,Other Minerals,Other minerals - LITHIUM",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,HELIUM OIL GAS & ASSOCIATED HYDROCARBONS,Oil And Gas,Other Minerals,Other minerals - POTASH",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Other Minerals",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Coal,OIL GAS & HYDROCARBON,Oil And Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,HELIUM OIL GAS & ASSOCIATED HYDROCARBONS,OIL GAS & ASSOCIATED HYDROCARBONS,Oil And Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Forest Grazing License",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Commercial,Forest Grazing License",
+    "activity": "Timber, Commercial"
+  },
+  {
+    "sub-activity": "Cabin",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Commercial",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Grazing Lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Ag & Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Grazing Competitive Bid",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Forest Grazing License,Grazing Lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Commercial,Grazing Lease",
+    "activity": "Grazing, Commercial"
+  },
+  {
+    "sub-activity": "Ag & Grazing Lease,Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Forest Grazing & Ag License",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Ag & Grazing Competitive Bid",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Ag Lease",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "Agriculture and grazing,Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Cabin,Grazing Lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Ag & Grazing Competitive Bid,Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Cabin,Forest Grazing License",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Forest Grazing Competitive Bid",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Agriculture and grazing",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Ag & Grazing Lease,Agriculture and grazing",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Ag & Grazing Competitive Bid,Ag Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Grazing Competitive Bid,Grazing Lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Ag Lease,Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "OilAndGas",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "OtherMin",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "OilAndGas,OtherMin",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas active lease,OilAndGas",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Coal,OilAndGas",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "State Forest",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Wildlife Management Area",
+    "activity": "Conservation"
+  },
+  {
+    "sub-activity": "Other Forest Land",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "State Park",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Aquatic Management Area",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Other Forest Land,State Park",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "State Forest,State Park",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Historic NonFerrous Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Historic Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Active Mineral Lease,Historic Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Active Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Historic Mineral Lease,Historic NonFerrous Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Mineral Lease,Minerals",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Unleased Minerals",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Agricultural Lease,Mineral Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Agricultural Lease",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "Long Term Commercial Lease,Mineral Lease",
+    "activity": "Mining, Commercial"
+  },
+  {
+    "sub-activity": "Long Term Commercial Lease",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Agricultural Lease,MAINTAIN PUBLIC HIGHWAY,Mineral Lease",
+    "activity": "Agriculture, Infrastructure, Mining"
+  },
+  {
+    "sub-activity": "Mineral Lease,Short Term Commercial Lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Short Term Commercial Lease",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Long Term Commercial Lease,Short Term Commercial Lease",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Recreation",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Interagency Agreement",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Temporary Access Permit",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Agreement",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Public Access Program",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Other",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Road Access Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Coal,Oil & Gas,Other Minerals",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Grazing lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Easements - Power",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Transportation",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Gas",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Easements - Mineral Associated Activity,Grazing lease",
+    "activity": "Mining, Grazing"
+  },
+  {
+    "sub-activity": "Easements - Transportation,Grazing lease",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Communication,Grazing lease",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Transportation,Special use lease - Black Powder and Muzzleloader Shooting Range and Access Road",
+    "activity": "Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Power,Grazing lease",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Communication,Special use lease - Black Powder and Muzzleloader Shooting Range and Access Road",
+    "activity": "Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing lease,Special use lease - Black Powder and Muzzleloader Shooting Range and Access Road",
+    "activity": "Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easements - Power,Grazing lease,Special use lease - Black Powder and Muzzleloader Shooting Range and Access Road",
+    "activity": "Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easements - Communication,Grazing lease,Special use lease - Residence (3) & Access Road",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Mineral Associated Activity,Grazing lease,Special use lease - Residence (3) & Access Road",
+    "activity": "Mining, Grazing"
+  },
+  {
+    "sub-activity": "Easements - Oil,Grazing lease",
+    "activity": "Fossil Fuels, Grazing"
+  },
+  {
+    "sub-activity": "Easements - Power,Grazing lease,Special use lease - Cabin Site and Access Road",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Power,Special use lease - Cabin Site and Access Road",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easements,Grazing lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Grazing lease,Wind lease",
+    "activity": "Grazing, Renewables"
+  },
+  {
+    "sub-activity": "Easements - Communication,Grazing lease,Wind lease",
+    "activity": "Grazing, Infrastructure, Renewables"
+  },
+  {
+    "sub-activity": "Easements",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Easements - Transportation,Grazing lease,Special use lease - Wetland/Riparian/Waterfowl Habitat Enhancement and Nonconsumptive Public Use Project",
+    "activity": "Conservation"
+  },
+  {
+    "sub-activity": "Easements,Grazing lease,Special use lease - Wetland/Riparian/Waterfowl Habitat Enhancement and Nonconsumptive Public Use Project",
+    "activity": "Grazing, Conservation"
+  },
+  {
+    "sub-activity": "Grazing lease,Special use lease - Farm/Ranch Management Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Easements - Transportation,Grazing lease,Wind lease",
+    "activity": "Grazing, Infrastructure, Renewables"
+  },
+  {
+    "sub-activity": "Grazing lease,Special use lease - Military Training Purposes",
+    "activity": "Grazing, Federal Government"
+  },
+  {
+    "sub-activity": "Wind lease",
+    "activity": "Renewables"
+  },
+  {
+    "sub-activity": "Easements - Communication,Special use lease - Abandoned Mine Reclamation and Restoration Work",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Flow Lines and Access Roads,Grazing lease,Offset Well Pad,Special use lease - Tank Battery",
+    "activity": "Grazing, Fossil Fuels, Infrastructure"
+  },
+  {
+    "sub-activity": "Flow Lines and Access Roads,Offset Well Pad,Special use lease - Tank Battery",
+    "activity": "Fossil Fuels, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Communication,Grazing lease,Special use lease - Access Road",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Power,Grazing lease,Special use lease - Spring Development and Pipeline",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing lease,Special use lease - Spring Development and Pipeline",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Communication,Grazing lease,Special use lease - Spring Development and Pipeline",
+    "activity": "Grazing, Water, Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Gas,Grazing lease",
+    "activity": "Fossil Fuels, Grazing"
+  },
+  {
+    "sub-activity": "Special use lease - Farm and Ranch Management Lease on Bull Creek Ranch",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Easements - Communication",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easements - Water",
+    "activity": "Water"
+  },
+  {
+    "sub-activity": "Easements - Irrigation",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "Easements - Communication,Special use lease - Water Supply System",
+    "activity": " Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easements - Transportation,Grazing lease,Special use lease - Habitat Conservation Bank",
+    "activity": "Grazing, Conservation, Infrastructure"
+  },
+  {
+    "sub-activity": "Oil and gas lease",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Metallic and nonmetallic mineral lease",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Metallic and nonmetallic mineral lease,Oil and gas lease",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Grazing Lease,Highways",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing Lease,Water for Grazing",
+    "activity": "Grazing, Water"
+  },
+  {
+    "sub-activity": "Water for Grazing",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Fracking Pond,Grazing Lease",
+    "activity": "Grazing, Fossil Fuels"
+  },
+  {
+    "sub-activity": "Grazing Lease,Utility (Public)",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Utility (Public)",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Highways",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Expired",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - CLOSED,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Released",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Under Review",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - OPERATING,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Consolidated Drilling Development Unit,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Consolidated Drilling Development Unit",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - CLOSING,Well Bottom Hole - CLOSING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas Well Bottom Hole - OPERATING,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas Well Bottom Hole - OPERATING,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas Well Bottom Hole - CONSTRUCTING,Oil and gas lease - Producing,Well Bottom Hole - CONSTRUCTING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Consolidated Drilling Development Unit,Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Producing,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Consolidated Drilling Development Unit,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas lease - Released",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit (Sub)",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas,Oil and gas Well Bottom Hole - CLOSED,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement (Sub),Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Producing,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Producing,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - OPERATING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit (Sub),Oil and gas",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit (Sub),Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement (Sub)",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Consolidated Drilling Development Unit,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement (Sub),Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Producing,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas Well Bottom Hole - OPERATING,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - CLOSED,Oil and gas lease - Producing,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Allocated Drilling Development Unit,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Allocated Drilling Development Unit",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Well Bottom Hole - CLOSED,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Producing,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement (Sub),Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement (Sub),Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Held by Unit,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas,Oil and gas Wellbores - CLOSING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - CLOSING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - CLOSING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - CLOSING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Expired,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Allocated Drilling Development Unit,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - CONSTRUCTING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - CONSTRUCTING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Well Bottom Hole - CLOSED,Oil and gas lease - Producing,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - CONSTRUCTING,Oil and gas Wellbores - OPERATING",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - OPERATING,Oil and gas lease - Primary Term Non-Producing",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Wellbores - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Well Bottom Hole - CLOSED,Oil and gas lease - Producing,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Wellbores - CLOSED",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas lease - Held by Unit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit (Sub),Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas lease - Shut-In Royalty",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas lease - Shut-In Royalty",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Well Bottom Hole - CLOSING,Oil and gas lease - Producing,Well Bottom Hole - CLOSING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Allocated Drilling Development Unit,Oil and gas Wellbores - CLOSED,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas Wellbores - OPERATING,Oil and gas lease - Expired",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas Well Bottom Hole - OPERATING,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Consolidation Unit",
+    "activity": "Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - CLOSING,Oil and gas Wellbores - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas Well Bottom Hole - CLOSED,Oil and gas Wellbores - OPERATING,Well Bottom Hole - CLOSED",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals - Development Agreement,Oil and gas Wellbores - CLOSING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Wellbores - CLOSING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - CLOSED,Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas,Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Secondary Recovery Unit,Oil and gas Well Bottom Hole - OPERATING,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Producing,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Drilling Development Unit,Oil and gas lease - Terminated",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Continuous Development Agreement,Oil and gas Wellbores - OPERATING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Production Sharing Agreement,Oil and gas,Oil and gas Well Bottom Hole - OPERATING,Oil and gas lease - Expired,Well Bottom Hole - OPERATING",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals - Pooled Unit,Oil and gas Wellbores - PLANNING,Oil and gas lease - Producing",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and Gas Lease",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Agriculture,Rights of way lease",
+    "activity": "Agriculture, Infrastructure"
+  },
+  {
+    "sub-activity": "Rights of way lease",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Agriculture,Commercial lease,Rights of way lease",
+    "activity": "Agriculture, Commercial, Infrastructure"
+  },
+  {
+    "sub-activity": "Commercial lease,Rights of way lease",
+    "activity": "Commercial, Infrastructure"
+  },
+  {
+    "sub-activity": "Agriculture,Energy By Solar,Rights of way lease",
+    "activity": "Agriculture, Renewables, Infrastructure"
+  },
+  {
+    "sub-activity": "Agriculture,Commercial lease,Energy By Wind,Rights of way lease",
+    "activity": "Agriculture, Renewables, Infrastructure"
+  },
+  {
+    "sub-activity": "Agriculture,Commercial lease,Rights of way lease,Wind Energy",
+    "activity": "Agriculture, Renewables, Infrastructure, Commercial"
+  },
+  {
+    "sub-activity": "Commercial lease,Rights of way lease,Wind Energy",
+    "activity": "Commercial, Renewables, Infrastructure"
+  },
+  {
+    "sub-activity": "Rights of way lease,Wind Energy",
+    "activity": "Renewables"
+  },
+  {
+    "sub-activity": "Agriculture,Rights of way lease,Wind Energy",
+    "activity": "Agriculture, Renewables, Infrastructure"
+  },
+  {
+    "sub-activity": "Agriculture,Energy By Wind,Rights of way lease",
+    "activity": "Agriculture, Renewables, Infrastructure"
+  },
+  {
+    "sub-activity": "Energy By Wind,Rights of way lease",
+    "activity": "Renewables"
+  },
+  {
+    "sub-activity": "Commercial lease",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Agriculture,Commercial lease",
+    "activity": "Agriculture, Commercial"
+  },
+  {
+    "sub-activity": "Commercial lease,Oil and gas lease",
+    "activity": "Fossil Fuels, Commercial"
+  },
+  {
+    "sub-activity": "Commercial lease,Oil and gas lease,Water",
+    "activity": "Commercial, Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil and gas lease,Water",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Commercial lease,Water",
+    "activity": "Commercial, Water"
+  },
+  {
+    "sub-activity": "Oil and gas lease,Salt Water Disposal",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Water",
+    "activity": "Water"
+  },
+  {
+    "sub-activity": "Sand & Gravel",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Commercial lease,Sand & Gravel",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Caliche,Commercial lease",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Caliche,Commercial lease,Oil and gas lease",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "misc",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Commercial Lease,misc",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Grazing Lease,misc",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Agriculture,Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Agriculture,Solar",
+    "activity": "Agriculture, Renewables"
+  },
+  {
+    "sub-activity": "Commercial Lease",
+    "activity": "Commercial"
+  },
+  {
+    "sub-activity": "Commercial Lease,Grazing Lease",
+    "activity": "Grazing, Commercial"
+  },
+  {
+    "sub-activity": "Agriculture,misc",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "Institutional Use",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Institutional Use,misc",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Grazing Lease,Institutional Use",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Grazing Lease,Solar",
+    "activity": "Grazing, Renewables"
+  },
+  {
+    "sub-activity": "Grazing Lease,US Govt Exclusive Use",
+    "activity": "Grazing, Federal Government"
+  },
+  {
+    "sub-activity": "Solar,misc",
+    "activity": "Renewables"
+  },
+  {
+    "sub-activity": "Minerals,Oil and gas",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals,Oil and gas,Prospecting Permit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas,Prospecting Permit",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Minerals,Oil and Gas Permit",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Minerals,Oil and Gas Permit,Oil and gas",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and Gas Permit",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Prospecting Permit",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Timber Sale,Water Rights",
+    "activity": "Timber, Water"
+  },
+  {
+    "sub-activity": "Crop,Easement Purpose:Ingress Egress,Easement Purpose:Utility Line,Timber Sale,Water Rights",
+    "activity": "Timber, Agriculture, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Crop,Easement Purpose:Ingress Egress,Easement Purpose:Utility Line,Timber Sale",
+    "activity": "Timber, Agriculture, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Temporary Permit,Timber - Sold",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ditch,Grazing,Temporary Permit,Timber - Sold",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Temporary Permit",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Grazing,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Grazing,Land Use Permit,Military,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure, Federal Government"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Land Use Permit,Military,Timber - Sold,Timber Sale",
+    "activity": "Timber, Infrastructure, Federal Government"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Land Use Permit,Military,Timber - Sold",
+    "activity": "Timber, Infrastructure, Federal Government"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Transmission Line,Grazing,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Communication,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Miscellaneous,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Communication,Miscellaneous,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Road,Grazing,Miscellaneous",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Road,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Timber Sale,Water Rights",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Transmission Line",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Transmission Line,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Timber - Advertised,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Temporary Permit,Water Rights",
+    "activity": "Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Temporary Permit,Timber - Proposed",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Timber - Sold,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Timber - Sold,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Salvage Sale,Timber Sale,Water Rights",
+    "activity": "Timber, Water, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Salvage Sale,Temporary Permit,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Timber - Proposed,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Temporary Permit,Timber - Proposed,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Timber - Proposed,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Temporary Permit,Timber - Proposed,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Land Use Permit,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Easement Purpose:Road,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Land Use Permit,Timber - Sold",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Bridge,Easement Purpose:Road,Grazing,Recreation - Commercial",
+    "activity": "Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Recreation - Commercial",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Recreation - Commercial,Temporary Permit,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Easement Purpose:Road,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Easement Purpose:Power Line,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Road,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Recreation - Commercial",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Recreation - Commercial,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Grazing,Recreation - Commercial,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Recreation - Commercial,Timber - Proposed",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Communication,Grazing,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Grazing,Recreation - Commercial",
+    "activity": "Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Recreation - Commercial",
+    "activity": "Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Recreation - Commercial,Timber - Advertised,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Recreation - Commercial",
+    "activity": "Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Recreation - Commercial,Temporary Permit",
+    "activity": "Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Land Use Permit,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Land Use Permit,Recreation - Commercial,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Recreation - Commercial,Temporary Permit",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Cable,Easement Purpose:Ingress Egress,Easement Purpose:Power Line,Easement Purpose:Road,Easement Purpose:Structure,Easement Purpose:Transmission Line,Land Use Permit,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Cable,Easement Purpose:Ingress Egress,Easement Purpose:Power Line,Easement Purpose:Road,Easement Purpose:Structure,Easement Purpose:Transmission Line,Miscellaneous,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Miscellaneous,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Miscellaneous,Temporary Permit,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Miscellaneous,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Grazing,Miscellaneous",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Recreation - Commercial,Timber - Sold,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Recreation - Commercial,Timber - Sold,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Recreation - Commercial,Timber - Sold,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Timber - Sold",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Miscellaneous,Temporary Permit,Timber - Sold",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Miscellaneous,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Timber - Proposed,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Recreation - Commercial,Temporary Permit",
+    "activity": "Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Salvage Sale,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Industrial,Temporary Permit,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Temporary Permit,Timber - Advertised",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Temporary Permit,Timber - Advertised,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Water Rights",
+    "activity": "Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Timber - Proposed,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Water Rights",
+    "activity": "Grazing, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Fiber Optic Cable,Grazing,Land Use Permit,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Fiber Optic Cable,Grazing,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Fiber Optic Cable,Land Use Permit,Temporary Permit,Water Rights",
+    "activity": "Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Grazing,Temporary Permit,Water Rights",
+    "activity": "Grazing, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Sewer Pipeline,Grazing,Land Use Permit,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Sewer Pipeline,Grazing,Land Use Permit,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Grazing,Land Use Permit,Temporary Permit,Water Rights",
+    "activity": "Grazing, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Sewer Pipeline,Grazing,Land Use Permit,Miscellaneous,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Highway,Grazing,Timber Sale,Water Rights",
+    "activity": "Timber, Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Power Line",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Power Line,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Power Line,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Grazing,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Grazing,Industrial,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Telephone Line,Easement Purpose:Transmission Line,Grazing,Temporary Permit,Timber - Sold",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pipeline,Grazing,Temporary Permit,Timber - Sold",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Land Use Permit,Timber - Sold",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Land Use Permit,Miscellaneous,Timber - Sold",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Transmission Line,Grazing,Land Use Permit,Timber - Sold",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Land Use Permit,Timber - Sold,Water Rights",
+    "activity": "Timber, Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Grazing,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:All Purpose,Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Land Use Permit,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Highway,Grazing,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Recreation - Commercial,Temporary Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Land Use Permit,Recreation - Commercial",
+    "activity": "Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Land Use Permit,Temporary Permit,Timber - Sold",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Grazing,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Land Use Permit,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Grazing,Land Use Permit,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Ingress Egress,Easement Purpose:Road,Timber - Sold,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Easement Purpose:Telecommunication Line,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Land Use Permit",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:UNKNOWN,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Ditch,Easement Purpose:Irrigation,Grazing,Timber Sale",
+    "activity": "Timber, Agriculture, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:UNKNOWN,Grazing,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Transmission Line,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Crop,Easement Purpose:Transmission Line,Land Use Permit",
+    "activity": "Agriculture, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Pipeline,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Natural Gas Pipeline,Grazing,Water Rights",
+    "activity": "Infrastructure, Grazing, Water"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Natural Gas Pipeline,Grazing",
+    "activity": "Infrastructure, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Land Use Permit",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Easement Purpose:Telephone Line,Grazing,Timber - Sold",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Telephone Line,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Timber - Sold",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Transmission Line,Grazing,Land Use Permit,Water Rights",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Transmission Line,Grazing,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Transmission Line,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Environmental,Temporary Permit",
+    "activity": "Conservation"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Road,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Conservation,Grazing",
+    "activity": "Grazing, Conservation"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Grazing",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Land Use Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Ingress Egress,Easement Purpose:Road,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Road,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Direct Sale,Easement Purpose:Ingress Egress,Easement Purpose:Road,Land Use Permit,Timber - Proposed,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:UNKNOWN,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Temporary Permit",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Grazing,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Grazing,Land Use Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Land Use Permit,Recreation - Commercial",
+    "activity": "Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Land Use Permit,Timber - Sold",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Direct Sale,Grazing,Timber Sale",
+    "activity": "Timber, Grazing"
+  },
+  {
+    "sub-activity": "Temporary Permit",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Direct Sale,Land Use Permit,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Crop,Easement Purpose:Power Line,Land Use Permit,Temporary Permit",
+    "activity": "Agriculture, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Timber - Sold",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Grazing,Recreation - Commercial,Temporary Permit",
+    "activity": "Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Cable,Easement Purpose:Ingress Egress,Easement Purpose:Power Line,Easement Purpose:Road,Easement Purpose:Structure,Easement Purpose:Transmission Line,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Grazing, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Grazing,Recreation - Commercial,Temporary Permit",
+    "activity": "Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Grazing,Recreation - Commercial,Timber - Sold",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Grazing,Recreation - Commercial,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Recreation"
+  },
+  {
+    "sub-activity": "Recreation - Commercial,Timber - Sold,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Land Use Permit,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Road,Land Use Permit,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Land Use Permit,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Land Use Permit,Recreation - Commercial,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Power Line,Grazing,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Recreation - Commercial,Temporary Permit,Timber Sale",
+    "activity": "Timber, Recreation, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Highway,Grazing,Timber - Sold,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Sewer Pipeline,Miscellaneous,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Timber Sale,Water Rights",
+    "activity": "Timber, Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Grazing,Recreation - Commercial,Timber - In Review,Timber Sale",
+    "activity": "Timber, Recreation"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:UNKNOWN,Temporary Permit,Timber Sale,Water Rights",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Temporary Permit,Timber Sale,Water Rights",
+    "activity": "Timber, Water"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Ingress Egress,Easement Purpose:Road,Grazing,Timber - Proposed,Water Rights",
+    "activity": "Timber, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Grazing,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Temporary Permit,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Miscellaneous,Temporary Permit,Timber - Advertised",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Miscellaneous,Temporary Permit,Timber - Advertised",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Miscellaneous,Temporary Permit,Timber - Advertised,Timber Sale",
+    "activity": "Timber"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Land Use Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Land Use Permit,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Road,Temporary Permit,Timber - Sold,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Timber - Sold,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Land Use Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pedestrian,Easement Purpose:Road,Land Use Permit,Temporary Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Land Use Permit,Timber Sale",
+    "activity": "Timber, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Ingress Egress,Easement Purpose:Road,Temporary Permit,Timber - Advertised,Timber Sale",
+    "activity": "Infrastructure, Timber"
+  },
+  {
+    "sub-activity": "Direct Sale,Easement Purpose:Road,Grazing,Timber Sale",
+    "activity": "Timber, Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Grazing,Temporary Permit,Water Rights",
+    "activity": "Grazing, Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Communication,Grazing,Temporary Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Crop,Temporary Permit,Water Rights",
+    "activity": "Agriculture, Water, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Pipeline,Grazing,Land Use Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Natural Gas Pipeline,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Communication,Easement Purpose:Pipeline",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Telephone Line,Grazing,Land Use Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Land Use Permit,Water Rights",
+    "activity": "Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Power Line,Temporary Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pipeline,Land Use Permit,Water Rights",
+    "activity": "Infrastructure, Water"
+  },
+  {
+    "sub-activity": "Easement Purpose:Pipeline",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Crop,Easement Purpose:Highway",
+    "activity": "Agriculture, Infrastructure"
+  },
+  {
+    "sub-activity": "Crop",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Grazing,Land Use Permit",
+    "activity": "Grazing, Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:Transmission Line,Land Use Permit",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Easement Purpose:UNKNOWN,Land Use Permit",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,SCATTERED WILDLIFE - WD",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,STATEWIDE WILDLIFE HABITAT - SD",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,STATEWIDE WILDLIFE HABITAT - SD",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,NATURAL AREA - DEDICATION",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,STATEWIDE HABITAT AREAS - WD",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,STATEWIDE PUBLIC ACCESS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,TUSCOBIA STATE TRAIL",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,STATEWIDE PUBLIC ACCESS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,GIFT LANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Owned - Open to public access,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,LAKE OF THE PINES CONSERVATION EASEMENT",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to public access,DNR Owned - Open to public access,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,SPRINGSTEAD MUSKEG STATE NATURAL AREA",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,STATEWIDE SPRING PONDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,STATEWIDE SPRING PONDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,STATEWIDE SPRING PONDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,STATEWIDE PUBLIC ACCESS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,TUSCOBIA STATE TRAIL",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,NICOLET STATE TRAIL",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,FOREST LEGACY PROGRAM",
+    "activity": "Conservation, Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,NICOLET STATE TRAIL",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Owned - Open to public access,NICOLET STATE TRAIL",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,STATEWIDE SPRING PONDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to public access,DNR Owned - Open to public access,STATEWIDE SPRING PONDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to public access",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to public access,STATE OWNED ISLANDS - NW",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to public access,DNR Owned - Open to public access,NATURAL AREA - DEDICATION",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to public access,NATURAL AREA - DEDICATION",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,NATURAL AREA - DEDICATION",
+    "activity": "Recreation, Conservation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use only,DNR Owned - Open to public access,STATEWIDE PUBLIC ACCESS - LM",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "DNR Easement - Open to passive use and fishing,DNR Owned - Open to public access,STATEWIDE WILDLIFE HABITAT - LM",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Easement/Permit Granted by DNR",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Easement/Permit Granted by DNR,Special Use Permits and Land Use Licenses",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Communications Site Lease",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Special Use Permits and Land Use Licenses",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Recreation Sites,Special Use Permits and Land Use Licenses",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Recreation Sites",
+    "activity": "Recreation"
+  },
+  {
+    "sub-activity": "Communications Site Lease,Easement/Permit Granted by DNR",
+    "activity": "Infrastructure"
+  },
+  {
+    "sub-activity": "Water Rights",
+    "activity": "Water"
+  },
+  {
+    "sub-activity": "Agricultural Lease,Easement/Permit Granted by DNR",
+    "activity": "Infrastructure, Agriculture"
+  },
+  {
+    "sub-activity": "Easement/Permit Acquired by DNR",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Agricultural Lease,Special Use Permits and Land Use Licenses",
+    "activity": "Agriculture"
+  },
+  {
+    "sub-activity": "Grazing Lease,Water Rights",
+    "activity": "Grazing, Water"
+  },
+  {
+    "sub-activity": "Easement/Permit Granted by DNR,Water Rights",
+    "activity": "Water"
+  },
+  {
+    "sub-activity": "Easement/Permit Acquired by DNR,Easement/Permit Granted by DNR",
+    "activity": "Uncategorized"
+  },
+  {
+    "sub-activity": "Agricultural Lease,Grazing Lease",
+    "activity": "Agriculture, Grazing"
+  },
+  {
+    "sub-activity": "Easement/Permit Granted by DNR,Grazing Lease",
+    "activity": "Grazing"
+  },
+  {
+    "sub-activity": "Agricultural Lease,Water Rights",
+    "activity": "Water, Agriculture"
+  },
+  {
+    "sub-activity": "Longterm Commercial",
+    "activity": "Commercial"
+  }
+]
