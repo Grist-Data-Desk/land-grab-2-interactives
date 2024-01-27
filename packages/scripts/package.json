@@ -12,6 +12,8 @@
     "arrayify-rights-type": "tsc && node dist/arrayify-rights-type.js",
     "build": "tsc && npm run fetch:lars && npm run arrayify-rights-type && npm run gen:tribe-parcel-links && npm run gen:university-parcel-links && npm run gen:vector-tiles && npm run rewind-parcels",
     "build:grid-scrollytelling": "tsc && npm run fetch:cessions && npm run fetch:territories && npm run fetch:sections && npm run fetch:townships && npm run gen:vector-tiles",
+    "deploy:interactive-map": "tsc && node --env-file=.env dist/deploy-interactive-map.js",
+    "derive-activity-category": "tsc && node dist/derive-activity-category.js",
     "fetch:cessions": "tsc && node dist/fetch-cessions.js",
     "fetch:lars": "tsc && node dist/fetch-lars.js",
     "fetch:territories": "tsc && node dist/fetch-territories.js",
