@@ -1,5 +1,5 @@
 import { Deck } from '@deck.gl/core';
-import { GeoJsonLayer } from '@deck.gl/layers';
+import { GeoJsonLayer, ScatterplotLayer } from '@deck.gl/layers';
 import { interpolateNumber } from 'd3-interpolate';
 
 interface FeatureProperties {
@@ -71,10 +71,15 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
   let lastTime = Date.now();
   let t = 0; 
   let direction = 1; 
-  const animationDuration = 5000;
+  const animationDuration = 10000;
   const pauseDuration = 2000; 
   let isPaused = false;
   let pauseStartTime = 0;
+
+  const circleCenters = [
+    { position: [-110.14, 38.00], color: [236, 108, 55, 128] }, 
+    { position: [-83.48, 38.75], color: [47, 47, 45, 128] }
+  ];
 
   function animate() {
     requestAnimationFrame(animate);
@@ -96,12 +101,30 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
         pauseStartTime = currentTime;
       }
 
+      const maxRadii = [200, 300]; 
+      const minRadius = 1;
+      const growthFactor = 7;
+
+      const circleLayers = circleCenters.map((center, index) => {
+      const maxRadius = maxRadii[index];
+      const circleRadius = minRadius + (maxRadius - minRadius) * Math.pow(t, growthFactor);
+
+      return new ScatterplotLayer({
+        id: `circle-${center.position.join('-')}`,
+        data: [center],
+        getPosition: d => d.position,
+        getFillColor: d => d.color,
+        radiusMinPixels: circleRadius,
+        radiusMaxPixels: circleRadius,
+      });
+    });
+
       const interpolatedData = getInterpolatedData(data, t);
-      updateDeck(interpolatedData);
+      updateDeck(interpolatedData, circleLayers);
     }
   }
 
-  function updateDeck(interpolatedData) {
+  function updateDeck(interpolatedData, circleLayers) {
     deck.setProps({
       layers: [
         new GeoJsonLayer({
@@ -112,7 +135,8 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
           getFillColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
           lineWidthMinPixels: 1,
           getLineColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
-        })
+        }),
+        ...circleLayers
       ]
     });
   }
