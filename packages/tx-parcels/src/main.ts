@@ -1,6 +1,8 @@
 import { Deck } from '@deck.gl/core';
 import { GeoJsonLayer, ScatterplotLayer } from '@deck.gl/layers';
 import { interpolateNumber } from 'd3-interpolate';
+import * as topojson from 'topojson-client';
+import { FeatureCollection } from 'geojson';
 
 interface FeatureProperties {
   final_lon: number;
@@ -8,16 +10,34 @@ interface FeatureProperties {
   state: string;
 }
 
-let deck = new Deck({
-  initialViewState: {
-    longitude: -100,
-    latitude: 40,
-    zoom: 4
-  },
-  controller: true,
-  layers: [],
-  parent: document.getElementById('map-container')
+document.addEventListener('DOMContentLoaded', async () => {
+  const usTopoJson = await fetch("/us.json").then(res => res.json()) as TopoJSON.Topology;
+  const usGeoJson = topojson.feature(usTopoJson, usTopoJson.objects.nation) as FeatureCollection;
+
+  const statesTopoJson = await fetch("/states.json").then(res => res.json()) as TopoJSON.Topology;
+  const statesGeoJson = topojson.feature(statesTopoJson, statesTopoJson.objects.states) as FeatureCollection;
+  const texasGeoJson = statesGeoJson.features.find(feature => feature.properties.name === "Texas");
+
+  initializeDeck(usGeoJson, texasGeoJson);
 });
+
+let deck;
+function initializeDeck(usGeoJson: FeatureCollection, texasGeoJson: FeatureCollection) {
+  deck = new Deck({
+    initialViewState: {
+      longitude: -96,
+      latitude: 39,
+      zoom: 3.8
+    },
+    controller: true,
+    layers: [],
+    parent: document.getElementById('map-container')
+  });
+
+  fetch('/parcels-rewound-translated.geojson')
+    .then(response => response.json())
+    .then(data => initializeAnimation(data as GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>, usGeoJson, texasGeoJson));
+}
 
 function calculateCentroid(geometry: GeoJSON.Polygon): { x: number, y: number } {
   let x = 0, y = 0, totalPoints = 0;
@@ -67,7 +87,7 @@ function getInterpolatedData(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
   });
 }
 
-function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>) {
+function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>, usGeoJson: FeatureCollection, texasGeoJson: FeatureCollection) {
   let lastTime = Date.now();
   let t = 0; 
   let direction = 1; 
@@ -106,25 +126,49 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
       const growthFactor = 7;
 
       const circleLayers = circleCenters.map((center, index) => {
-      const maxRadius = maxRadii[index];
-      const circleRadius = minRadius + (maxRadius - minRadius) * Math.pow(t, growthFactor);
-
-      return new ScatterplotLayer({
-        id: `circle-${center.position.join('-')}`,
-        data: [center],
-        getPosition: d => d.position,
-        getFillColor: d => d.color,
-        radiusMinPixels: circleRadius,
-        radiusMaxPixels: circleRadius,
+        const maxRadius = maxRadii[index];
+        const circleRadius = minRadius + (maxRadius - minRadius) * Math.pow(t, growthFactor);
+      
+        return new ScatterplotLayer({
+          id: `circle-${center.position.join('-')}`,
+          data: [center],
+          getPosition: d => d.position,
+          getFillColor: d => d.color,
+          radiusMinPixels: circleRadius,
+          radiusMaxPixels: circleRadius,
+        });
       });
-    });
+
+      const o = 1 - Math.pow(t, growthFactor);
+      document.getElementById('left-number').style.opacity = `${1 - o}`;
+      document.getElementById('right-number').style.opacity = `${1 - o}`;
+
+      const usOutlineLayer = new GeoJsonLayer({
+        id: 'us-outline-layer',
+        data: usGeoJson,
+        stroked: true,
+        filled: false,
+        lineWidthMinPixels: 1.5,
+        getLineColor: [47, 47, 45, o * 255],
+        getFillColor: [240, 240, 240, o * 255 / 2]
+      });
+
+      const texasOutlineLayer = new GeoJsonLayer({
+        id: 'texas-outline-layer',
+        data: texasGeoJson,
+        stroked: true,
+        filled: true,
+        lineWidthMinPixels: 1.5,
+        getLineColor: [236, 108, 55, o * 255],
+        getFillColor: [236, 108, 55, o * 255 / 2]
+      });
 
       const interpolatedData = getInterpolatedData(data, t);
-      updateDeck(interpolatedData, circleLayers);
+      updateDeck(interpolatedData, circleLayers, usOutlineLayer, texasOutlineLayer);
     }
   }
 
-  function updateDeck(interpolatedData, circleLayers) {
+  function updateDeck(interpolatedData, circleLayers, usOutlineLayer, texasOutlineLayer) {
     deck.setProps({
       layers: [
         new GeoJsonLayer({
@@ -136,14 +180,10 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
           lineWidthMinPixels: 1,
           getLineColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
         }),
-        ...circleLayers
+        [...circleLayers, usOutlineLayer, texasOutlineLayer]
       ]
     });
   }
 
   animate();
 }
-
-fetch('/parcels-rewound-translated.geojson')
-  .then(response => response.json())
-  .then(data => initializeAnimation(data as GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>));
