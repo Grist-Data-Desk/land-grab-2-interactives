@@ -1,0 +1,52 @@
+#puf-scrolly {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: 18px;
+  overflow: auto;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  height: 81.4vw; /* Calculated based on the aspect-ratio of the PUF graphics. */
+}
+
+@media (min-width: 612px) {
+  #puf-scrolly {
+    height: 488px;
+  }
+}
+
+#puf-scrolly article {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (min-width: 612px) {
+  #puf-scrolly article {
+    width: 600px;
+  }
+}
+
+#puf-scrolly .puf-img-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+#puf-scrolly .puf-step__graphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0, 0, 0.2, 1);
+}
+
+#puf-scrolly .puf-step__graphic--active {
+  opacity: 1;
+}
+
+#puf-scrolly .puf-step {
+  height: 75vh;
+}
