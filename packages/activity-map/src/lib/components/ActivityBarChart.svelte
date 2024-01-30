@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { slide } from 'svelte/transition';
 	import type { FeatureCollection, Point } from 'geojson';
 	import type { ParcelProperties } from '@land-grab-2-interactives/types';
 	import groupBy from 'lodash.groupby';
@@ -9,7 +8,7 @@
 	import { activity } from '$lib/stores/activity';
 	import { ACTIVITY_CONFIG } from '$lib/utils/activity-config';
 
-	export let parcels: FeatureCollection<Point, ParcelProperties>;
+	export let parcels: FeatureCollection<Point, ParcelProperties & { category: string }>;
 
 	$: universities = groupBy(parcels.features, (d) => d.properties.university);
 	$: sums = Object.entries(universities).map(([key, value]) => {
@@ -39,17 +38,16 @@
 	$: yScale = d3.scaleBand(yDomain, yRange).padding(0.1);
 </script>
 
-<div class="stack stack-sm md:stack-none md:stack-h md:stack-h-md">
-	<div
-		class="stack stack-xs border-earth stack stack-sm border-b pb-2 md:border-b-0 md:border-r md:pr-6"
-	>
-		<p class="text-sm md:text-base">Total Acreage Across All Universities</p>
-		<strong style="color: {ACTIVITY_CONFIG[$activity].color};" class="text-2xl md:text-4xl"
-			>{acreage.toLocaleString()}</strong
+<div class="activity-map-bar-chart__container">
+	<div class="activity-map-bar-chart__acreage-total">
+		<p class="activity-map-bar-chart__statistic-label">Total Acreage Held For All Universities</p>
+		<strong
+			style="color: {ACTIVITY_CONFIG[$activity].color};"
+			class="activity-map-bar-chart__statistic-value">{acreage.toLocaleString()}</strong
 		>
 	</div>
-	<div class="stack stack-xs md:basis-[425px]">
-		<p class="text-sm md:text-base">Universities with the Highest Acreage</p>
+	<div class="activity-map-bar-chart__chart">
+		<p class="activity-map-bar-chart__statistic-label">Universities With the Most Acreage</p>
 		<svg
 			viewBox="0 0 425 100"
 			width="425"
@@ -64,7 +62,7 @@
 						width={xScale(sum.acres)}
 						height={yScale.bandwidth()}
 						fill={ACTIVITY_CONFIG[$activity].color}
-						class="transition-all duration-300 ease-out"
+						class="activity-map-bar-chart__bar"
 					/>
 					<text
 						x={xScale(sum.acres) + 10}
@@ -93,3 +91,114 @@
 		</svg>
 	</div>
 </div>
+
+<style>
+	:root {
+		--grist-color-earth: #3c3830;
+	}
+
+	/* stack stack-sm md:stack-none md:stack-h md:stack-h-md font-sans */
+	.activity-map-bar-chart__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		font-family: 'PolySans', 'Open Sans', Helvetica, sans-serif;
+	}
+
+	.activity-map-bar-chart__container > * {
+		margin-block: 0;
+	}
+
+	.activity-map-bar-chart__container > * + * {
+		margin-block-start: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.activity-map-bar-chart__container {
+			flex-direction: row;
+		}
+
+		.activity-map-bar-chart__container > * {
+			margin-inline: 0;
+		}
+
+		.activity-map-bar-chart__container > * + * {
+			margin-block-start: 0;
+			margin-inline-start: 1.5rem;
+		}
+	}
+
+	.activity-map-bar-chart__acreage-total {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		border-bottom: 1px solid var(--grist-color-earth);
+		padding-bottom: 0.5rem;
+	}
+
+	.activity-map-bar-chart__acreage-total > * {
+		margin-block: 0;
+	}
+
+	.activity-map-bar-chart__acreage-total > * + * {
+		margin-block-start: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.activity-map-bar-chart__acreage-total {
+			border-bottom: 0;
+			border-right: 1px solid var(--grist-color-earth);
+			padding-right: 1.5rem;
+		}
+	}
+
+	.activity-map-bar-chart__statistic-label {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+
+	@media (min-width: 768px) {
+		.activity-map-bar-chart__statistic-label {
+			font-size: 1rem;
+			line-height: 1.5rem;
+		}
+	}
+
+	.activity-map-bar-chart__statistic-value {
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	@media (min-width: 768px) {
+		.activity-map-bar-chart__statistic-value {
+			font-size: 2.25rem;
+			line-height: 2.5rem;
+		}
+	}
+
+	.activity-map-bar-chart__chart {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.activity-map-bar-chart__chart > * {
+		margin-block: 0;
+	}
+
+	.activity-map-bar-chart__chart > * + * {
+		margin-block-start: 0.5rem;
+	}
+
+	@media (min-width: 768px) {
+		.activity-map-bar-chart__chart {
+			flex-basis: 425px;
+		}
+	}
+
+	.activity-map-bar-chart__bar {
+		transition-property: all;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 300ms;
+	}
+</style>

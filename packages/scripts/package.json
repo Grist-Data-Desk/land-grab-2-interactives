@@ -14,6 +14,7 @@
     "build:activity-map": "tsc && npm run derive-activity-category && npm run rewind-parcels",
     "build:grid-scrollytelling": "tsc && npm run fetch:cessions && npm run fetch:territories && npm run fetch:sections && npm run fetch:townships && npm run gen:vector-tiles",
     "deploy:activity-map": "tsc && node --env-file=.env dist/deploy-activity-map.js",
+    "deploy:grid-scrollytelling": "tsc && node --env-file=.env dist/deploy-grid-scrollytelling.js",
     "deploy:interactive-map": "tsc && node --env-file=.env dist/deploy-interactive-map.js",
     "derive-activity-category": "tsc && node dist/derive-activity-category.js",
     "fetch:cessions": "tsc && node dist/fetch-cessions.js",

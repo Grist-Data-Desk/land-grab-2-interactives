@@ -120,7 +120,7 @@ export const chapters: Chapter[] = [
         "match",
         ["get", "PLSSID"],
         TOWNSHIP_ID,
-        0.75,
+        0.6,
         0.15,
       ]);
     },
@@ -179,7 +179,7 @@ export const chapters: Chapter[] = [
       legend.classList.remove("grid-scrolly-legend--hidden");
       legend.classList.add("grid-scrolly-legend--visible");
 
-      map.setPaintProperty("wa-trust-lands", "fill-opacity", 0.75);
+      map.setPaintProperty("wa-trust-lands", "fill-opacity", 0.6);
     },
     onChapterExit: (map, direction) => {
       if (direction === "up") {
@@ -194,7 +194,7 @@ export const chapters: Chapter[] = [
           "match",
           ["get", "PLSSID"],
           TOWNSHIP_ID,
-          0.75,
+          0.6,
           0.15,
         ]);
         map.setPaintProperty("township-outlines", "line-opacity", 1);
@@ -205,10 +205,10 @@ export const chapters: Chapter[] = [
     center: [-120.825, 47.273],
     zoom: 6.5,
     onChapterEnter: (map) => {
-      // Remove the previous step's legend here. This final step has a custom
-      // data-offset, so its onChapterEnter callback fires a hair earlier than
-      // the previous step's onChapterExit callback. This helps avoid a split
-      // second where both legends are visible.
+      // Remove the previous step's legend here. This onChapterEnter callback
+      // fires a touch earlier than the previous chapter's onChapterExit callback,
+      // so we need to do some management to ensure there's only one legend
+      // rendered at a time.
       const prevLegend = document.getElementById(
         "wa-state-trust-lands-legend"
       )!;
@@ -228,7 +228,7 @@ export const chapters: Chapter[] = [
       legend.classList.add("grid-scrolly-legend--hidden");
 
       if (direction === "up") {
-        map.setPaintProperty("wa-trust-lands", "fill-opacity", 0.75);
+        map.setPaintProperty("wa-trust-lands", "fill-opacity", 0.6);
         map.setPaintProperty("parcels", "fill-opacity", 0);
 
         const prevLegend = document.getElementById(
@@ -236,6 +236,17 @@ export const chapters: Chapter[] = [
         )!;
         prevLegend.classList.remove("grid-scrolly-legend--hidden");
         prevLegend.classList.add("grid-scrolly-legend--visible");
+      }
+    },
+    onChapterProgress: (_, progress) => {
+      if (progress >= 0.5) {
+        const legend = document.getElementById("wsu-state-trust-lands-legend")!;
+        legend.classList.remove("grid-scrolly-legend--visible");
+        legend.classList.add("grid-scrolly-legend--hidden");
+      } else {
+        const legend = document.getElementById("wsu-state-trust-lands-legend")!;
+        legend.classList.remove("grid-scrolly-legend--hidden");
+        legend.classList.add("grid-scrolly-legend--visible");
       }
     },
   },

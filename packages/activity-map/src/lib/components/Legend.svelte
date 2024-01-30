@@ -21,28 +21,26 @@
 	};
 </script>
 
-<div class="stack-h stack-h-sm max-w-[500px] items-center">
-	<div class="stack stack-xs">
-		<p class="font-sans-alt text-xs md:text-sm">
-			This map shows the <strong>acreage</strong> of state trust lands devoted to different land uses.
-			Each spike is located at the geographic center of its associated parcel. Some parcels are associated
-			with multiple land uses. In these cases, the acreage is counted for each practice.
-		</p>
-	</div>
-	<div class="stack stack-xs">
-		<p class="text-2xs">Num. Acres</p>
+<div class="activity-map-legend__container">
+	<p class="activity-map-legend__annotation">
+		This map shows the <strong>acreage</strong> of state trust lands devoted to different land uses.
+		Each spike is located at the geographic center of its associated parcel. Some parcels are associated
+		with multiple land uses. In these cases, the acreage is counted for each practice.
+	</p>
+	<div class="activity-map-legend__spikes">
+		<p class="activity-map-legend__spikes-label">Number of Acres</p>
 		<svg
 			viewBox="0 0 {dimensions.width} {dimensions.height}"
 			width={dimensions.width}
 			height={dimensions.height}
-			class="shrink-0"
+			style="flex-shrink: 0;"
 		>
 			<g text-anchor="end">
 				{#each LEGEND_ENTRIES as entry}
 					<text
 						x={labelPadding.left}
 						y={dimensions.height - scale(entry)}
-						class="font-sans-alt text-2xs"
+						class="activity-map-legend__spikes-axis-label"
 					>
 						{entry}
 					</text>
@@ -66,3 +64,64 @@
 		</svg>
 	</div>
 </div>
+
+<style>
+	.activity-map-legend__container {
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		max-width: 500px;
+		align-items: center;
+		font-family: 'PolySans', 'Open Sans', Helvetica, sans-serif;
+	}
+
+	.activity-map-legend__container > * {
+		margin-inline: 0;
+	}
+
+	.activity-map-legend__container > * + * {
+		margin-inline-start: 1rem;
+	}
+
+	.activity-map-legend__annotation {
+		font-family:
+			Basis Grotesque Pro,
+			'Open Sans',
+			Helvetica,
+			sans-serif;
+		font-size: 0.75rem;
+		line-height: 1rem;
+	}
+
+	@media (min-width: 768px) {
+		.activity-map-legend__annotation {
+			font-size: 0.875rem;
+			line-height: 1.25rem;
+		}
+	}
+
+	.activity-map-legend__spikes {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.activity-map-legend__spikes > * {
+		margin-block: 0;
+	}
+
+	.activity-map-legend__spikes > * + * {
+		margin-block-start: 1rem;
+	}
+
+	.activity-map-legend__spikes-label,
+	.activity-map-legend__spikes-axis-label {
+		font-size: 0.625rem;
+		text-wrap: nowrap;
+	}
+
+	.activity-map-legend__spikes-axis-label {
+		font-family: 'PolySans', 'Open Sans', Helvetica, sans-serif;
+		font-weight: 400;
+	}
+</style>

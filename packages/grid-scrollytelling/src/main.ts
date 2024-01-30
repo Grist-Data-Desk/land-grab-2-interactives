@@ -12,44 +12,46 @@ maplibregl.addProtocol("pmtiles", protocol.tile);
 
 // Instantate the map instance.
 const map = new Map({
-  container: "map-grid-scrolly",
-  style: "/style.json",
+  container: "grid-scrolly-map",
+  style: `${DO_SPACES_URL}/style/style-satellite.json`,
   center: chapters[0].center,
   zoom: chapters[0].zoom,
 });
+
+map.scrollZoom.disable();
 
 map.on("load", async () => {
   // Add sources.
   map.addSource("cessions", {
     type: "vector",
-    url: "pmtiles://http://localhost:5173/cessions.pmtiles",
+    url: `pmtiles://${DO_SPACES_URL}/pmtiles/cessions.pmtiles`,
   });
 
   range(DECADE_RANGE[0], DECADE_RANGE[1], 10).forEach((decade) => {
     map.addSource(`territories-${decade}`, {
       type: "geojson",
-      data: `/territories-${decade}.geojson`,
+      data: `${DO_SPACES_URL}/geojson/territories-${decade}.geojson`,
     });
   });
 
   map.addSource("townships", {
     type: "vector",
-    url: "pmtiles://http://localhost:5173/townships.pmtiles",
+    url: `pmtiles://${DO_SPACES_URL}/pmtiles/townships.pmtiles`,
   });
 
   map.addSource("sections", {
     type: "geojson",
-    data: "/sections.geojson",
+    data: `${DO_SPACES_URL}/geojson/sections.geojson`,
   });
 
   map.addSource("sections-16-36", {
     type: "geojson",
-    data: "/sections-16-36.geojson",
+    data: `${DO_SPACES_URL}/geojson/sections-16-36.geojson`,
   });
 
   map.addSource("sections-other", {
     type: "geojson",
-    data: "/sections-other.geojson",
+    data: `${DO_SPACES_URL}/geojson/sections-other.geojson`,
   });
 
   map.addSource("parcels", {
@@ -59,7 +61,7 @@ map.on("load", async () => {
 
   map.addSource("wa-trust-lands", {
     type: "geojson",
-    data: "wa-trust-lands.geojson",
+    data: `${DO_SPACES_URL}/geojson/wa-trust-lands.geojson`,
   });
 
   // Add layers. All layers have their relevant paint property opacity's set to 0
@@ -70,7 +72,7 @@ map.on("load", async () => {
     "source-layer": "cessions",
     type: "line",
     paint: {
-      "line-color": GRIST_COLORS.CELERY,
+      "line-color": GRIST_COLORS.GOLD,
       "line-opacity": 0,
       // @ts-expect-error – MapLibre's types fail to support -transition properties.
       "line-opacity-transition": {
@@ -253,7 +255,6 @@ map.on("load", async () => {
   scroller
     .setup({
       step: "#scrolly article .step",
-      debug: false,
       progress: true,
       offset: 0.5,
     })

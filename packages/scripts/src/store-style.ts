@@ -21,23 +21,27 @@ const main = async () => {
     }
   });
 
-  const file = await fs.readFile(
-    path.resolve(__dirname, `../../interactive-map/static/style.json`)
-  );
+  const files = await fs.readdir(path.resolve(__dirname, '../styles'));
 
-  const putObjectCommand = new PutObjectCommand({
-    Bucket: 'grist',
-    Key: `${STYLE_PATH}/style.json`,
-    Body: file,
-    ACL: 'public-read'
-  });
+  for (const file of files) {
+    const Body = await fs.readFile(
+      path.resolve(__dirname, `../styles/${file}`)
+    );
 
-  try {
-    const response = await s3Client.send(putObjectCommand);
-    console.log('Successfully uploaded style.json.');
-    console.log(response);
-  } catch (error) {
-    console.error(error);
+    const putObjectCommand = new PutObjectCommand({
+      Bucket: 'grist',
+      Key: `${STYLE_PATH}/${file}`,
+      Body,
+      ACL: 'public-read'
+    });
+
+    try {
+      const response = await s3Client.send(putObjectCommand);
+      console.log(`Successfully uploaded ${file}.`);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
   }
 };
 

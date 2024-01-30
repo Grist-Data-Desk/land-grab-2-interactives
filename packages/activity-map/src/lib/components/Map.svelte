@@ -6,19 +6,19 @@
 
 	import { activity } from '$lib/stores/activity';
 	import { ACTIVITY_CONFIG } from '$lib/utils/activity-config';
-	import { GRIST_COLORS, CANVAS_DIMENSIONS, SPIKE_OPACITY } from '$lib/utils/constants';
+	import { COLORS, CANVAS_DIMENSIONS, SPIKE_OPACITY } from '$lib/utils/constants';
 
 	export let scale: d3.ScaleLinear<number, number>;
 	export let us: Feature;
 	export let states: FeatureCollection;
-	export let parcels: FeatureCollection<Point, ParcelProperties>;
+	export let parcels: FeatureCollection<Point, ParcelProperties & { category: string }>;
 	export let universities: FeatureCollection<Point>;
 
 	let canvas: HTMLCanvasElement;
 
 	const projection = d3
 		.geoAlbersUsa()
-		.scale(1300)
+		.scale(1560)
 		.translate([CANVAS_DIMENSIONS.width / 2, CANVAS_DIMENSIONS.height / 2]);
 	const spike = (length: number, width = 6) => `M${-width / 2},0L0,${-length}L${width / 2},0`;
 
@@ -37,7 +37,7 @@
 		ctx.shadowOffsetY = -5;
 		ctx.shadowBlur = 10;
 		ctx.lineWidth = 0.5;
-		ctx.strokeStyle = GRIST_COLORS.EARTH;
+		ctx.strokeStyle = COLORS.EARTH;
 		ctx.stroke();
 		ctx.fillStyle = '#ffffff';
 		ctx.fill();
@@ -84,10 +84,10 @@
 				// Draw university locations.
 				ctx.beginPath();
 				ctx.arc(x, y, 4, 0, 2 * Math.PI);
-				ctx.fillStyle = GRIST_COLORS.EARTH;
+				ctx.fillStyle = COLORS.EARTH;
 				ctx.fill();
 				ctx.lineWidth = 1;
-				ctx.strokeStyle = GRIST_COLORS.SMOG;
+				ctx.strokeStyle = COLORS.SMOG;
 				ctx.stroke();
 				ctx.closePath();
 
@@ -100,7 +100,7 @@
 				ctx.shadowOffsetX = 2;
 				ctx.shadowBlur = 10;
 				ctx.fillStyle = '#ffffff';
-				ctx.strokeStyle = GRIST_COLORS.EARTH;
+				ctx.strokeStyle = COLORS.EARTH;
 
 				// One-off label placement to avoid collisions.
 				if (university.properties?.name === 'Washington State University') {
@@ -120,8 +120,8 @@
 				ctx.shadowBlur = 0;
 
 				// Labels.
-				ctx.fillStyle = GRIST_COLORS.EARTH;
-				ctx.strokeStyle = GRIST_COLORS.SMOG;
+				ctx.fillStyle = COLORS.EARTH;
+				ctx.strokeStyle = COLORS.SMOG;
 				ctx.lineWidth = 0.1;
 
 				if (university.properties?.name === 'Washington State University') {

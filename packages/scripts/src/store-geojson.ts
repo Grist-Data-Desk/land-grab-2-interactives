@@ -22,12 +22,30 @@ const main = async () => {
   });
 
   const geojsonSources = [
+    { directory: 'processed', name: 'sections-16-36' },
+    { directory: 'processed', name: 'sections-other' },
+    { directory: 'processed', name: 'sections' },
+    { directory: 'processed', name: 'territories-1790' },
+    { directory: 'processed', name: 'territories-1800' },
+    { directory: 'processed', name: 'territories-1810' },
+    { directory: 'processed', name: 'territories-1820' },
+    { directory: 'processed', name: 'territories-1830' },
+    { directory: 'processed', name: 'territories-1840' },
+    { directory: 'processed', name: 'territories-1850' },
+    { directory: 'processed', name: 'territories-1860' },
+    { directory: 'processed', name: 'territories-1870' },
+    { directory: 'processed', name: 'territories-1880' },
+    { directory: 'processed', name: 'territories-1890' },
+    { directory: 'processed', name: 'territories-1900' },
+    { directory: 'processed', name: 'territories-1910' },
+    { directory: 'processed', name: 'territories-1920' },
     { directory: 'processed', name: 'university-parcel-links' },
     { directory: 'processed', name: 'tribe-parcel-links' },
     { directory: 'processed', name: 'parcel-centroids-rewound' },
     { directory: 'raw', name: 'universities' },
     { directory: 'raw', name: 'states' },
-    { directory: 'raw', name: 'us' }
+    { directory: 'raw', name: 'us' },
+    { directory: 'raw', name: 'wa-trust-lands' }
   ];
 
   for (const geojsonSource of geojsonSources) {

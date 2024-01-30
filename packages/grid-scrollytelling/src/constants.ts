@@ -1,6 +1,6 @@
 export const GRIST_COLORS = {
-  CELERY: "#e6ffa0",
-  ORANGE: "#f79945",
+  GOLD: "#d9ac4a",
+  ORANGE: "#ec6c37",
   SMOG: "#f0f0f0",
   EARTH: "#3c3830",
 };

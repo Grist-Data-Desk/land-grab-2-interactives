@@ -2,10 +2,7 @@ import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
 import * as url from 'node:url';
 
-import {
-  PutObjectCommand,
-  S3Client
-} from '@aws-sdk/client-s3';
+import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const PMTILES_PATH = 'land-grab-ii/dev/data/pmtiles';
@@ -28,7 +25,9 @@ const main = async () => {
     'lars',
     'parcels',
     'university-parcel-links',
-    'tribe-parcel-links'
+    'tribe-parcel-links',
+    'cessions',
+    'townships'
   ];
 
   for (const tileset of tilesets) {
