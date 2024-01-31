@@ -3,10 +3,9 @@ export const COLORS = {
 	SMOG: '#f0f0f0',
 	ORANGE: '#ec6c37',
 	GOLD: '#d9ac4a',
-	TAN: '#f5b431', // Tan from the palette (#f4e1bc) with saturation increased to 80%.
-	CHARCOAL: '#2f2f2d',
+	GRAY: '#9ca3af',
 	GREEN: '#476039',
-	COBALT: '#3977f3'
+	PALE_GREEN: '#9ca18c'
 };
 
 export const MAX_SPIKE_HEIGHT = 100;

@@ -47,10 +47,12 @@
 		>
 	</div>
 	<div class="activity-map-bar-chart__chart">
-		<p class="activity-map-bar-chart__statistic-label">Universities With the Most Acreage</p>
+		<p class="activity-map-bar-chart__statistic-label">
+			Universities With the Most Acreage Devoted To {ACTIVITY_CONFIG[$activity].label}
+		</p>
 		<svg
-			viewBox="0 0 425 100"
-			width="425"
+			viewBox="0 0 475 100"
+			width="475"
 			height="100"
 			style="max-width: 100%; height: auto; height: intrinsic;"
 		>
@@ -132,6 +134,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		align-items: center;
 		border-bottom: 1px solid var(--grist-color-earth);
 		padding-bottom: 0.5rem;
 	}
@@ -192,7 +195,7 @@
 
 	@media (min-width: 768px) {
 		.activity-map-bar-chart__chart {
-			flex-basis: 425px;
+			flex-basis: 475px;
 		}
 	}
 

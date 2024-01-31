@@ -1,4 +1,11 @@
 @tailwind base;
+
+@layer base {
+  p {
+    margin: 18px 0 0;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 

@@ -37,8 +37,8 @@
 		--grist-color-smog: #f0f0f0;
 		--lgu-ii-color-gold: #d9ac4a;
 		--lgu-ii-color-green: #476039;
-		--lgu-ii-color-tan: #f5b431;
-		--lgu-ii-color-charcoal: #2f2f2d;
+		--lgu-ii-color-pale-green: #9ca18c;
+		--lgu-ii-color-gray: #9ca3af;
 		--lgu-ii-color-orange: #ec6c37;
 	}
 
@@ -95,7 +95,7 @@
 	}
 
 	.activity-map-filters__container--grazing::after {
-		background-color: var(--lgu-ii-color-tan);
+		background-color: var(--lgu-ii-color-pale-green);
 		transform: translateY(100%);
 	}
 
@@ -106,7 +106,7 @@
 	}
 
 	.activity-map-filters__container--infrastructure::after {
-		background-color: var(--lgu-ii-color-charcoal);
+		background-color: var(--lgu-ii-color-gray);
 		transform: translate(100%, 100%);
 	}
 

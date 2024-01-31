@@ -31,12 +31,12 @@ export const ACTIVITY_CONFIG: Record<
 	},
 	grazing: {
 		label: 'Grazing',
-		color: COLORS.TAN,
+		color: COLORS.PALE_GREEN,
 		filter: (parcel) => parcel.properties.category.includes('Grazing')
 	},
 	infrastructure: {
 		label: 'Infrastructure',
-		color: COLORS.CHARCOAL,
+		color: COLORS.GRAY,
 		filter: (parcel) => parcel.properties.category.includes('Infrastructure')
 	},
 	renewables: {
