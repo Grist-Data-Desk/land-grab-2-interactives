@@ -32,7 +32,7 @@ const renderLARPopup =
       larPopup
         .setLngLat(coordinates)
         .setHTML(
-          `<div class="stack-h stack-h-xs items-center border-0 border-b border-earth border-dotted">
+          `<div class="stack-h stack-h-xs items-center">
           <svg width="16" height="16" viewBox="0 0 16 16">
             <rect
               x="0"
@@ -45,8 +45,8 @@ const renderLARPopup =
               stroke-width="1"
             />
           </svg>
-          <p class="text-base text-earth align-left font-bold my-0">
-            ${LARNAME}
+          <p class="text-base text-earth align-left font-bold">
+            ${LARNAME.replace('LAR', 'Land Area')}
           </p>
         </div>`
         )
@@ -89,6 +89,7 @@ const renderParcelPopup =
       features?: maplibregl.GeoJSONFeature[] | undefined;
     }
   ) => {
+    console.log(e.type);
     map.getCanvas().style.cursor = 'pointer';
 
     if (e.features) {
@@ -114,7 +115,7 @@ const renderParcelPopup =
         .setLngLat(coordinates)
         .setHTML(
           `<div class="flex flex-col text-earth stack stack-xs font-sans">
-            <div class="stack-h stack-h-xs items-center border-0 border-b border-earth border-dotted">
+            <div class="stack-h stack-h-xs items-center border-b border-earth border-dotted pb-2">
               <svg width="16" height="16" viewBox="0 0 16 16">
                 <rect
                   x="0"
@@ -128,43 +129,45 @@ const renderParcelPopup =
               </svg>
               <p class="text-base align-left font-bold my-0">Parcel ${object_id}</p>
             </div>
-            <table class="font-sans-alt">
+            <table class="font-sans-alt font-xs table-auto">
               <tbody>
                 <tr>
-                  <td class="font-gray-300 pr-1">University</td>
-                  <td class="font-bold pl-1">${university}</td>
+                  <td class="font-gray-300 p-1 pl-0 whitespace-nowrap border-b-0 font-normal">University</td>
+                  <td class="font-bold p-1 pr-0 text-left border-b-0">${university}</td>
                 </tr>
                 <tr>
-                  <td class="font-gray-300 pr-1">State Enabling Act</td>
-                  <td class="font-bold pl-1">${state_enabling_act}</td>
+                  <td class="font-gray-300 p-1 pl-0 whitespace-nowrap border-b-0 font-normal">State Enabling Act</td>
+                  <td class="font-bold p-1 pr-0 text-left border-b-0">${state_enabling_act ?? 'None'}</td>
                 <tr>
-                  <td class="font-gray-300 pr-1">Managing Agency</td>
-                  <td class="font-bold pl-1">${managing_agency}</td>
+                  <td class="font-gray-300 p-1 pl-0 whitespace-nowrap border-b-0 font-normal">Managing Agency</td>
+                  <td class="font-bold p-1 pr-0 text-left border-b-0">${managing_agency}</td>
                 </tr>
                 <tr>
-                  <td class="font-gray-300 pr-1 align-top">Activity</td>
-                  <td class="font-bold pl-1">
+                  <td class="font-gray-300 p-1 pl-0 align-top whitespace-nowrap border-b-0 font-normal">Activity</td>
+                  <td class="font-bold p-1 pr-0 text-left border-b-0">
                     ${formatActivity(activity)}
                   </td>
                 </tr>
                 <tr>
-                  <td class="font-gray-300 pr-1">Rights Type</td>
-                  <td class="font-bold pl-1">${formatRightsType(
+                  <td class="font-gray-300 p-1 pl-0 whitespace-nowrap border-b-0 font-normal">Rights Type</td>
+                  <td class="font-bold p-1 pr-0 text-left border-b-0">${formatRightsType(
                     rights_type
                   )}</td>
                 </tr>
                 <tr>
-                  <td class="font-gray-300 pr-1 align-top">Associated Tribes</td>
-                  <td class="font-bold pl-1">${formatTribes([
-                    C1_present_day_tribe,
-                    C2_present_day_tribe,
-                    C3_present_day_tribe,
-                    C4_present_day_tribe,
-                    C5_present_day_tribe,
-                    C6_present_day_tribe,
-                    C7_present_day_tribe,
-                    C8_present_day_tribe
-                  ])}</td>
+                  <td class="font-gray-300 p-1 pl-0 align-top whitespace-nowrap border-b-0 font-normal">Associated Tribes</td>
+                  <td class="font-bold p-1 pr-0 text-left border-b-0">${formatTribes(
+                    [
+                      C1_present_day_tribe,
+                      C2_present_day_tribe,
+                      C3_present_day_tribe,
+                      C4_present_day_tribe,
+                      C5_present_day_tribe,
+                      C6_present_day_tribe,
+                      C7_present_day_tribe,
+                      C8_present_day_tribe
+                    ]
+                  )}</td>
                 </tr>
               </tbody>
             </table>
@@ -188,23 +191,16 @@ const renderParcelPopup =
 export const createParcelPopup = (map: maplibregl.Map): void => {
   const parcelPopup = new maplibregl.Popup({
     closeButton: false,
-    closeOnClick: false
+    closeOnClick: true
   });
 
-  map.on(
-    'mouseenter',
-    LAYER_CONFIG.parcels.id,
-    renderParcelPopup(map, parcelPopup)
-  );
-
-  map.on(
-    'mousemove',
-    LAYER_CONFIG.parcels.id,
-    renderParcelPopup(map, parcelPopup)
-  );
+  map.on('mouseenter', LAYER_CONFIG.parcels.id, () => {
+    map.getCanvas().style.cursor = 'pointer';
+  });
 
   map.on('mouseleave', LAYER_CONFIG.parcels.id, () => {
     map.getCanvas().style.cursor = '';
-    parcelPopup.remove();
   });
+
+  map.on('click', LAYER_CONFIG.parcels.id, renderParcelPopup(map, parcelPopup));
 };

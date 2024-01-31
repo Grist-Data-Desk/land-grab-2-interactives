@@ -13,7 +13,7 @@ export const formatActivity = (activity: string | null): string => {
   <ul class="list-none">
     ${activity
       .split(',')
-      .map((act) => `<li>${act}</li>`)
+      .map((act) => `<li class="mt-0 pl-0 before:content-none">${act}</li>`)
       .join('\n')}
   </ul>`;
 };
@@ -49,6 +49,6 @@ export const formatTribes = (tribes: (string | null)[]): string => {
     .flatMap((tribe) => tribe!.split(';'));
 
   return `<ul class="list-none">
-    ${filteredTribes.map((tribe) => `<li>${tribe}</li>`).join('\n')}
+    ${filteredTribes.map((tribe) => `<li class="mt-0 pl-0 before:content-none">${tribe}</li>`).join('\n')}
   </ul>`;
 };

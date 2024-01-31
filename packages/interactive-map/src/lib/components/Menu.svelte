@@ -5,7 +5,7 @@
     FilterSpecification,
     Map
   } from 'maplibre-gl';
-  import * as _ from 'lodash';
+  import _ from 'lodash';
   import type { Feature } from 'geojson';
 
   import Legend from '$lib/components/Legend.svelte';
@@ -17,7 +17,7 @@
     type MapFilters as ParcelFilters
   } from '$lib/stores/map-filters';
   import type { Data } from '$lib/types/data';
-  import { DO_SPACE_URL, LAYER_CONFIG } from '$lib/utils/layer-config';
+  import { DO_SPACES_URL, LAYER_CONFIG } from '$lib/utils/layer-config';
 
   export let data: Data;
   export let map: Map;
@@ -28,8 +28,8 @@
   ) => {
     const features = await fetch(
       entity === 'universities'
-        ? `${DO_SPACE_URL}/geojson/university-parcel-links.geojson`
-        : `${DO_SPACE_URL}/geojson/tribe-parcel-links.geojson`
+        ? `${DO_SPACES_URL}/geojson/university-parcel-links.geojson`
+        : `${DO_SPACES_URL}/geojson/tribe-parcel-links.geojson`
     )
       .then((res) => res.json())
       .then((res) => res.features as Feature[]);
@@ -130,19 +130,19 @@
 </script>
 
 <div
-  class="stack stack-sm border-earth bg-smog text-earth md:stack-md z-10 border border-solid p-4 shadow-md md:absolute md:left-8 md:top-8 md:w-[23rem] md:rounded md:px-4 md:py-6"
+  class="stack stack-sm md:stack-md border-earth bg-smog text-earth z-10 border p-4 shadow-md md:absolute md:left-8 md:top-8 md:w-[23rem] md:rounded md:px-4 md:py-6"
 >
-  <h1
-    class="border-earth md:text-headline flex items-baseline justify-center border-0 border-b border-dotted pb-2 text-center font-serif text-xl font-black md:flex-col md:pb-4"
+  <h2
+    class="border-earth md:text-headline flex items-baseline justify-center border-b border-dotted pb-2 text-center font-serif text-xl font-black md:flex-col md:items-center md:pb-4"
   >
     Indigenous Land
     <span
       class="ml-2 text-lg font-normal text-gray-600 md:ml-0 md:self-center md:text-3xl"
       >Granted to Universities</span
     >
-  </h1>
+  </h2>
   <div
-    class="stack stack-xs md:stack-sm border-earth border-0 border-b border-dotted pb-4 md:pb-6"
+    class="stack stack-xs md:stack-sm border-earth border-b border-dotted pb-4 md:pb-6"
   >
     <MapSwitch {map} />
     <MapFilters {data} />

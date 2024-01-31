@@ -40,6 +40,11 @@
       map.setLayoutProperty(layerId, 'visibility', 'none');
     }
   };
+
+  // Reset the links checkbox when mapEntity changes.
+  mapEntity.subscribe(() => {
+    showLinks = true;
+  });
 </script>
 
 <div class="stack stack-xs">
@@ -59,7 +64,7 @@
         />
       </svg>
       <span class="font-sans-alt text-xs"
-        >Indigenous Land Area Representation (LAR)</span
+        >Land Areas of Federally Recognized Tribes</span
       >
     </div>
   </Checkbox>
@@ -97,7 +102,7 @@
         />
       </svg>
       <span class="font-sans-alt text-xs"
-        >Parcel-{$mapEntity === 'universities' ? 'University' : 'Tribe'} Link</span
+        >Parcel–{$mapEntity === 'universities' ? 'University' : 'Tribe'} Link</span
       >
     </div>
   </Checkbox>

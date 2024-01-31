@@ -3,7 +3,7 @@ import type { AddLayerObject, SourceSpecification } from 'maplibre-gl';
 import type { Data } from '$lib/types/data';
 import { GRIST_COLORS } from '$lib/utils/constants';
 
-export const DO_SPACE_URL =
+export const DO_SPACES_URL =
   'https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/data';
 
 export const SOURCE_CONFIG = (
@@ -13,14 +13,15 @@ export const SOURCE_CONFIG = (
     id: 'lars',
     config: {
       type: 'vector',
-      url: `pmtiles://${DO_SPACE_URL}/pmtiles/lars.pmtiles`
+      url: `pmtiles://${DO_SPACES_URL}/pmtiles/lars.pmtiles`
     }
   },
   parcels: {
     id: 'parcels',
     config: {
       type: 'vector',
-      url: `pmtiles://${DO_SPACE_URL}/pmtiles/parcels.pmtiles`
+      url: `pmtiles://${DO_SPACES_URL}/pmtiles/parcels.pmtiles`,
+      promoteId: 'object_id'
     }
   },
   universities: {
@@ -34,7 +35,7 @@ export const SOURCE_CONFIG = (
     id: 'university-parcel-links',
     config: {
       type: 'vector',
-      url: `pmtiles://${DO_SPACE_URL}/pmtiles/university-parcel-links.pmtiles`
+      url: `pmtiles://${DO_SPACES_URL}/pmtiles/university-parcel-links.pmtiles`
     }
   },
   tribalHeadquarters: {
@@ -48,7 +49,7 @@ export const SOURCE_CONFIG = (
     id: 'tribe-parcel-links',
     config: {
       type: 'vector',
-      url: `pmtiles://${DO_SPACE_URL}/pmtiles/tribe-parcel-links.pmtiles`
+      url: `pmtiles://${DO_SPACES_URL}/pmtiles/tribe-parcel-links.pmtiles`
     }
   }
 });
@@ -90,7 +91,12 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
     },
     paint: {
       'fill-color': GRIST_COLORS.ORANGE,
-      'fill-opacity': 0.25
+      'fill-opacity': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        0.75,
+        0.25
+      ]
     }
   },
   parcelOutlines: {
@@ -102,8 +108,18 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
       visibility: 'visible'
     },
     paint: {
-      'line-color': GRIST_COLORS.ORANGE,
-      'line-width': 0.25
+      'line-color': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        GRIST_COLORS.SMOG,
+        GRIST_COLORS.ORANGE
+      ],
+      'line-width': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        0.75,
+        0.25
+      ]
     }
   },
   universityParcelLinks: {

@@ -10,7 +10,7 @@
   import {
     SOURCE_CONFIG,
     LAYER_CONFIG,
-    DO_SPACE_URL
+    DO_SPACES_URL
   } from '$lib/utils/layer-config';
   import { createLARPopup, createParcelPopup } from '$lib/utils/maplibre';
 
@@ -24,8 +24,8 @@
     maplibregl.addProtocol('pmtiles', protocol.tile);
 
     map = new maplibregl.Map({
-      container: 'map',
-      style: `${DO_SPACE_URL}/style/style.json`,
+      container: 'interactive-map',
+      style: `${DO_SPACES_URL}/style/style.json`,
       center: [-105.93, 40.36],
       zoom: 4.5
     });
@@ -40,6 +40,8 @@
       })
     );
 
+    let hoveredStateId: string | number | undefined;
+
     map.on('load', () => {
       Object.values(SOURCE_CONFIG(data)).forEach(({ id, config }) => {
         map.addSource(id, config);
@@ -51,6 +53,34 @@
 
       createLARPopup(map);
       createParcelPopup(map);
+
+      map.on('mousemove', 'parcels', (event) => {
+        if (event.features && event.features.length > 0) {
+          if (hoveredStateId) {
+            map.setFeatureState(
+              { source: 'parcels', sourceLayer: 'parcels', id: hoveredStateId },
+              { hover: false }
+            );
+          }
+
+          hoveredStateId = event.features[0].id;
+
+          map.setFeatureState(
+            { source: 'parcels', sourceLayer: 'parcels', id: hoveredStateId },
+            { hover: true }
+          );
+        }
+      });
+
+      map.on('mouseleave', 'parcels', () => {
+        if (hoveredStateId) {
+          map.setFeatureState(
+            { source: 'parcels', sourceLayer: 'parcels', id: hoveredStateId },
+            { hover: false }
+          );
+        }
+        hoveredStateId = undefined;
+      });
     });
 
     map.once('idle', () => {
@@ -67,11 +97,11 @@
 </script>
 
 <div
-  class="full-bleed border-earth relative mt-[18px] flex h-screen w-screen flex-col border-b font-sans md:h-[80vh] md:border md:border-solid"
+  class="full-bleed border-earth relative my-[18px] flex h-screen w-screen flex-col border-b font-sans md:h-[80vh] md:border md:border-solid"
 >
   {#if map && mapIdle}
     <Menu {data} {map} />
     <Search {map} />
   {/if}
-  <div id="map" class="w-full grow md:h-full" />
+  <div id="interactive-map" class="w-full grow md:h-full" />
 </div>

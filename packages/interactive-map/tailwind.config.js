@@ -18,7 +18,5 @@ export default {
     }
   },
   plugins: [],
-  corePlugins: {
-    preflight: false
-  }
+  important: '#interactive-map-container'
 };
