@@ -84,7 +84,7 @@ assign_final_lon_lat(geojson_data, grid_points_group2, group2.index, center_grou
 
 geojson_data = geojson_data.to_crs("EPSG:4326")
 
-updated_file_path = 'updated_parcels.geojson'
+updated_file_path = 'updated-parcels.geojson'
 geojson_data.to_file(updated_file_path, driver='GeoJSON')
 
 print(f"Updated GeoJSON file saved to: {updated_file_path}")
