@@ -64,6 +64,8 @@
 		flex-direction: column;
 		align-items: center;
 		padding: 1rem;
+		width: 100vw;
+		margin-left: calc((50vw - 50%) * -1);
 	}
 
 	.activity-map__container > * {
@@ -81,6 +83,8 @@
 
 		.activity-map__container {
 			padding: 2rem 1rem;
+			width: 80vw;
+			margin-left: calc((40vw - 50%) * -1);
 		}
 	}
 
