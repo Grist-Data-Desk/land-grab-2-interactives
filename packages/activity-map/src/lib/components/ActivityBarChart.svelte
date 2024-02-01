@@ -48,7 +48,7 @@
 	</div>
 	<div class="activity-map-bar-chart__chart">
 		<p class="activity-map-bar-chart__statistic-label">
-			Universities With the Most Acreage Devoted To {ACTIVITY_CONFIG[$activity].label}
+			Universities With the Most {ACTIVITY_CONFIG[$activity].label} Acreage
 		</p>
 		<svg
 			viewBox="0 0 475 100"
