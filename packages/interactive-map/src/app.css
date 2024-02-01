@@ -4,6 +4,18 @@
   p {
     margin: 18px 0 0;
   }
+
+  hr {
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+
+  @media (min-width: 768px) {
+    hr {
+      margin-top: 60px;
+      margin-bottom: 60px;
+    }
+  }
 }
 
 @tailwind components;
