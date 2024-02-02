@@ -1,19 +1,32 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/src/style.css">
-</head>
-<body>
-  <div class="scroll-container">
-    <div id="map-container">
-      <div id="title">A Texas-sized trust</div>
-      <div id="subtitle">Texas A&M benefits from more than half of the state trust lands held on behalf of universities.</div>
-      <div id="left-number">4.0 million acres</div>
-      <div id="right-number">4.2 million acres</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="tx-parcels">
+      <div class="tx-parcels__title-container">
+        <h2 class="tx-parcels__title">A Texas-sized trust</h2>
+        <h3 class="tx-parcels__subtitle">
+          Texas A&M benefits from more than half of the state trust lands held
+          on behalf of universities.
+        </h3>
+      </div>
+      <div
+        id="left-number"
+        class="tx-parcels__statistic tx-parcels__statistic--left"
+      >
+        4.0 million acres
+      </div>
+      <div
+        id="right-number"
+        class="tx-parcels__statistic tx-parcels__statistic--right"
+      >
+        4.2 million acres
+      </div>
     </div>
-  </div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

@@ -35,7 +35,6 @@
     "d3fc": "^15.2.6",
     "deck.gl": "^8.9.34",
     "lodash": "^4.17.21",
-    "maplibre-gl": "^3.6.2",
-    "topojson-client": "^3.1.0"
+    "maplibre-gl": "^3.6.2"
   }
 }

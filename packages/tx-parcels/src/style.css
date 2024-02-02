@@ -1,51 +1,49 @@
-body, html { 
-  margin: 0; 
-  padding: 0; 
-  height: 100%; 
-  overflow-x: hidden; 
-}
-.scroll-container { 
-  overflow-y: auto; 
-  position: relative; 
-  width: 100%;
-}
-#map-container { 
-  height: 100vh; 
-  width: 100%;
-  position: relative; 
+#tx-parcels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 36px;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
   pointer-events: none;
+  color: #3c3830;
+  margin-left: calc((50vw - 50%) * -1);
+  max-width: unset;
 }
-#title, #subtitle, #left-number, #right-number {
-    position: absolute;
-    left: 20vh; 
-    color: #3c3830; 
+
+#tx-parcels .tx-parcels__title-container {
+  max-width: 600px;
 }
-#title {
-    top: 5px;
-    font-size: 36px; 
-    font-family: 'PolySans';
+
+#tx-parcels .tx-parcels__title {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-family: "PolySans", sans-serif;
 }
-#subtitle {
-    position: relative;
-    top: 55px; 
-    bottom: 50px;
-    font-size: 24px; 
-    font-family: 'Basis Grotesque Pro';
+
+#tx-parcels .tx-parcels__subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Basis Grotesque Pro", sans-serif;
 }
-#left-number, #right-number {
-    font-size: 30px; 
-    opacity: 0; 
-    top: 46vh;
-    font-family: 'Basis Grotesque Pro';
-    font-weight: 600;
-    color: #f0f0f0;
-    z-index: 1000;
+
+#tx-parcels .tx-parcels__statistic {
+  position: absolute;
+  top: 46vh;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-family: "Basis Grotesque Pro", sans-serif;
+  font-weight: 600;
+  color: #f0f0f0;
+  z-index: 10;
 }
-#left-number {
-  left: 40vh;
-  font-size: 26px; 
+
+#tx-parcels .tx-parcels__statistic--left {
+  left: 18vw;
 }
-#right-number {
-  left: 107vh;
-  font-size: 26px; 
+
+#tx-parcels .tx-parcels__statistic--right {
+  left: 60vw;
 }

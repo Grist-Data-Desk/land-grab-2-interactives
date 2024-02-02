@@ -42,7 +42,9 @@ const main = async () => {
     { directory: 'processed', name: 'tribe-parcel-links' },
     { directory: 'processed', name: 'parcel-centroids-rewound' },
     { directory: 'raw', name: 'states' },
+    { directory: 'raw', name: 'texas' },
     { directory: 'raw', name: 'tribes' },
+    { directory: 'raw', name: 'tx-viz-parcels' },
     { directory: 'raw', name: 'universities' },
     { directory: 'raw', name: 'us' },
     { directory: 'raw', name: 'wa-trust-lands' }
