@@ -1,0 +1,44 @@
+article {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin-top: 18px;
+  font-family: "GT Super Display", serif;
+  font-size: 20px;
+  word-spacing: 0px;
+  line-height: 30px;
+}
+
+hr {
+  margin: 60px 0;
+}
+
+.collage__container {
+  position: relative;
+}
+
+.collage__overlay {
+  opacity: 1;
+  position: absolute;
+  inset: 0;
+}
+
+.collage__overlay--nmsu {
+  background: rgba(137, 52, 18, 0.46);
+}
+
+.collage__overlay--wsu {
+  background: rgba(71, 96, 57, 0.46);
+}
+
+.collage__overlay--uminn {
+  background: rgba(217, 172, 74, 0.46);
+}
