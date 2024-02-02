@@ -1,0 +1,163 @@
+#video-topper {
+  position: relative;
+  width: 100vw;
+  height: 200vh;
+  max-width: none;
+  margin-left: calc((50vw - 50%) * -1);
+}
+
+#video-topper .video-topper__video-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#video-topper .video-topper__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 65%;
+}
+
+@media (min-width: 768px) {
+  #video-topper .video-topper__video {
+    object-position: 60%;
+  }
+}
+
+@media (min-width: 1280px) {
+  #video-topper .video-topper__video {
+    object-position: 35%;
+  }
+}
+
+#video-topper .video-topper__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background-color: rgba(68, 46, 3, 0.3);
+  opacity: 1;
+}
+
+#video-topper .video-topper__trigger {
+  position: absolute;
+  top: 100vh;
+  height: 100vh;
+  width: 100%;
+}
+
+#video-topper .video-topper__title-container {
+  position: absolute;
+  left: 5vw;
+  bottom: 110vh;
+  max-width: 90vw;
+}
+
+#video-topper .video-topper__title {
+  font-family: "GT Super Display", serif;
+  color: #d9ac4a;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  max-width: 85%;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+@media (min-width: 768px) {
+  #video-topper .video-topper__title {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  #video-topper .video-topper__title {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1280px) {
+  #video-topper .video-topper__title {
+    margin-bottom: 2rem;
+    font-size: 4.5rem;
+  }
+}
+
+#video-topper .video-topper__subtitle {
+  font-family: "GT Super Display", serif;
+  color: #f0f0f0;
+  font-weight: 300;
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+
+@media (min-width: 768px) {
+  #video-topper .video-topper__subtitle {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #video-topper .video-topper__subtitle {
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 1280px) {
+  #video-topper .video-topper__subtitle {
+    font-size: 2.75rem;
+    line-height: 4rem;
+  }
+}
+
+#video-topper .video-topper__header {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+  z-index: 10;
+  padding-top: 2rem;
+}
+
+#video-topper .video-topper__home-link {
+  color: #f0f0f0;
+}
+
+#video-topper .video-topper__announcement {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#video-topper .video-topper__logo {
+  height: 100%;
+}
+
+#video-topper-byline.video-topper__byline {
+  margin-left: 0;
+  font-weight: 700;
+  font-family: "Basis Grotesque", sans-serif;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 1024px) {
+  #video-topper-byline.video-topper__byline {
+    margin-left: calc((50vw - 50%) * -1 + 2rem);
+  }
+}
