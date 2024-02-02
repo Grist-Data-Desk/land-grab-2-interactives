@@ -1,0 +1,264 @@
+/***********************************************
+ * Video Topper.
+ ***********************************************/
+.page__topper {
+  display: none;
+}
+
+.article {
+  margin-top: 0 !important;
+}
+
+/***********************************************
+ * Special Project Template.
+ ***********************************************/
+@media (min-width: 1440px) {
+  .single-gristspecialproject .article__content {
+    margin-left: calc(300px + 3vw);
+    margin-right: calc(300px + 3vw);
+  }
+}
+
+/***********************************************
+ * Article Meta.
+ ***********************************************/
+aside.article-meta {
+  margin-top: 8vmin;
+}
+
+@media (max-width: 1439px) and (min-width: 1200px) {
+  aside.article-meta {
+    margin-top: 6vmin;
+  }
+}
+
+@media (min-width: 1440px) {
+  aside.article-meta {
+    top: 200vh;
+  }
+}
+
+/***********************************************
+ * Block Images.
+ ***********************************************/
+.wp-block-image {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+@media (min-width: 768px) {
+  .wp-block-image {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+/***********************************************
+ * Callouts.
+ ***********************************************/
+:root {
+  --color-lgii-gold: #d9ac4a;
+}
+
+.lgii-callout {
+  position: relative;
+  border: 2px solid var(--color-lgii-gold);
+  padding: 1.5rem;
+  margin: 18px 0;
+  font-family:
+    Basis Grotesque Pro,
+    'Open Sans',
+    Helvetica,
+    sans-serif !important;
+}
+
+@media (min-width: 612px) {
+  .lgii-callout {
+    float: left;
+    margin-left: 0;
+    margin-right: 36px;
+    width: 490px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lgii-callout {
+    margin-left: 2rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lgii-callout {
+    margin-left: 6rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .lgii-callout {
+    margin-left: -8rem;
+  }
+}
+
+.lgii-callout__title {
+  color: var(--color-lgii-gold);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.lgii-callout__title--center {
+  text-align: center;
+}
+
+@media (min-width: 612px) {
+  .lgii-callout__title.lgii-callout__title--center {
+    text-align: left;
+  }
+}
+
+.lgii-callout__toc {
+  position: relative;
+  padding-left: 1rem !important;
+}
+
+@media (min-width: 768px) {
+  .lgii-callout__toc {
+    padding-left: 2.5rem !important;
+  }
+}
+
+.lgii-callout__toc::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 95%;
+  bottom: 0px;
+  transform: translateY(-32px);
+  border: 1.5px solid var(--color-lgii-gold);
+}
+
+.lgii-callout__toc-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 1rem !important;
+  padding-left: 0 !important;
+}
+
+.lgii-callout__toc-item::before {
+  content: '' !important;
+  display: block;
+  position: relative !important;
+  flex-shrink: 0;
+  width: 3rem;
+  top: 0rem !important;
+  border: 1.5px solid var(--color-lgii-gold);
+}
+
+.lgii-callout__toc-item > *:first-child {
+  flex-shrink: 0;
+}
+
+.lgii-callout__toc-item-thumbnail {
+  aspect-ratio: 16 / 9;
+  width: 7rem;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.lgii-callout__toc-item-link {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  border: 0 !important;
+}
+
+@media (min-width: 612px) {
+  .lgii-callout__toc-item-link {
+    font-size: 1rem;
+  }
+}
+
+.lgii-callout__text {
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media (min-width: 612px) {
+  .lgii-callout__text {
+    text-align: left;
+  }
+}
+
+.lgii-callout__university-list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 612px) {
+  .lgii-callout__university-list {
+    max-height: 180px;
+    flex-wrap: wrap;
+  }
+
+  .lgii-callout__university-list > * {
+    flex: 1 1 25px;
+  }
+}
+
+.lgii-callout__university {
+  padding-left: 0 !important;
+  margin-top: 0 !important;
+  color: #442e0380;
+  font-size: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 612px) {
+  .lgii-callout__university {
+    text-align: left;
+    padding-right: 1rem;
+  }
+}
+
+.lgii-callout__university::before {
+  content: '' !important;
+}
+
+/***********************************************
+ * Collages.
+ ***********************************************/
+.collage__container {
+  position: relative;
+}
+
+.collage__overlay {
+  opacity: 1;
+  position: absolute;
+  inset: 0;
+}
+
+.collage__overlay--nmsu {
+  background: rgba(137, 52, 18, 0.46);
+}
+
+.collage__overlay--wsu {
+  background: rgba(71, 96, 57, 0.46);
+}
+
+.collage__overlay--uminn {
+  background: rgba(217, 172, 74, 0.46);
+}
+
+/***********************************************
+ * Credits.
+ ***********************************************/
+.credits-block {
+  margin-top: 60px;
+}
+
+@media (max-width: 480px) {
+  .credits-block {
+    margin-top: 36px;
+  }
+}
