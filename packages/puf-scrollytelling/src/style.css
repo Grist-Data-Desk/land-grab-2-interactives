@@ -1,52 +1,43 @@
 #puf-scrolly {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
-  margin-top: 18px;
-  overflow: auto;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  height: 81.4vw; /* Calculated based on the aspect-ratio of the PUF graphics. */
-}
-
-@media (min-width: 612px) {
-  #puf-scrolly {
-    height: 488px;
-  }
-}
-
-#puf-scrolly article {
-  position: relative;
+  width: 100%;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
-}
-
-@media (min-width: 612px) {
-  #puf-scrolly article {
-    width: 600px;
-  }
 }
 
 #puf-scrolly .puf-img-container {
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-
-#puf-scrolly .puf-step__graphic {
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transition: opacity 0.7s cubic-bezier(0, 0, 0.2, 1);
+  inset: 0;
 }
 
-#puf-scrolly .puf-step__graphic--active {
+#puf-scrolly .puf-img-container__frame {
+  position: sticky;
+  top: 25vh;
+  bottom: 0;
+  width: 100%;
+  height: 50vh;
+}
+
+#puf-scrolly .puf-img-container__cell {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+#puf-scrolly .puf-img-container__cell--active {
   opacity: 1;
 }
 
-#puf-scrolly .puf-step {
-  height: 75vh;
+#puf-scrolly .puf-img-container__cell img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.puf-step {
+  height: 100vh;
+  width: 100%;
 }
