@@ -1,20 +1,51 @@
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+body, html { 
+  margin: 0; 
+  padding: 0; 
+  height: 100%; 
+  overflow-x: hidden; 
 }
-
-#controls {
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
+.scroll-container { 
+  overflow-y: auto; 
+  position: relative; 
+  width: 100%;
 }
-
-canvas {
-  border: 1px solid black;
+#map-container { 
+  height: 100vh; 
+  width: 100%;
+  position: relative; 
+  pointer-events: none;
+}
+#title, #subtitle, #left-number, #right-number {
+    position: absolute;
+    left: 20vh; 
+    color: #3c3830; 
+}
+#title {
+    top: 5px;
+    font-size: 36px; 
+    font-family: 'PolySans';
+}
+#subtitle {
+    position: relative;
+    top: 55px; 
+    bottom: 50px;
+    font-size: 24px; 
+    font-family: 'Basis Grotesque Pro';
+}
+#left-number, #right-number {
+    font-size: 30px; 
+    opacity: 0; 
+    top: 46vh;
+    font-family: 'Basis Grotesque Pro';
+    font-weight: 600;
+    color: #f0f0f0;
+    z-index: 1000;
+}
+#left-number {
+  left: 40vh;
+  font-size: 26px; 
+}
+#right-number {
+  left: 107vh;
+  font-size: 26px; 
 }
