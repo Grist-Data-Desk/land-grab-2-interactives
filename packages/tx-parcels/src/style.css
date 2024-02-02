@@ -35,17 +35,17 @@ body, html {
 #left-number, #right-number {
     font-size: 30px; 
     opacity: 0; 
-    top: 54vh;
+    top: 46vh;
     font-family: 'Basis Grotesque Pro';
     font-weight: 600;
     color: #f0f0f0;
     z-index: 1000;
 }
 #left-number {
-  left: 49vh;
-  font-size: 24px; 
+  left: 40vh;
+  font-size: 26px; 
 }
 #right-number {
-  left: 119vh;
-  font-size: 24px; 
+  left: 107vh;
+  font-size: 26px; 
 }

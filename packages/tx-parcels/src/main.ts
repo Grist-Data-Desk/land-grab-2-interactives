@@ -12,11 +12,12 @@ interface FeatureProperties {
 }
 
 const projection = d3.geoAlbers();
-let projectedData;
 const project = (coord) => {
   const [x, y] = projection(coord) || [0, 0];
   return [x, y];
 };
+
+let projectedData;
 
 function transformGeoJsonToCartesian(geoJsonData) {
   const transformGeometry = (geometry) => {
@@ -61,8 +62,8 @@ let deck: deck;
 function initializeDeck(usGeoJson: FeatureCollection, texasGeoJson: FeatureCollection) {
   deck = new Deck({
     initialViewState: {
-      target: [530, 230, 0],
-      zoom: 0.39
+      target: [510, 230, 0],
+      zoom: 0.5
     },
     views: new OrthographicView({
       controller: true
@@ -72,7 +73,7 @@ function initializeDeck(usGeoJson: FeatureCollection, texasGeoJson: FeatureColle
     parent: document.getElementById('map-container')
   });
 
-  fetch('/parcels-rewound-translated.geojson')
+  fetch('/updated-parcels.geojson')
   .then(response => response.json())
   .then(geojsonData => {
     projectedData = transformGeoJsonToCartesian(geojsonData);
@@ -94,19 +95,28 @@ function calculateCentroid(geometry: GeoJSON.Polygon): { x: number, y: number } 
   return { x: x / totalPoints, y: y / totalPoints };
 }
 
-function translatePolygon(geometry: GeoJSON.Polygon, newCentroid: { x: number, y: number }): GeoJSON.Polygon {
+function translateAndScalePolygon(geometry: GeoJSON.Polygon, newCentroid: { x: number, y: number }, scale: number): GeoJSON.Polygon {
   const oldCentroid = calculateCentroid(geometry);
   const dx = newCentroid.x - oldCentroid.x;
   const dy = newCentroid.y - oldCentroid.y;
 
   const newCoordinates = geometry.coordinates.map(ring => 
-    ring.map(point => [point[0] + dx, point[1] + dy])
+    ring.map(point => [
+      (point[0] - oldCentroid.x) * scale + oldCentroid.x + dx,
+      (point[1] - oldCentroid.y) * scale + oldCentroid.y + dy
+    ])
   );
 
   return { ...geometry, type: 'Polygon', coordinates: newCoordinates };
 }
 
+let t = 0;
+let growthFactor = 7;
+
 function getInterpolatedData(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>, t: number): GeoJSON.Feature<GeoJSON.Polygon, FeatureProperties>[] {
+  const scalingFactor = 10;
+  const scale = 1 + (scalingFactor * Math.pow(t, growthFactor));
+
   return data.features.map(feature => {
     const geometry = feature.geometry as GeoJSON.Polygon;
 
@@ -124,23 +134,23 @@ function getInterpolatedData(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
 
     return {
       ...feature,
-      geometry: translatePolygon(geometry, interpolatedCentroid)
+      geometry: translateAndScalePolygon(geometry, interpolatedCentroid, scale)
     };
   });
 }
 
 function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>, usGeoJson: FeatureCollection, texasGeoJson: FeatureCollection) {
   let lastTime = Date.now();
-  let t = 0; 
   let direction = 1; 
   const animationDuration = 10000;
-  const pauseDuration = 2000; 
+  const pauseDuration = 3000; 
   let isPaused = false;
   let pauseStartTime = 0;
+  let o;
 
   const circleCenters = [
-    { position: [-110.14, 38.00], color: [236, 108, 55, 128] }, 
-    { position: [-83.48, 38.75], color: [47, 47, 45, 128] }
+    { position: [-82.5, 40.50], color: [236, 108, 55, 128] }, 
+    { position: [-110.25, 40.50], color: [47, 47, 45, 128] }
   ];
 
   function animate() {
@@ -162,10 +172,11 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
         isPaused = true;
         pauseStartTime = currentTime;
       }
-
-      const maxRadii = [200, 300]; 
+      
+      const rc = 260;
+      const rf = 1.05;
+      const maxRadii = [rc*rf, rc]; 
       const minRadius = 1;
-      const growthFactor = 7;
 
       function transformCircleData(circleData) {
         return circleData.map(data => {
@@ -194,7 +205,7 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
         });
       });
 
-      const o = 1 - Math.pow(t, growthFactor);
+      o = 1 - Math.pow(t, growthFactor);
       document.getElementById('left-number').style.opacity = `${1 - o}`;
       document.getElementById('right-number').style.opacity = `${1 - o}`;
 
@@ -204,7 +215,7 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
         coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
         stroked: true,
         filled: false,
-        lineWidthMinPixels: 1.5,
+        lineWidthMinPixels: 1,
         getLineColor: [47, 47, 45, o * 255],
         getFillColor: [240, 240, 240, o * 255 / 2]
       });
@@ -217,31 +228,50 @@ function initializeAnimation(data: GeoJSON.FeatureCollection<GeoJSON.Polygon, Fe
         filled: true,
         lineWidthMinPixels: 1.5,
         getLineColor: [236, 108, 55, o * 255],
-        getFillColor: [236, 108, 55, o * 255 / 2]
+        getFillColor: [236, 108, 55, o * 255 / 4]
       });
 
       const interpolatedData = getInterpolatedData(projectedData, t);
-      updateDeck(interpolatedData, circleLayers, usOutlineLayer, texasOutlineLayer);
+      updateDeck(
+        interpolatedData,
+        circleLayers,
+        usOutlineLayer,
+        texasOutlineLayer);
     }
   }
 
-  function updateDeck(interpolatedData, circleLayers, usOutlineLayer, texasOutlineLayer) {
-    deck.setProps({
-      layers: [
-        new GeoJsonLayer({
-          id: 'geojson-layer',
-          data: { type: 'FeatureCollection', features: interpolatedData },
-          coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
-          filled: true,
-          stroked: true,
-          getFillColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
-          lineWidthMinPixels: 1,
-          getLineColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
-        }),
-        [...circleLayers, usOutlineLayer, texasOutlineLayer]
-      ]
-    });
-  }
+  function updateDeck(
+    interpolatedData,
+    circleLayers,
+    usOutlineLayer,
+    texasOutlineLayer) {
+      const strokeOpacity = 1 - Math.pow(t, growthFactor);
+      const lineWidth = strokeOpacity;
+      deck.setProps({
+        layers: [
+          new GeoJsonLayer({
+            id: 'geojson-layer',
+            data: { type: 'FeatureCollection', features: interpolatedData },
+            coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
+            filled: true,
+            stroked: true,
+            getFillColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
+            lineWidthMinPixels: lineWidth,
+            getLineColor: (feature: any) => feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
+            getLineWidth: lineWidth,
+            updateTriggers: {
+              getLineWidth: [t],
+              lineWidthMinPixels: [t]
+            }
+          }),
+          [
+            ...circleLayers,
+            usOutlineLayer,
+            texasOutlineLayer
+          ]
+        ]
+      });
+    }
 
   animate();
 }
