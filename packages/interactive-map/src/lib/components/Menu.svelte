@@ -133,7 +133,8 @@
   class="stack stack-sm md:stack-md border-earth bg-smog text-earth z-10 border p-4 shadow-md md:absolute md:left-8 md:top-8 md:w-[23rem] md:rounded md:px-4 md:py-6"
 >
   <h2
-    class="border-earth md:text-headline flex items-baseline justify-center border-b border-dotted pb-2 text-center font-serif text-xl font-black md:flex-col md:items-center md:pb-4"
+    class="border-earth md:text-headline flex items-baseline justify-center border-b border-dotted pb-2 text-center font-serif text-lg font-black tracking-normal sm:text-xl md:flex-col md:items-center md:pb-4"
+    style="word-spacing: normal;"
   >
     Indigenous Land
     <span

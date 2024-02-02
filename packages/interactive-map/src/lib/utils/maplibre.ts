@@ -45,7 +45,7 @@ const renderLARPopup =
               stroke-width="1"
             />
           </svg>
-          <p class="text-base text-earth align-left font-bold">
+          <p class="text-base text-earth align-left font-bold m-0">
             ${LARNAME.replace('LAR', 'Land Area')}
           </p>
         </div>`
