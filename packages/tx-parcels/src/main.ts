@@ -29,6 +29,16 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 let deck: typeof Deck;
 
+function getScaleTransform() {
+  if (window.matchMedia("(min-width: 1024px)").matches) {
+    return "scale(1)";
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+    return "scale(0.8)";
+  }
+
+  return "scale(0.45)";
+}
+
 /**
  * Initialze the deck.gl instance with the given GeoJSON data.
  *
@@ -41,8 +51,8 @@ function initializeDeck(
 ): void {
   deck = new Deck({
     initialViewState: {
-      target: [510, 230, 0],
-      zoom: 0.5,
+      target: [487.5, 305, 0],
+      zoom: 0,
     },
     views: new OrthographicView({
       controller: true,
@@ -50,6 +60,12 @@ function initializeDeck(
     controller: true,
     layers: [],
     parent: document.getElementById("tx-parcels"),
+    height: 610,
+    width: 975,
+    style: {
+      position: "relative",
+      transform: getScaleTransform(),
+    },
   });
 
   fetch(`/tx-viz-parcels-smol-albers.geojson`)
@@ -163,7 +179,7 @@ const circleCenters: [CircleCenter, CircleCenter] = [
     label: "4.0 million acres",
   },
 ];
-const rc = 260;
+const rc = 185;
 const rf = 1.05;
 const maxRadii = [rc * rf, rc];
 const minRadius = 1;
