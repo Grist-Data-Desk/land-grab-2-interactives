@@ -68,15 +68,21 @@ h6 {
 #video-topper .video-topper__title-container {
   position: absolute;
   left: 5vw;
-  bottom: 110vh;
+  bottom: 105vh;
   max-width: 90vw;
+}
+
+@media (min-width: 768px) {
+  #video-topper .video-topper__title-container {
+    bottom: 110vh;
+  }
 }
 
 #video-topper .video-topper__title {
   font-family: "GT Super Display", serif;
   color: #d9ac4a;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 3.75rem;
+  line-height: 1;
   margin: 0;
   margin-bottom: 1rem;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -87,7 +93,7 @@ h6 {
 
 @media (min-width: 768px) {
   #video-topper .video-topper__title {
-    font-size: 3.75rem;
+    font-size: 4.5rem;
     line-height: 1;
   }
 }
@@ -101,7 +107,7 @@ h6 {
 @media (min-width: 1280px) {
   #video-topper .video-topper__title {
     margin-bottom: 2rem;
-    font-size: 4.5rem;
+    font-size: 6rem;
   }
 }
 
