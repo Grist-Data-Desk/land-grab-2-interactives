@@ -26,7 +26,18 @@
 				class="activity-map-filters__radio-input"
 				on:change={onCategoryChange}
 			/>
-			<label for="{id}-radio" class="activity-map-filters__radio-label">{activity.label}</label>
+			<label
+				for="{id}-radio"
+				class="activity-map-filters__radio-label"
+				class:activity-map-filters__radio-label--fossilFuels={activity.label === 'Fossil Fuels'}
+				class:activity-map-filters__radio-label--mining={activity.label === 'Mining'}
+				class:activity-map-filters__radio-label--timber={activity.label === 'Timber'}
+				class:activity-map-filters__radio-label--grazing={activity.label === 'Grazing'}
+				class:activity-map-filters__radio-label--infrastructure={activity.label ===
+					'Infrastructure'}
+				class:activity-map-filters__radio-label--renewables={activity.label === 'Renewables'}
+				>{activity.label}</label
+			>
 		</div>
 	{/each}
 </div>
@@ -72,8 +83,6 @@
 	@media (min-width: 768px) {
 		.activity-map-filters__container {
 			grid-template-columns: repeat(6, minmax(0, 1fr));
-			font-size: 1rem;
-			line-height: 1.5rem;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -81,6 +90,13 @@
 		.activity-map-filters__container::after {
 			height: 100%;
 			width: 16.6666667%;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.activity-map-filters__container {
+			font-size: 1rem;
+			line-height: 1.5rem;
 		}
 	}
 
@@ -134,7 +150,6 @@
 	}
 
 	.activity-map-filters__radio-input {
-		pointer-events: none;
 		position: absolute;
 		margin-right: 0.25rem;
 		opacity: 0;
@@ -152,5 +167,34 @@
 		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-duration: 150ms;
+	}
+
+	.activity-map-filters__radio-label:hover {
+		cursor: pointer;
+		color: var(--grist-color-smog);
+	}
+
+	.activity-map-filters__radio-label--fossilFuels:hover {
+		background-color: var(--grist-color-earth);
+	}
+
+	.activity-map-filters__radio-label--mining:hover {
+		background-color: var(--lgu-ii-color-gold);
+	}
+
+	.activity-map-filters__radio-label--timber:hover {
+		background-color: var(--lgu-ii-color-green);
+	}
+
+	.activity-map-filters__radio-label--grazing:hover {
+		background-color: var(--lgu-ii-color-pale-green);
+	}
+
+	.activity-map-filters__radio-label--infrastructure:hover {
+		background-color: var(--lgu-ii-color-gray);
+	}
+
+	.activity-map-filters__radio-label--renewables:hover {
+		background-color: var(--lgu-ii-color-orange);
 	}
 </style>
