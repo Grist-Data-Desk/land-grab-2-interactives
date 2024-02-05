@@ -28,22 +28,3 @@
   line-height: 2rem;
   font-family: "Basis Grotesque Pro", sans-serif;
 }
-
-#tx-parcels .tx-parcels__statistic {
-  position: absolute;
-  top: 46vh;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-family: "Basis Grotesque Pro", sans-serif;
-  font-weight: 600;
-  color: #f0f0f0;
-  z-index: 10;
-}
-
-#tx-parcels .tx-parcels__statistic--left {
-  left: 18vw;
-}
-
-#tx-parcels .tx-parcels__statistic--right {
-  left: 60vw;
-}

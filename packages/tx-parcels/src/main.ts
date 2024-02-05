@@ -1,5 +1,5 @@
 import { Deck, OrthographicView, COORDINATE_SYSTEM } from "@deck.gl/core";
-import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
+import { GeoJsonLayer, ScatterplotLayer, TextLayer } from "@deck.gl/layers";
 import { interpolateNumber } from "d3-interpolate";
 import type { FeatureCollection, Feature, Polygon } from "geojson";
 
@@ -148,16 +148,19 @@ const pauseDuration = 3000;
 interface CircleCenter {
   position: [number, number];
   color: [number, number, number, number];
+  label: string;
 }
 
 const circleCenters: [CircleCenter, CircleCenter] = [
   {
     position: [678.0619817594988, 202.62415589521095] /* [-82.5, 40.5] */,
     color: [236, 108, 55, 128],
+    label: "4.2 million acres",
   },
   {
     position: [288.8132830943682, 201.08834423151688] /* [-110.25, 40.5] */,
     color: [47, 47, 45, 128],
+    label: "4.0 million acres",
   },
 ];
 const rc = 260;
@@ -218,8 +221,21 @@ function initializeAnimation(
       });
 
       o = 1 - Math.pow(t, growthFactor);
-      document.getElementById("left-number")!.style.opacity = `${1 - o}`;
-      document.getElementById("right-number")!.style.opacity = `${1 - o}`;
+
+      const circleTextLayer = new TextLayer({
+        id: "circle-text-layer",
+        data: circleCenters,
+        characterSet: "auto",
+        fontFamily: '"Basis Grotesque Pro", sans-serif',
+        fontSettings: {
+          buffer: 8,
+        },
+        getText: (d: CircleCenter) => d.label,
+        getPosition: (d: CircleCenter) => d.position,
+        getColor: [255, 255, 255, (1 - o) * 255],
+        getSize: 32,
+        maxWidth: 64 * 12,
+      });
 
       const usOutlineLayer = new GeoJsonLayer({
         id: "us-outline-layer",
@@ -247,6 +263,7 @@ function initializeAnimation(
       updateDeck({
         interpolatedData,
         circleLayers,
+        circleTextLayer,
         usOutlineLayer,
         texasOutlineLayer,
       });
@@ -256,6 +273,7 @@ function initializeAnimation(
   interface UpdateDeckParams {
     interpolatedData: Feature<Polygon, FeatureProperties>[];
     circleLayers: (typeof ScatterplotLayer)[];
+    circleTextLayer: typeof TextLayer;
     usOutlineLayer: typeof GeoJsonLayer;
     texasOutlineLayer: typeof GeoJsonLayer;
   }
@@ -263,6 +281,7 @@ function initializeAnimation(
   function updateDeck({
     interpolatedData,
     circleLayers,
+    circleTextLayer,
     usOutlineLayer,
     texasOutlineLayer,
   }: UpdateDeckParams): void {
@@ -287,7 +306,7 @@ function initializeAnimation(
             lineWidthMinPixels: [t],
           },
         }),
-        [...circleLayers, usOutlineLayer, texasOutlineLayer],
+        [...circleLayers, circleTextLayer, usOutlineLayer, texasOutlineLayer],
       ],
     });
   }
