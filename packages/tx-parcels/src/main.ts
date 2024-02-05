@@ -68,7 +68,7 @@ function initializeDeck(
     },
   });
 
-  fetch(`/tx-viz-parcels-smol-albers.geojson`)
+  fetch(`${DO_SPACES_URL}/geojson/tx-viz-parcels-smol-albers.geojson`)
     .then((response) => response.json())
     .then((geoJSON) => {
       projectedData = geoJSON;
