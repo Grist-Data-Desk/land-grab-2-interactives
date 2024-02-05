@@ -1,10 +1,7 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Deck, OrthographicView, COORDINATE_SYSTEM } from "@deck.gl/core";
 import { GeoJsonLayer, ScatterplotLayer } from "@deck.gl/layers";
-import * as d3 from "d3-geo";
 import { interpolateNumber } from "d3-interpolate";
-// eslint-disable-next-line import/no-unresolved
-import { FeatureCollection, Geometry, Feature, Polygon } from "geojson";
+import type { FeatureCollection, Feature, Polygon } from "geojson";
 
 const DO_SPACES_URL =
   "https://grist.nyc3.cdn.digitaloceanspaces.com/land-grab-ii/dev/data";
@@ -13,77 +10,35 @@ interface FeatureProperties {
   final_lon: number;
   final_lat: number;
   state: string;
+  centroid: [number, number];
 }
 
-const projection = d3.geoAlbers();
-const project = (coord: [number, number]) => {
-  const [x, y] = projection(coord) || [0, 0];
-  return [x, y];
-};
-
-// @ts-ignore
-let projectedData;
-
-function transformGeoJsonToCartesian(geoJsonData: FeatureCollection) {
-  const transformGeometry = (geometry: Geometry) => {
-    switch (geometry.type) {
-      case "Point":
-        // @ts-ignore
-        return { ...geometry, coordinates: project(geometry.coordinates) };
-      case "MultiPoint":
-      case "LineString":
-        // @ts-ignore
-        return { ...geometry, coordinates: geometry.coordinates.map(project) };
-      case "MultiLineString":
-      case "Polygon":
-        return {
-          ...geometry,
-          // @ts-ignore
-          coordinates: geometry.coordinates.map((ring) => ring.map(project)),
-        };
-      case "MultiPolygon":
-        return {
-          ...geometry,
-          coordinates: geometry.coordinates.map((polygon) =>
-            // @ts-ignore
-            polygon.map((ring) => ring.map(project))
-          ),
-        };
-      default:
-        return geometry;
-    }
-  };
-
-  return {
-    ...geoJsonData,
-    features: geoJsonData.features.map((feature) => ({
-      ...feature,
-      geometry: transformGeometry(feature.geometry),
-    })),
-  };
-}
+let projectedData: FeatureCollection<Polygon, FeatureProperties>;
 
 document.addEventListener("DOMContentLoaded", async () => {
-  let usGeoJson = (await fetch(`${DO_SPACES_URL}/geojson/us.geojson`).then(
-    (res) => res.json()
-  )) as FeatureCollection;
-
-  let texasGeoJson = (await fetch(
-    `${DO_SPACES_URL}/geojson/texas.geojson`
+  const usGeoJson = (await fetch(
+    `${DO_SPACES_URL}/geojson/us-albers.geojson`
   ).then((res) => res.json())) as FeatureCollection;
 
-  usGeoJson = transformGeoJsonToCartesian(usGeoJson);
-  texasGeoJson = transformGeoJsonToCartesian(texasGeoJson);
+  const texasGeoJson = (await fetch(
+    `${DO_SPACES_URL}/geojson/texas-albers.geojson`
+  ).then((res) => res.json())) as FeatureCollection;
 
   initializeDeck(usGeoJson, texasGeoJson);
 });
 
-// @ts-ignore
-let deck: deck;
+let deck: typeof Deck;
+
+/**
+ * Initialze the deck.gl instance with the given GeoJSON data.
+ *
+ * @param usGeoJson – The GeoJSON data for the US outline.
+ * @param texasGeoJson – The GeoJSON data for the Texas outline.
+ */
 function initializeDeck(
   usGeoJson: FeatureCollection,
   texasGeoJson: FeatureCollection
-) {
+): void {
   deck = new Deck({
     initialViewState: {
       target: [510, 230, 0],
@@ -97,108 +52,138 @@ function initializeDeck(
     parent: document.getElementById("tx-parcels"),
   });
 
-  fetch(`${DO_SPACES_URL}/geojson/tx-viz-parcels.geojson`)
+  fetch(`/tx-viz-parcels-smol-albers.geojson`)
     .then((response) => response.json())
-    .then((geojsonData) => {
-      projectedData = transformGeoJsonToCartesian(geojsonData);
+    .then((geoJSON) => {
+      projectedData = geoJSON;
 
       initializeAnimation(usGeoJson, texasGeoJson);
     });
 }
 
-function calculateCentroid(geometry: GeoJSON.Polygon): {
-  x: number;
-  y: number;
-} {
-  let x = 0,
-    y = 0,
-    totalPoints = 0;
-
-  for (const ring of geometry.coordinates) {
-    for (const point of ring) {
-      x += point[0];
-      y += point[1];
-      totalPoints += 1;
-    }
-  }
-
-  return { x: x / totalPoints, y: y / totalPoints };
+interface TranslateAndScalePolygonParams {
+  geometry: Polygon;
+  centroid: [number, number];
+  interpolatedCentroid: readonly [number, number];
+  scale: number;
 }
 
-function translateAndScalePolygon(
-  geometry: GeoJSON.Polygon,
-  newCentroid: { x: number; y: number },
-  scale: number
-): GeoJSON.Polygon {
-  const oldCentroid = calculateCentroid(geometry);
-  const dx = newCentroid.x - oldCentroid.x;
-  const dy = newCentroid.y - oldCentroid.y;
+/**
+ * Translate and scale a given parcel based on the current animation frame.
+ *
+ * @param geometry — The parcel geometry.
+ * @param centroid — The centroid of the parcel.
+ * @param interpolatedCentroid — The interpolated centroid of the parcel in the
+ * current animation frame.
+ * @param scale — The scale factor to apply to the parcel.
+ * @returns – The translated and scaled parcel geometry.
+ */
+function translateAndScalePolygon({
+  geometry,
+  centroid,
+  interpolatedCentroid,
+  scale,
+}: TranslateAndScalePolygonParams): Polygon {
+  const [origX, origY] = centroid;
+  const [interpolatedX, interpolatedY] = interpolatedCentroid;
+  const dx = interpolatedX - origX;
+  const dy = interpolatedY - origY;
 
-  const newCoordinates = geometry.coordinates.map((ring) =>
+  const interpolatedCoordinates = geometry.coordinates.map((ring) =>
     ring.map((point) => [
-      (point[0] - oldCentroid.x) * scale + oldCentroid.x + dx,
-      (point[1] - oldCentroid.y) * scale + oldCentroid.y + dy,
+      (point[0] - origX) * scale + origX + dx,
+      (point[1] - origY) * scale + origY + dy,
     ])
   );
 
-  return { ...geometry, type: "Polygon", coordinates: newCoordinates };
+  return { ...geometry, type: "Polygon", coordinates: interpolatedCoordinates };
 }
 
 let t = 0;
 const growthFactor = 7;
+const scalingFactor = 10;
 
+/**
+ * Obtain a version of the parcel data interpolated to the current animation frame.
+ *
+ * @param data – The original source parcel data
+ * @param t – The current step of the animation, expressed as a number between 0 and 1.
+ * @returns — The interpolated parcel data.
+ */
 function getInterpolatedData(
-  data: GeoJSON.FeatureCollection<GeoJSON.Polygon, FeatureProperties>,
+  data: FeatureCollection<Polygon, FeatureProperties>,
   t: number
-): GeoJSON.Feature<GeoJSON.Polygon, FeatureProperties>[] {
-  const scalingFactor = 10;
+): Feature<Polygon, FeatureProperties>[] {
   const scale = 1 + scalingFactor * Math.pow(t, growthFactor);
 
   return data.features.map((feature) => {
-    const geometry = feature.geometry as GeoJSON.Polygon;
-
-    const originalCentroid = calculateCentroid(geometry);
-    const [finalX, finalY] = project([
-      feature.properties.final_lon,
-      feature.properties.final_lat,
-    ]);
-    const finalPosition = {
-      x: finalX,
-      y: finalY,
-    };
-
-    const interpolatedCentroid = {
-      x: interpolateNumber(originalCentroid.x, finalPosition.x)(t),
-      y: interpolateNumber(originalCentroid.y, finalPosition.y)(t),
-    };
+    const interpolatedCentroid = [
+      interpolateNumber(
+        feature.properties.centroid[0],
+        feature.properties.final_lon
+      )(t),
+      interpolateNumber(
+        feature.properties.centroid[1],
+        feature.properties.final_lat
+      )(t),
+    ] as const;
 
     return {
       ...feature,
-      geometry: translateAndScalePolygon(geometry, interpolatedCentroid, scale),
+      geometry: translateAndScalePolygon({
+        geometry: feature.geometry,
+        centroid: feature.properties.centroid,
+        interpolatedCentroid,
+        scale,
+      }),
     };
   });
 }
 
+// Constants for the parcel animation.
+const animationDuration = 10000;
+const pauseDuration = 3000;
+
+// Constants for the circle animation.
+interface CircleCenter {
+  position: [number, number];
+  color: [number, number, number, number];
+}
+
+const circleCenters: [CircleCenter, CircleCenter] = [
+  {
+    position: [678.0619817594988, 202.62415589521095] /* [-82.5, 40.5] */,
+    color: [236, 108, 55, 128],
+  },
+  {
+    position: [288.8132830943682, 201.08834423151688] /* [-110.25, 40.5] */,
+    color: [47, 47, 45, 128],
+  },
+];
+const rc = 260;
+const rf = 1.05;
+const maxRadii = [rc * rf, rc];
+const minRadius = 1;
+
+/**
+ * Initalize the parcel animation.
+ *
+ * @param usGeoJson – The GeoJSON data for the US outline.
+ * @param texasGeoJson – The GeoJSON data for the Texas outline.
+ */
 function initializeAnimation(
   usGeoJson: FeatureCollection,
   texasGeoJson: FeatureCollection
 ) {
-  let lastTime = Date.now();
+  let lastTime = performance.now();
   let direction = 1;
-  const animationDuration = 10000;
-  const pauseDuration = 3000;
   let isPaused = false;
   let pauseStartTime = 0;
   let o;
 
-  const circleCenters = [
-    { position: [-82.5, 40.5], color: [236, 108, 55, 128] },
-    { position: [-110.25, 40.5], color: [47, 47, 45, 128] },
-  ];
-
   function animate() {
     requestAnimationFrame(animate);
-    const currentTime = Date.now();
+    const currentTime = performance.now();
 
     if (isPaused) {
       if (currentTime - pauseStartTime > pauseDuration) {
@@ -216,33 +201,7 @@ function initializeAnimation(
         pauseStartTime = currentTime;
       }
 
-      const rc = 260;
-      const rf = 1.05;
-      const maxRadii = [rc * rf, rc];
-      const minRadius = 1;
-
-      // @ts-ignore
-      // eslint-disable-next-line no-inner-declarations
-      function transformCircleData(circleData) {
-        // @ts-ignore
-        return circleData.map((data) => {
-          const projectedPosition = projection([
-            data.position[0],
-            data.position[1],
-          ]);
-          return {
-            ...data,
-            position: projectedPosition
-              ? [projectedPosition[0], projectedPosition[1]]
-              : [0, 0],
-          };
-        });
-      }
-
-      const transformedCircleCenters = transformCircleData(circleCenters);
-
-      // @ts-ignore
-      const circleLayers = transformedCircleCenters.map((center, index) => {
+      const circleLayers = circleCenters.map((center, index) => {
         const maxRadius = maxRadii[index];
         const circleRadius =
           minRadius + (maxRadius - minRadius) * Math.pow(t, growthFactor);
@@ -251,20 +210,16 @@ function initializeAnimation(
           id: `circle-${center.position.join("-")}`,
           data: [center],
           coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
-          // @ts-ignore
-          getPosition: (d) => d.position,
-          // @ts-ignore
-          getFillColor: (d) => d.color,
+          getPosition: (d: CircleCenter) => d.position,
+          getFillColor: (d: CircleCenter) => d.color,
           radiusMinPixels: circleRadius,
           radiusMaxPixels: circleRadius,
         });
       });
 
       o = 1 - Math.pow(t, growthFactor);
-      // @ts-ignore
-      document.getElementById("left-number").style.opacity = `${1 - o}`;
-      // @ts-ignore
-      document.getElementById("right-number").style.opacity = `${1 - o}`;
+      document.getElementById("left-number")!.style.opacity = `${1 - o}`;
+      document.getElementById("right-number")!.style.opacity = `${1 - o}`;
 
       const usOutlineLayer = new GeoJsonLayer({
         id: "us-outline-layer",
@@ -288,27 +243,29 @@ function initializeAnimation(
         getFillColor: [236, 108, 55, (o * 255) / 4],
       });
 
-      // @ts-ignore
       const interpolatedData = getInterpolatedData(projectedData, t);
-      updateDeck(
+      updateDeck({
         interpolatedData,
         circleLayers,
         usOutlineLayer,
-        texasOutlineLayer
-      );
+        texasOutlineLayer,
+      });
     }
   }
 
-  function updateDeck(
-    // @ts-ignore
+  interface UpdateDeckParams {
+    interpolatedData: Feature<Polygon, FeatureProperties>[];
+    circleLayers: (typeof ScatterplotLayer)[];
+    usOutlineLayer: typeof GeoJsonLayer;
+    texasOutlineLayer: typeof GeoJsonLayer;
+  }
+
+  function updateDeck({
     interpolatedData,
-    // @ts-ignore
     circleLayers,
-    // @ts-ignore
     usOutlineLayer,
-    // @ts-ignore
-    texasOutlineLayer
-  ) {
+    texasOutlineLayer,
+  }: UpdateDeckParams): void {
     const strokeOpacity = 1 - Math.pow(t, growthFactor);
     const lineWidth = strokeOpacity;
     deck.setProps({
