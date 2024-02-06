@@ -15,6 +15,7 @@ interface FeatureProperties {
   centroid: [number, number];
 }
 
+const isTabletOrAbove = window.matchMedia("(min-width: 768px)").matches;
 let projectedData: FeatureCollection<Polygon, FeatureProperties>;
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -31,16 +32,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 let deck: typeof Deck;
 
-function getScaleTransform() {
-  if (window.matchMedia("(min-width: 1024px)").matches) {
-    return "scale(1)";
-  } else if (window.matchMedia("(min-width: 768px)").matches) {
-    return "scale(0.8)";
-  }
-
-  return "scale(0.45)";
-}
-
 /**
  * Initialze the deck.gl instance with the given GeoJSON data.
  *
@@ -53,8 +44,8 @@ function initializeDeck(
 ): void {
   deck = new Deck({
     initialViewState: {
-      target: [487.5, 305, 0],
-      zoom: 0,
+      target: isTabletOrAbove ? [487.5, 250, 0] : [487.5, 375, 0],
+      zoom: isTabletOrAbove ? 0 : -1,
     },
     views: new OrthographicView({
       controller: true,
@@ -62,11 +53,10 @@ function initializeDeck(
     controller: true,
     layers: [],
     parent: document.getElementById("tx-parcels"),
-    height: 610,
-    width: 975,
+    height: isTabletOrAbove ? 610 : 400,
+    width: isTabletOrAbove ? 975 : "100vw",
     style: {
       position: "relative",
-      transform: getScaleTransform(),
     },
   });
 
@@ -135,15 +125,13 @@ function getInterpolatedData(
   const scale = 1 + scalingFactor * Math.pow(t, growthFactor);
 
   return data.features.map((feature) => {
+    const targetCoords = isTabletOrAbove
+      ? [feature.properties.final_lon, feature.properties.final_lat]
+      : [feature.properties.final_lonv, feature.properties.final_latv];
+
     const interpolatedCentroid = [
-      interpolateNumber(
-        feature.properties.centroid[0],
-        feature.properties.final_lon
-      )(t),
-      interpolateNumber(
-        feature.properties.centroid[1],
-        feature.properties.final_lat
-      )(t),
+      interpolateNumber(feature.properties.centroid[0], targetCoords[0])(t),
+      interpolateNumber(feature.properties.centroid[1], targetCoords[1])(t),
     ] as const;
 
     return {
@@ -165,6 +153,7 @@ const pauseDuration = 3000;
 // Constants for the circle animation.
 interface CircleCenter {
   position: [number, number];
+  positionv: [number, number];
   color: [number, number, number, number];
   label: string;
 }
@@ -172,18 +161,18 @@ interface CircleCenter {
 const circleCenters: [CircleCenter, CircleCenter] = [
   {
     position: [678.0619817594988, 202.62415589521095] /* [-82.5, 40.5] */,
-    positionv: [] /* [-96.375, 42] */,
+    positionv: [483.4928925061944, 187.85068255211274] /* [-96.375, 42] */,
     color: [236, 108, 55, 128],
     label: "4.2 million acres",
   },
   {
     position: [288.8132830943682, 201.08834423151688] /* [-110.25, 40.5] */,
-    positionv: [] /* [-96.375, 21.5] */,
+    positionv: [481.9822318299906, 570.72490875931] /* [-96.375, 21.5] */,
     color: [47, 47, 45, 128],
     label: "4.0 million acres",
   },
 ];
-const rc = 185;
+const rc = isTabletOrAbove ? 185 : 92.5;
 const rf = 1.05;
 const maxRadii = [rc * rf, rc];
 const minRadius = 1;
@@ -233,7 +222,8 @@ function initializeAnimation(
           id: `circle-${center.position.join("-")}`,
           data: [center],
           coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
-          getPosition: (d: CircleCenter) => d.position,
+          getPosition: (d: CircleCenter) =>
+            isTabletOrAbove ? d.position : d.positionv,
           getFillColor: (d: CircleCenter) => d.color,
           radiusMinPixels: circleRadius,
           radiusMaxPixels: circleRadius,
@@ -251,9 +241,10 @@ function initializeAnimation(
           buffer: 8,
         },
         getText: (d: CircleCenter) => d.label,
-        getPosition: (d: CircleCenter) => d.position,
+        getPosition: (d: CircleCenter) =>
+          isTabletOrAbove ? d.position : d.positionv,
         getColor: [255, 255, 255, (1 - o) * 255],
-        getSize: 32,
+        getSize: isTabletOrAbove ? 32 : 20,
         maxWidth: 64 * 12,
       });
 
@@ -279,56 +270,38 @@ function initializeAnimation(
         getFillColor: [236, 108, 55, (o * 255) / 4],
       });
 
+      const strokeOpacity = 1 - Math.pow(t, growthFactor);
+      const lineWidth = strokeOpacity;
+
       const interpolatedData = getInterpolatedData(projectedData, t);
-      updateDeck({
-        interpolatedData,
-        circleLayers,
-        circleTextLayer,
-        usOutlineLayer,
-        texasOutlineLayer,
+      const interpolatedLayer = new GeoJsonLayer({
+        id: "geojson-layer",
+        data: { type: "FeatureCollection", features: interpolatedData },
+        coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
+        filled: true,
+        stroked: true,
+        getFillColor: (feature: Feature<Polygon, FeatureProperties>) =>
+          feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
+        lineWidthMinPixels: lineWidth,
+        getLineColor: (feature: Feature<Polygon, FeatureProperties>) =>
+          feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
+        getLineWidth: lineWidth,
+        updateTriggers: {
+          getLineWidth: [t],
+          lineWidthMinPixels: [t],
+        },
+      });
+
+      deck.setProps({
+        layers: [
+          interpolatedLayer,
+          ...circleLayers,
+          circleTextLayer,
+          usOutlineLayer,
+          texasOutlineLayer,
+        ],
       });
     }
-  }
-
-  interface UpdateDeckParams {
-    interpolatedData: Feature<Polygon, FeatureProperties>[];
-    circleLayers: (typeof ScatterplotLayer)[];
-    circleTextLayer: typeof TextLayer;
-    usOutlineLayer: typeof GeoJsonLayer;
-    texasOutlineLayer: typeof GeoJsonLayer;
-  }
-
-  function updateDeck({
-    interpolatedData,
-    circleLayers,
-    circleTextLayer,
-    usOutlineLayer,
-    texasOutlineLayer,
-  }: UpdateDeckParams): void {
-    const strokeOpacity = 1 - Math.pow(t, growthFactor);
-    const lineWidth = strokeOpacity;
-    deck.setProps({
-      layers: [
-        new GeoJsonLayer({
-          id: "geojson-layer",
-          data: { type: "FeatureCollection", features: interpolatedData },
-          coordinateSystem: COORDINATE_SYSTEM.CARTESIAN,
-          filled: true,
-          stroked: true,
-          getFillColor: (feature: Feature<Polygon, FeatureProperties>) =>
-            feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
-          lineWidthMinPixels: lineWidth,
-          getLineColor: (feature: Feature<Polygon, FeatureProperties>) =>
-            feature.properties.state === "TX" ? [236, 108, 55] : [47, 47, 45],
-          getLineWidth: lineWidth,
-          updateTriggers: {
-            getLineWidth: [t],
-            lineWidthMinPixels: [t],
-          },
-        }),
-        [...circleLayers, circleTextLayer, usOutlineLayer, texasOutlineLayer],
-      ],
-    });
   }
 
   animate();
