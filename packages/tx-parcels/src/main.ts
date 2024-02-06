@@ -9,6 +9,8 @@ const DO_SPACES_URL =
 interface FeatureProperties {
   final_lon: number;
   final_lat: number;
+  final_lonv: number;
+  final_latv: number;
   state: string;
   centroid: [number, number];
 }
@@ -170,11 +172,13 @@ interface CircleCenter {
 const circleCenters: [CircleCenter, CircleCenter] = [
   {
     position: [678.0619817594988, 202.62415589521095] /* [-82.5, 40.5] */,
+    positionv: [] /* [-96.375, 42] */,
     color: [236, 108, 55, 128],
     label: "4.2 million acres",
   },
   {
     position: [288.8132830943682, 201.08834423151688] /* [-110.25, 40.5] */,
+    positionv: [] /* [-96.375, 21.5] */,
     color: [47, 47, 45, 128],
     label: "4.0 million acres",
   },

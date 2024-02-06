@@ -55,6 +55,23 @@ def assign_final_lon_lat(geo_data, grid_points, indexes, center, transformer):
         geo_data.at[index, 'final_lon'] = translated_points_wgs84[i][0]
         geo_data.at[index, 'final_lat'] = translated_points_wgs84[i][1]
 
+def assign_final_lon_latv(geo_data, grid_points, indexes, center, transformer):
+    shuffled_indexes = list(indexes)
+    random.shuffle(shuffled_indexes)
+    
+    if len(grid_points) > len(shuffled_indexes):
+        grid_points = grid_points[:len(shuffled_indexes)]
+    elif len(grid_points) < len(shuffled_indexes):
+        extra_points = [grid_points[-1]] * (len(shuffled_indexes) - len(grid_points))
+        grid_points.extend(extra_points)
+    
+    translated_points_albers = [(x + center[0], y + center[1]) for x, y in grid_points]
+    translated_points_wgs84 = [transformer.transform(x, y) for x, y in translated_points_albers]
+    
+    for i, index in enumerate(shuffled_indexes):
+        geo_data.at[index, 'final_lonv'] = translated_points_wgs84[i][0]
+        geo_data.at[index, 'final_latv'] = translated_points_wgs84[i][1]
+
 file_path = 'parcels-rewound.geojson'
 geojson_data = gpd.read_file(file_path)
 
@@ -81,6 +98,14 @@ center_group2 = transformer_to_albers.transform(*center_group2_lonlat)
 
 assign_final_lon_lat(geojson_data, grid_points_group1, group1.index, center_group1, transformer_to_wgs84)
 assign_final_lon_lat(geojson_data, grid_points_group2, group2.index, center_group2, transformer_to_wgs84)
+
+center_group1_lonlatv = [-96.375, 42] 
+center_group2_lonlatv = [-96.375, 21.5] 
+center_group1v = transformer_to_albers.transform(*center_group1_lonlatv)
+center_group2v = transformer_to_albers.transform(*center_group2_lonlatv)
+
+assign_final_lon_latv(geojson_data, grid_points_group1, group1.index, center_group1v, transformer_to_wgs84)
+assign_final_lon_latv(geojson_data, grid_points_group2, group2.index, center_group2v, transformer_to_wgs84)
 
 geojson_data = geojson_data.to_crs("EPSG:4326")
 
