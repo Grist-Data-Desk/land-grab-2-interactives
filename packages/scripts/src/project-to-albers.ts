@@ -58,12 +58,18 @@ function transformGeoJSONToCartesian(
       feature.properties.final_lon,
       feature.properties.final_lat
     ]);
+    const [final_lonv, final_latv] = project([
+      feature.properties.final_lonv,
+      feature.properties.final_latv
+    ]);
     const centroid = calculateCentroid(geometry as Polygon);
 
     return turf.feature(geometry, {
       ...feature.properties,
       final_lon,
       final_lat,
+      final_lonv,
+      final_latv,
       centroid
     });
   });
@@ -102,7 +108,7 @@ function calculateCentroid(geometry: Polygon): Point['coordinates'] {
  * to data/processed.
  */
 const main = async () => {
-  const files = ['us', 'texas', 'tx-viz-parcels', 'tx-viz-parcels-smol'];
+  const files = ['us', 'texas', 'tx-viz-parcels-smol'];
 
   for (const file of files) {
     const inputPath = path.resolve(__dirname, `../data/raw/${file}.geojson`);
