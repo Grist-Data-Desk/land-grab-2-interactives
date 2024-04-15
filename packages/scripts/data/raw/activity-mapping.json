@@ -1,5 +1,53 @@
 [
   {
+    "sub-activity": "Coal,Oil & gas,Other Min",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil & gas,Oil and gas active lease,Other Min",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil and gas active lease,Other Min",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Oil and gas active lease,Other Min",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil and gas active lease",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Coal,Oil & gas,Oil and gas active lease",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Coal,Other Min",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal,Oil & gas",
+    "activity": "Fossil Fuels"
+  },
+  {
+    "sub-activity": "Oil & gas,Other Min",
+    "activity": "Fossil Fuels, Mining"
+  },
+  {
+    "sub-activity": "Coal",
+    "activity": "Fossil Fuels"
+  },  
+  {
+    "sub-activity": "Oil & gas",
+    "activity": "Fossil Fuels"
+  },  
+  {
+    "sub-activity": "Other Min",
+    "activity": "Mining"
+  },  
+  {
     "sub-activity": "Grazing",
     "activity": "Grazing"
   },
