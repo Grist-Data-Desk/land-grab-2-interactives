@@ -65,7 +65,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.activity-map-legend__container {
 		display: flex;
 		flex-direction: row;

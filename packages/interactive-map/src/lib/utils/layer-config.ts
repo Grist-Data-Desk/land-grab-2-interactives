@@ -176,7 +176,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
     paint: {
       'text-color': GRIST_COLORS.EARTH,
       'text-halo-color': GRIST_COLORS.SMOG,
-      'text-halo-width': 1
+      'text-halo-width': 0.5
     }
   },
   tribeParcelLinks: {
@@ -247,7 +247,7 @@ export const LAYER_CONFIG: Record<string, AddLayerObject> = {
     paint: {
       'text-color': GRIST_COLORS.EARTH,
       'text-halo-color': GRIST_COLORS.SMOG,
-      'text-halo-width': 1
+      'text-halo-width': 0.5
     }
   }
 };

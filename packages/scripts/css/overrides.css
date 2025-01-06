@@ -307,3 +307,22 @@ figcaption.wp-element-caption {
     margin-top: 36px;
   }
 }
+
+/***********************************************
+ * IFrames.
+ ***********************************************/
+.h-screen-with-appeal-bar {
+  height: calc(100vh - 47px);
+}
+
+@media (min-width: 768px) {
+  .h-screen-with-appeal-bar {
+    height: calc(100vh - 57px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .h-screen-with-appeal-bar {
+    height: calc(100vh - 66px);
+  }
+}

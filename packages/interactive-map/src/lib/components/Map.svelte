@@ -3,10 +3,13 @@
   import { onDestroy, onMount } from 'svelte';
   import * as pmtiles from 'pmtiles';
 
+  import ExpandLegend from '$lib/components/ExpandLegend.svelte';
+  import Legend from '$lib/components/Legend.svelte';
   import Menu from '$lib/components/Menu.svelte';
   import Search from '$lib/components/Search.svelte';
   import { map as mapStore } from '$lib/stores/map';
   import type { Data } from '$lib/types/data';
+  import { TABLET_BREAKPOINT } from '$lib/utils/constants';
   import {
     SOURCE_CONFIG,
     LAYER_CONFIG,
@@ -18,6 +21,9 @@
 
   let map: Map;
   let mapIdle = false;
+  let innerWidth: number;
+
+  $: isTabletOrAbove = innerWidth >= TABLET_BREAKPOINT;
 
   onMount(() => {
     const protocol = new pmtiles.Protocol();
@@ -27,8 +33,8 @@
       container: 'interactive-map',
       style: `${DO_SPACES_URL}/style/style.json`,
       center: [-105.93, 40.36],
-      zoom: 4.5,
-      minZoom: 3.5
+      zoom: isTabletOrAbove ? 4.5 : 3,
+      minZoom: 3
     });
 
     map.scrollZoom.disable();
@@ -39,7 +45,8 @@
           enableHighAccuracy: true
         },
         trackUserLocation: true
-      })
+      }),
+      'top-left'
     );
 
     let hoveredStateId: string | number | undefined;
@@ -98,12 +105,12 @@
   });
 </script>
 
-<div
-  class="full-bleed border-earth relative my-[36px] flex h-screen w-screen flex-col border-b font-sans md:my-[60px] md:h-[80vh] md:border md:border-solid"
->
+<svelte:window bind:innerWidth />
+<div id="interactive-map" class="absolute inset-0">
   {#if map && mapIdle}
-    <Menu {data} {map} />
+    <Menu {data} {map} {isTabletOrAbove} />
     <Search {map} />
+    <Legend {map} {isTabletOrAbove} />
+    <ExpandLegend />
   {/if}
-  <div id="interactive-map" class="w-full grow md:h-full" />
 </div>

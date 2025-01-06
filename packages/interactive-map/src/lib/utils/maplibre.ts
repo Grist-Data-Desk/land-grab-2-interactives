@@ -20,7 +20,7 @@ const renderLARPopup =
   (map: maplibregl.Map, larPopup: maplibregl.Popup) =>
   (
     e: maplibregl.MapMouseEvent & {
-      features?: maplibregl.GeoJSONFeature[] | undefined;
+      features?: maplibregl.MapGeoJSONFeature[] | undefined;
     }
   ): void => {
     map.getCanvas().style.cursor = 'pointer';
@@ -64,16 +64,18 @@ const renderLARPopup =
 export const createLARPopup = (map: maplibregl.Map): void => {
   const larPopup = new maplibregl.Popup({
     closeButton: false,
-    closeOnClick: false
+    closeOnClick: true
   });
 
-  map.on('mouseenter', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
-  map.on('mousemove', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
+  map.on('mouseenter', LAYER_CONFIG.lars.id, () => {
+    map.getCanvas().style.cursor = 'pointer';
+  });
 
   map.on('mouseleave', LAYER_CONFIG.lars.id, () => {
     map.getCanvas().style.cursor = '';
-    larPopup.remove();
   });
+
+  map.on('click', LAYER_CONFIG.lars.id, renderLARPopup(map, larPopup));
 };
 
 /**
@@ -86,10 +88,9 @@ const renderParcelPopup =
   (map: maplibregl.Map, parcelPopup: maplibregl.Popup) =>
   (
     e: maplibregl.MapMouseEvent & {
-      features?: maplibregl.GeoJSONFeature[] | undefined;
+      features?: maplibregl.MapGeoJSONFeature[] | undefined;
     }
   ) => {
-    console.log(e.type);
     map.getCanvas().style.cursor = 'pointer';
 
     if (e.features) {

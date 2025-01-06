@@ -58,7 +58,7 @@
 	{/if}
 </div>
 
-<style>
+<style lang="postcss">
 	.activity-map__container {
 		display: flex;
 		flex-direction: column;

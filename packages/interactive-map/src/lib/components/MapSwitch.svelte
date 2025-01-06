@@ -102,13 +102,13 @@
   };
 </script>
 
-<div class="stack stack-2xs md:stack-xs text-xs text-earth md:text-sm">
+<div class="stack stack-2xs md:stack-xs text-earth text-xs md:text-sm">
   <SectionHeading>See Connections To</SectionHeading>
   <div
-    class="radio-container relative flex w-full border border-solid border-earth"
+    class="radio-container border-earth font-sans-alt relative flex w-full border border-solid"
     class:radio-container--right={$mapEntity === 'tribes'}
   >
-    <div class="z-10 flex basis-1/2 justify-center border-r border-earth p-2">
+    <div class="border-earth z-10 flex basis-1/2 justify-center border-r p-2">
       <input
         type="radio"
         id="universities-radio"
@@ -119,7 +119,7 @@
       />
       <label
         for="universities-radio"
-        class="transition-colors peer-checked:font-bold peer-checked:text-smog"
+        class="peer-checked:text-smog transition-colors peer-checked:font-bold"
         >Universities</label
       >
     </div>
@@ -134,16 +134,16 @@
       />
       <label
         for="tribes-radio"
-        class="transition-colors peer-checked:font-bold peer-checked:text-smog"
+        class="peer-checked:text-smog transition-colors peer-checked:font-bold"
         >Indigenous Nations</label
       >
     </div>
   </div>
 </div>
 
-<style>
+<style lang="postcss">
   .radio-container::after {
-    @apply absolute left-0 top-0 z-0 h-full w-1/2 bg-earth transition-all;
+    @apply bg-earth absolute left-0 top-0 z-0 h-full w-1/2 transition-all;
     content: '';
   }
 

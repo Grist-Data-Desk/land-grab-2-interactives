@@ -21,6 +21,56 @@
   strong {
     font-weight: 700;
   }
+
+  @layer base {
+    @font-face {
+      font-display: auto;
+      font-family: 'PolySans';
+      font-style: normal;
+      font-weight: 500;
+      src:
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/PolySansUS-Median..woff2)
+          format('woff2'),
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/PolySansUS-Median..woff)
+          format('woff');
+    }
+
+    @font-face {
+      font-display: auto;
+      font-family: 'Basis Grotesque';
+      font-style: normal;
+      font-weight: 400;
+      src:
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/basis-grotesque-regular-pro..woff2)
+          format('woff2'),
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/basis-grotesque-regular-pro..woff)
+          format('woff');
+    }
+
+    @font-face {
+      font-display: auto;
+      font-family: 'Basis Grotesque';
+      font-style: normal;
+      font-weight: 700;
+      src:
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/basis-grotesque-bold-pro..woff2)
+          format('woff2'),
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/basis-grotesque-bold-pro..woff)
+          format('woff');
+    }
+
+    @font-face {
+      font-display: auto;
+      font-family: 'Basis Grotesque';
+      font-style: italic;
+      font-weight: 700;
+      src:
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/basis-grotesque-bold-italic-pro..woff2)
+          format('woff2'),
+        url(https://grist.org/wp-content/themes/grist/dist/fonts/basis-grotesque-bold-italic-pro..woff)
+          format('woff');
+    }
+  }
 }
 
 @tailwind components;
@@ -96,38 +146,36 @@
   .stack-h-none > * + * {
     margin-inline-start: 0;
   }
-
-  /* Full Bleed */
-  .full-bleed {
-    margin-left: calc(50% - 50vw);
-  }
 }
 
 /* MapLibre Overrides. */
-.maplibregl-popup-tip {
+#interactive-map .maplibregl-popup-tip {
   display: none;
 }
 
-.maplibregl-popup-content {
+#interactive-map .maplibregl-popup-content {
   @apply border border-solid border-earth !bg-smog p-2 shadow-md;
 }
 
-.maplibregl-ctrl-group:not(:empty) {
-  @apply border border-solid border-earth bg-smog shadow-md;
+#interactive-map .maplibregl-ctrl-top-left {
+  @apply left-[3%] top-4 md:bottom-10 md:left-[21rem] md:top-auto;
 }
 
-.maplibregl-ctrl-group button + button {
-  @apply border-earth;
+#interactive-map .maplibregl-ctrl.maplibregl-ctrl-group {
+  @apply m-0 rounded border border-solid border-earth bg-smog/75 shadow backdrop-blur;
 }
 
-.maplibregl-ctrl-top-right {
-  @apply -top-[2px] right-[10px] scale-75 md:right-8 md:top-8 md:scale-100;
+#interactive-map .maplibregl-ctrl-geolocate,
+#interactive-map .maplibregl-ctrl-zoom-in,
+#interactive-map .maplibregl-ctrl-zoom-out,
+#interactive-map .maplibregl-ctrl-compass {
+  @apply h-8 w-8;
 }
 
-.maplibregl-ctrl-top-right .maplibregl-ctrl {
-  @apply m-0;
+#interactive-map .maplibregl-ctrl-top-right {
+  @apply bottom-auto right-[3%] top-4 md:bottom-10 md:right-8 md:top-auto;
 }
 
-.maplibregl-ctrl-top-right .maplibregl-ctrl:last-child {
-  @apply mt-2;
+#interactive-map .maplibregl-popup-tip {
+  display: none;
 }

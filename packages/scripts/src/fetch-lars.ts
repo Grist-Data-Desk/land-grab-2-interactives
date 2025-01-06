@@ -20,7 +20,7 @@ const main = async () => {
 
   const oids = _.range(1, 336);
   const lars: (Feature<Polygon> | null)[] = await Promise.all(
-    oids.map((oid) => {
+    oids.map(async (oid) => {
       const endpoint = `${SERVER_ENDPOINT}?objectIds=${oid}&outFields=*&f=geojson`;
 
       return fetch(endpoint)
@@ -28,7 +28,7 @@ const main = async () => {
         .then((data) => {
           return data.features[0] as Feature<Polygon>;
         })
-        .catch((err) => {
+        .catch((err: Error): null => {
           console.error(`Failed to fetch LAR for oid: ${oid}.`, err);
           return null;
         });

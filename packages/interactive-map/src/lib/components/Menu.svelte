@@ -5,10 +5,9 @@
     FilterSpecification,
     Map
   } from 'maplibre-gl';
-  import _ from 'lodash';
+  import * as _ from 'lodash-es';
   import type { Feature } from 'geojson';
 
-  import Legend from '$lib/components/Legend.svelte';
   import MapFilters from '$lib/components/MapFilters.svelte';
   import MapSwitch from '$lib/components/MapSwitch.svelte';
   import { mapEntity, type MapEntity } from '$lib/stores/map-entity';
@@ -21,6 +20,7 @@
 
   export let data: Data;
   export let map: Map;
+  export let isTabletOrAbove: boolean;
 
   const fitFilteredFeatureBounds = async (
     filters: ParcelFilters,
@@ -51,17 +51,35 @@
         _.overEvery(predicates)(feature)
       );
 
-      const bbox = turf.bbox(turf.featureCollection(filteredFeatures));
-      map.fitBounds(bbox, { padding: 50 });
+      const bbox = turf.bbox(turf.featureCollection(filteredFeatures)) as [
+        number,
+        number,
+        number,
+        number
+      ];
+      map.fitBounds(
+        bbox,
+        isTabletOrAbove
+          ? { padding: 50 }
+          : { padding: { left: 50, right: 50, top: 50, bottom: 200 } }
+      );
     } else {
       const bounds = (await fetch(
         `${DO_SPACES_URL}/json/bounds-by-tribe.json`
-      ).then((res) => res.json())) as Record<string, turf.BBox>;
+      ).then((res) => res.json())) as Record<
+        string,
+        [number, number, number, number]
+      >;
 
       const { presentDayTribe } = filters[LAYER_CONFIG.tribeParcelLinks.id];
 
       const bbox = bounds[presentDayTribe?.value ?? 'All'];
-      map.fitBounds(bbox, { padding: 50 });
+      map.fitBounds(
+        bbox,
+        isTabletOrAbove
+          ? { padding: 50 }
+          : { padding: { left: 50, right: 50, top: 50, bottom: 200 } }
+      );
     }
   };
 
@@ -131,24 +149,26 @@
 </script>
 
 <div
-  class="stack stack-sm md:stack-md border-earth bg-smog text-earth z-10 overflow-auto border p-4 shadow-md md:absolute md:left-8 md:top-8 md:w-[23rem] md:rounded md:px-4 md:py-6"
-  style="max-height: calc(80vh - 2rem - 1px);"
+  class="stack stack-sm md:stack-md border-earth bg-smog text-earth absolute bottom-0 left-[3%] z-10 w-[94%] overflow-auto rounded-t border border-b-0 p-4 shadow-md md:bottom-auto md:left-8 md:top-8 md:w-[23rem] md:rounded md:border-b md:px-4 md:py-6"
 >
   <h2
-    class="border-earth md:text-headline flex items-baseline justify-center border-b border-dotted pb-2 text-center font-serif text-lg font-black tracking-normal sm:text-xl md:flex-col md:items-center md:pb-4"
-    style="word-spacing: normal;"
+    class="border-earth md:text-headline flex items-baseline justify-center border-b border-opacity-25 pb-2 text-center font-sans text-lg font-medium tracking-normal md:flex-col md:items-center md:pb-4"
   >
     Indigenous land
-    <span
-      class="ml-2 text-lg font-normal text-gray-600 md:ml-0 md:self-center md:text-3xl"
+    <span class="ml-2 text-lg md:ml-0 md:self-center md:text-3xl"
       >granted to universities</span
     >
   </h2>
-  <div
-    class="stack stack-xs md:stack-sm border-earth border-b border-dotted pb-4 md:pb-6"
-  >
+  <div class="stack stack-xs md:stack-sm">
     <MapSwitch {map} />
     <MapFilters {data} />
   </div>
-  <Legend {map} />
+  <div
+    class="border-earth font-sans-alt text-3xs border-t border-opacity-25 pt-2"
+  >
+    <p class="m-0">
+      <strong>Sources</strong> &nbsp;Grist analysis / Bureau of Indian Affairs
+    </p>
+    <p class="m-0"><strong>Graphic</strong> &nbsp;Parker Ziegler / Grist</p>
+  </div>
 </div>

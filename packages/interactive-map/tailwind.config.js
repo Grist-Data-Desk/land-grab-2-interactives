@@ -8,9 +8,8 @@ export default {
         smog: '#f0f0f0'
       },
       fontFamily: {
-        sans: '"PolySans", "Open Sans", Helvetica, sans-serif',
-        'sans-alt': "Basis Grotesque Pro, 'Open Sans', Helvetica, sans-serif",
-        serif: '"GT Super Display", Georgia, serif'
+        sans: '"PolySans", sans-serif',
+        'sans-alt': '"Basis Grotesque", sans-serif'
       },
       fontSize: {
         headline: ['2.625rem', '2.75rem']

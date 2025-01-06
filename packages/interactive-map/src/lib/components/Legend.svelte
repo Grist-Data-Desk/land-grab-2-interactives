@@ -3,11 +3,13 @@
 
   import Checkbox from '$lib/components/Checkbox.svelte';
   import SectionHeading from '$lib/components/SectionHeading.svelte';
+  import { legendOpen } from '$lib/stores/legend';
   import { mapEntity } from '$lib/stores/map-entity';
   import { GRIST_COLORS } from '$lib/utils/constants';
   import { LAYER_CONFIG } from '$lib/utils/layer-config';
 
   export let map: Map;
+  export let isTabletOrAbove: boolean;
 
   let showParcels = true;
   let showLinks = true;
@@ -47,8 +49,13 @@
   });
 </script>
 
-<div class="stack stack-xs">
-  <SectionHeading>Legend</SectionHeading>
+<div
+  class="border-earth bg-smog/75 stack-xs stack absolute right-14 top-14 max-w-[calc(94%-3rem)] rounded border p-2 shadow-xl backdrop-blur md:left-auto md:right-8 md:top-8"
+  class:!hidden={isTabletOrAbove ? false : !$legendOpen}
+>
+  {#if isTabletOrAbove}
+    <SectionHeading>Legend</SectionHeading>
+  {/if}
   <Checkbox id="show-lars" on:change={() => {}} checked disabled>
     <div class="stack-h stack-h-xs items-center">
       <svg viewBox="0 0 16 16" width="16" height="16">

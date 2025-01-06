@@ -4,3 +4,5 @@ export const GRIST_COLORS = {
   SMOG: '#f0f0f0',
   GREEN: '#476039'
 };
+
+export const TABLET_BREAKPOINT = 768;

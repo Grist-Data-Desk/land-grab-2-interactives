@@ -94,7 +94,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	:root {
 		--grist-color-earth: #3c3830;
 	}

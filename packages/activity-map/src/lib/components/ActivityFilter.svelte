@@ -42,7 +42,7 @@
 	{/each}
 </div>
 
-<style>
+<style lang="postcss">
 	:root {
 		--grist-color-earth: #3c3830;
 		--grist-color-smog: #f0f0f0;
